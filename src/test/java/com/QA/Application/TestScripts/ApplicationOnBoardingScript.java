@@ -17,26 +17,25 @@ public class ApplicationOnBoardingScript extends TestBase{
 		
 		//Click On Applications
 		webdriver.clickOnButton(ApplicationsPage.btnApplications);
-		TestPass("User Click On Applications");;
+		TestPass("User Click On Applications");
 
 		//click on application defination
 		webdriver.clickOnButton(ApplicationsPage.btnApplicationDefination);
-		webdriver.AssertElementIsPresentOrNot(ApplicationsPage.btnApplicationDefination,"Application","ApplicationDefinition");
+		webdriver.VerifyElementIsPresentorNot(ApplicationsPage.btnApplicationDefination,"Application","ApplicationDefination");
 		LogInFo("User able to Click On ApplicationDefinition");
 
 		//Click On Add New Application
 		webdriver.waitForElementVisible(ApplicationsPage.btnAddNewApplication);
 		webdriver.clickOnButton(ApplicationsPage.btnAddNewApplication);
-		TakeScreenshot(TestDescription, FolderName, ImageName);
+		TakeScreenshot("AddNew Application","Application","AddNewApplication");
+		
 		////////////////////// ---CONDITION IS BASED APPLICATION IT WILL EXECUTE --/////////////////
 		if(properties.getProperty("ApplicationTypeofOnBoardingType").equalsIgnoreCase("Delimiter")) 
 		{
 			//Enter Application Name
-			webdriver.enterText(ApplicationsPage.txtApplicationName,properties.getProperty("DelimiterApplicationName"));
-			webdriver.WaitForSometime(1000);
-			//test.pass(.createScreenCaptureFromPath(webdriver.CaptureScreenShot("ApplicationName")).build());
-			test.pass("User Enter Application Name");
-			
+			webdriver.enterText(ApplicationsPage.txtApplicationName,webdriver.generateRandomString(10));
+			webdriver.getText(ApplicationsPage.txtApplicationName);
+			webdriver.waitForElementVisible(ApplicationsPage.btnDelimiterSave);
 
 			//Select Application Owner
 			webdriver.clickOnButton(ApplicationsPage.selectOwner);
@@ -45,32 +44,32 @@ public class ApplicationOnBoardingScript extends TestBase{
 			Robot r = new Robot();
 			r.keyPress(KeyEvent.VK_ENTER);
 			r.keyRelease(KeyEvent.VK_ENTER);
-			test.pass("User Select The Application Owner");
+			TestPass("User Select The Application Owner");
+			LogInFo("User Select The Application Owner");
 			webdriver.WaitForSometime(1000);
 
 			//Select Application Type 
 			webdriver.selectValueOnDropDown(ApplicationsPage.selectApplicationType,properties.getProperty("DelimiterApplicationType"));
-			LOG.info("User Select The Application Type");
-			test.pass("User Select The Application Type");
+			TestPass("User select Application Type");
 			webdriver.WaitForSometime(1000);
 
 			//Select Authoritative Application 
 			webdriver.clickOnButton(ApplicationsPage.selectAuthoritativeApplication);
-			test.pass("User Select The AuthoritativeApplication");
 			webdriver.WaitForSometime(1000);
+			TakeScreenshot("User Select Application As Authorative Application","Application","AuthorativeApplication");
 
 			//Navigate To Configuration Tab
 			webdriver.clickOnButton(ApplicationsPage.btnConfiguration);
-			LOG.info("User Navigate The Configuration Tab");
-			test.pass("User Navigate The Configuration Tab");
+			LogInFo("User Navigate To Configuration Tab");
+			TakeScreenshot("User is Navigate To Configauration Tab","Application","Configuration");
 			webdriver.WaitForSometime(2000);
 
 			//Enter The File Path
 			webdriver.enterText(ApplicationsPage.txtFilePath,properties.getProperty("DelimiterFilePath"));
-			LOG.info("User Enter The File Path");
-			test.pass("User  Enter The File Path");
+			LogInFo("User Enter The File Path");
+			TestPass("User Enter The File Path");
 			webdriver.WaitForSometime(2000);
-
+//Tommorrow 
 			//Enter The Delimiter
 			webdriver.enterText(ApplicationsPage.txtDelimiter,properties.getProperty("Delimiter"));
 			test.pass("User  Enter The Delimiter");

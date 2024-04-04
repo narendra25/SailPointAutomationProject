@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Apr 04 12:37:04 IST 2024</td>
+<td>Started on:</td><td>Thu Apr 04 17:36:09 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (24 ms)</td>
+<tr><td>Total time:</td><td>10 seconds (10075 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,12 +76,14 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.QA.Application.TestScripts.ApplicationOnBoardingScript.tc02verifyApplicationOnBoarding()'><b>tc02verifyApplicationOnBoarding</b><br>Test class: com.QA.Application.TestScripts.ApplicationOnBoardingScript</td>
-<td><div><pre>org.openqa.selenium.NoSuchSessionException: invalid session id
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;*[name=&apos;loginForm:accountId&apos;]&quot;}
+  (Session info: MicrosoftEdge=123.0.2420.65)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;OJAS-DL647&apos;, ip: &apos;192.168.4.218&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.9&apos;
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 123.0.2420.65, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:64132}, msedge: {msedgedriverVersion: 123.0.2420.65 (49b6a5859239..., userDataDir: C:\Users\na21279\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a495c25c2d35ced060084d0fd0bffdfd
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 123.0.2420.65, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:52681}, msedge: {msedgedriverVersion: 123.0.2420.65 (49b6a5859239..., userDataDir: C:\Users\na21279\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 56c5e604e744fa79f1e4494180cee8ca
 *** Element info: {Using=name, value=loginForm:accountId}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
@@ -93,17 +95,19 @@ Session ID: a495c25c2d35ced060084d0fd0bffdfd
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)
 	at org.openqa.selenium.By$ByName.findElement(By.java:284)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at com.QA.Application.Utilities.ReUsableMethods.enterText(ReUsableMethods.java:27)
-	at com.QA.Application.TestBase.TestBase.Launch_Url(TestBase.java:199)
-	at com.QA.Application.TestScripts.ApplicationOnBoardingScript.tc02verifyApplicationOnBoarding(ApplicationOnBoardingScript.java:19)
+	at com.QA.Application.Utilities.ReUsableMethods.enterText(ReUsableMethods.java:30)
+	at com.QA.Application.TestBase.TestBase.Launch_Application(TestBase.java:203)
+	at com.QA.Application.TestScripts.ApplicationOnBoardingScript.tc02verifyApplicationOnBoarding(ApplicationOnBoardingScript.java:16)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1614588868", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1614588868'><pre>org.openqa.selenium.NoSuchSessionException: invalid session id
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace262535196", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace262535196'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;*[name=&apos;loginForm:accountId&apos;]&quot;}
+  (Session info: MicrosoftEdge=123.0.2420.65)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;OJAS-DL647&apos;, ip: &apos;192.168.4.218&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.9&apos;
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 123.0.2420.65, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:64132}, msedge: {msedgedriverVersion: 123.0.2420.65 (49b6a5859239..., userDataDir: C:\Users\na21279\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a495c25c2d35ced060084d0fd0bffdfd
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 123.0.2420.65, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:52681}, msedge: {msedgedriverVersion: 123.0.2420.65 (49b6a5859239..., userDataDir: C:\Users\na21279\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 56c5e604e744fa79f1e4494180cee8ca
 *** Element info: {Using=name, value=loginForm:accountId}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
@@ -120,9 +124,9 @@ Session ID: a495c25c2d35ced060084d0fd0bffdfd
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)
 	at org.openqa.selenium.By$ByName.findElement(By.java:284)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at com.QA.Application.Utilities.ReUsableMethods.enterText(ReUsableMethods.java:27)
-	at com.QA.Application.TestBase.TestBase.Launch_Url(TestBase.java:199)
-	at com.QA.Application.TestScripts.ApplicationOnBoardingScript.tc02verifyApplicationOnBoarding(ApplicationOnBoardingScript.java:19)
+	at com.QA.Application.Utilities.ReUsableMethods.enterText(ReUsableMethods.java:30)
+	at com.QA.Application.TestBase.TestBase.Launch_Application(TestBase.java:203)
+	at com.QA.Application.TestScripts.ApplicationOnBoardingScript.tc02verifyApplicationOnBoarding(ApplicationOnBoardingScript.java:16)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -152,8 +156,8 @@ Session ID: a495c25c2d35ced060084d0fd0bffdfd
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>0</td>
-<td>com.QA.Application.TestScripts.ApplicationOnBoardingScript@894858</td></tr>
+<td>10</td>
+<td>com.QA.Application.TestScripts.ApplicationOnBoardingScript@60b71e8f</td></tr>
 </table><p>
 </body>
 </html>

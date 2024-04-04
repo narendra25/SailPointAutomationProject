@@ -9,6 +9,5 @@ public class LoginScript extends TestBase{
 	public static void tc01VerifyLogin() throws InterruptedException, IOException {
 		CreateExtentTest("Verify URL", "Case 1: User needs to verify if Go Applicaton  homepage works as expected.","Functional_TestCase","Narendra Reddy");
 		Launch_Application();
-		System.out.println("___________________________________________________________________________________________________________");
 	}
 }

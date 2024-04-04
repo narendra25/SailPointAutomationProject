@@ -21,63 +21,67 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.QA.Application.TestBase.TestBase;
 
+
 public class ReUsableMethods extends TestBase{
-	//Enter Text by using locator
-	public void enterText(By locator, String text) {
-		WebElement element = driver.findElement(locator);
-		element.sendKeys(text);
+	public static By PassLocator;
+	public static String EnterText;
+	//Enter Text by using PassPassLocator
+	public void enterText(By PassLocator, String EnterText) {
+		WebElement element = driver.findElement(PassLocator);
+		element.sendKeys(EnterText);
 
 	}
 	//Clear Text Method
-	public void clearText(By locator) {
+	public void clearText(By PassLocator) {
 
-		WebElement element = driver.findElement(locator);
+		WebElement element = driver.findElement(PassLocator);
 		element.clear();
 	}
 	//Click Button
-	public void clickOnButton(By locator) {
-		WebElement element = driver.findElement(locator);
+	public void clickOnButton(By PassLocator) {
+		WebElement element = driver.findElement(PassLocator);
 		element.click();
 	}
 	//GET TEXT METHOD 
-	public void getText(By locator) {
-		WebElement element = driver.findElement(locator);
+	public void getText(By PassLocator) {
+		WebElement element = driver.findElement(PassLocator);
 		String Text=element.getAttribute("value");
 		System.out.println(Text);
 	}
 	//GET ATTRIBUTE
-	public String getPlaceholder(By locator) {
-		WebElement element = driver.findElement(locator);
+	public String getPlaceholder(By PassLocator) {
+		WebElement element = driver.findElement(PassLocator);
 		return element.getAttribute("placeholder");
 	}
 	//BY USING TEXT OF DROPDOWN.
-	public void selectTextOnDropDown(By locator, String Text) {
+	public void selectTextOnDropDown(By PassLocator, String EnterText) {
 
-		Select selectValue = new Select(driver.findElement(locator));
-		selectValue.selectByVisibleText(Text);
+		Select selectValue = new Select(driver.findElement(PassLocator));
+		selectValue.selectByVisibleText(EnterText);
 	}
+	public static int IndexNumber;
 	//BY USING INDEX OF DROPDOWN.
-	public void selectIndexeOnDropDown(By locator, int index) {
+	public void selectIndexeOnDropDown(By PassLocator, int IndexNumber) {
 
-		Select selectValue = new Select(driver.findElement(locator));
-		selectValue.selectByIndex(index);
+		Select selectValue = new Select(driver.findElement(PassLocator));
+		selectValue.selectByIndex(IndexNumber);
 	}
 	//BY USING VALUE OF DROPDOWN.
-	public void selectValueOnDropDown(By locator, String Text) {
+	public void selectValueOnDropDown(By PassLocator, String EnterText) {
 
-		Select selectValue = new Select(driver.findElement(locator));
-		selectValue.selectByValue(Text);;
+		Select selectValue = new Select(driver.findElement(PassLocator));
+		selectValue.selectByValue(EnterText);;
 	}
 
 	//CHECK VALUE IN CHECK BOX
-	public void selectValueOnCheckBox(By chkBoxCollection, By labelText, By getInput, String Text) {
+	public void selectValueOnCheckBox(By chkBoxCollection, By labelText, By getInput, String EnterText) {
 
 		List<WebElement> chkBoxCollections = driver.findElements(chkBoxCollection);
 		for (WebElement webElement : chkBoxCollections) {
 			WebElement getLabel = webElement.findElement(labelText);
 			WebElement getInput1 = webElement.findElement(getInput);
 
-			if (getLabel.getText().equals(Text)) {
+			if (getLabel.getText().equals(EnterText)) {
 				if (!getInput1.isSelected()) {
 					getLabel.click();
 					break;
@@ -106,28 +110,28 @@ public class ReUsableMethods extends TestBase{
 	}
 
 	//WAIT FOR ELEMENT VISIBLE 
-	public void waitForElementVisible(By locator) {
+	public void waitForElementVisible(By PassLocator) {
 		WebDriverWait wait = new WebDriverWait(driver, 50);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(PassLocator));
 
 	}
 	//WAIT FOR ELEMENT TO BE CLICKABLE
-	public void waitForElementToBeClickable(By locator) {
+	public void waitForElementToBeClickable(By PassLocator) {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.elementToBeClickable(locator));
+		wait.until(ExpectedConditions.elementToBeClickable(PassLocator));
 	}
 	//WAIT FOR ELEMENT LOCATED
-	public void waitForElementLocated(By locator) {
+	public void waitForElementLocated(By PassLocator) {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		wait.until(ExpectedConditions.presenceOfElementLocated(PassLocator));
 	}
 	//BY USING JAVA SCRIPT EXECUTOR OF CLICKING BUTON
-	public void clickByJS(By locator) {
+	public void clickByJS(By PassLocator) {
 		try {
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
-			executor.executeScript("arguments[0].click();", locator);
+			executor.executeScript("arguments[0].click();",PassLocator);
 		} catch (NoSuchElementException e) {
-			System.out.println("Element not found: " + locator);
+			System.out.println("Element not found: " +PassLocator);
 		}
 	}
 	//Maximize and minimize the screens
@@ -135,35 +139,36 @@ public class ReUsableMethods extends TestBase{
 	public  void MaximizeScreen() {
 		driver.manage().window().maximize();
 	}
-
+	public static int Length;
 	//passing random alphabetic 
-	public static String generateRandomString(int length){
-		return RandomStringUtils.randomAlphabetic(length);
+	public String generateRandomString(int Length){
+		return RandomStringUtils.randomAlphabetic(Length);
 	} 
 
 	//for passing random numbers 
-	public String generateRandomNumber(int length){
-		return RandomStringUtils.randomNumeric(length);
+	public String generateRandomNumber(int Length){
+		return RandomStringUtils.randomNumeric(Length);
 	} 
 	//for passing alpha numeric
-	public static String generateRandomAlphanumeric(int length) {
-		return RandomStringUtils.randomAlphanumeric(length);
+	public static String generateRandomAlphanumeric(int Length) {
+		return RandomStringUtils.randomAlphanumeric(Length);
 	}
 	//--------------------------------------------------------------------------------//
-	public void WaitForSometime(int mins) throws InterruptedException {
-		Thread.sleep(mins);
+	public static int Seconds;
+	public void WaitForSometime(int Seconds) throws InterruptedException {
+		Thread.sleep(Seconds);
 	}
 	//Element To Be Clickable 
-	public void  WaitUntilElementToBeClickable(By locator) {
+	public void  WaitUntilElementToBeClickable(By PassLocator) {
 		WebDriverWait wait = new WebDriverWait(driver,5);
-		wait.until(ExpectedConditions.elementToBeClickable(locator));
+		wait.until(ExpectedConditions.elementToBeClickable(PassLocator));
 	}
 
 	//Presence of Element Located 
-	public  void  PresenceOfElementLocated(By locator) {
+	public  void  PresenceOfElementLocated(By PassLocator) {
 		WebDriverWait wait = new WebDriverWait(driver,5);
 
-		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		wait.until(ExpectedConditions.presenceOfElementLocated(PassLocator));
 	}
 	//Capturing ScreenSHot 
 	public static String CaptureScreenShot(String Folder,String filename) throws IOException {
@@ -195,39 +200,41 @@ public class ReUsableMethods extends TestBase{
 	}
 
 	//I Scroll Up The Page
-	public void ScrollParticularElement(By locator) {
-		WebElement element=driver.findElement(locator);
+	public void ScrollParticularElement(By PassLocator) {
+		WebElement element=driver.findElement(PassLocator);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();",element); //Vertical Scroll</p>
 	}
 
 	//I Click By Using JavaScript executor
-	public static void ClickByJavaScript_Executor(By locator) {
+	public static void ClickByJavaScript_Executor(By PassLocator) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		WebElement button =driver.findElement(locator);
+		WebElement button =driver.findElement(PassLocator);
 		js.executeScript("arguments[0].click();", button);
 	}
 
 	//ASSERTIONS
 	//// Assertion using try-catch block (for handling exceptions)
-	public  void AssertElementIsPresentOrNot(By locator,String Folder,String text) throws IOException {
-		WebElement element = driver.findElement(locator);
+	public static String FolderName;
+	public static String ImageName;
+	public  void AssertElementIsPresentOrNot(By PassLocator,String FolderName,String ImageName) throws IOException {
+		WebElement element = driver.findElement(PassLocator);
 		String Text=element.getAttribute("value");
 		System.out.println(Text);
-		if(Text.equals(text)) {
-			TestBase.TakeScreenshot("Assertion passed:The actual Text is "+text +" as expected.",Folder,text);
-			CaptureScreenShot(Folder,text);
+		if(Text.equals(ImageName)) {
+			TestBase.TakeScreenshot("Assertion passed:The actual Text is "+ImageName +" as expected.",FolderName,ImageName);
+			CaptureScreenShot(FolderName,ImageName);
 		}else {
-			System.out.println("Assertion failed:"+text +" Element is not as expected.");
-			TestBase.TakeScreenshot("Assertion failed:The actual Text is "+text +" is not expected",Folder,text);
-			CaptureScreenShot(Folder,text);
+			System.out.println("Assertion failed:"+ImageName +" Element is not as expected.");
+			TestBase.TakeScreenshot("Assertion failed:The actual Text is "+ImageName +" is not expected",FolderName,ImageName);
+			CaptureScreenShot(FolderName,ImageName);
 			driver.close();
 		}
 	}
 	//I_Enter_Value_By_Using_JavaScriptExecutor  
-	public void EnterValueByUsingJSE(By locator, String data) {
+	public void EnterValueByUsingJSE(By PassLocator, String data) {
 		//find the element in selenium webdriver
-		WebElement userNameTxt = driver.findElement(locator); 
+		WebElement userNameTxt = driver.findElement(PassLocator); 
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;  
 		// set the text
 		jsExecutor.executeScript("arguments[0].value='"+data+"'", userNameTxt);  
@@ -237,17 +244,16 @@ public class ReUsableMethods extends TestBase{
 	}
 
 	//I_Verify_Element is present or not 
-	public void VerifyElementIsPresentorNot(By locator,String Folder,String text) throws InterruptedException, IOException {
-		WebElement ele=driver.findElement(locator);
+	public void VerifyElementIsPresentorNot(By PassLocator,String FolderName,String ImageName) throws InterruptedException, IOException {
+		WebElement ele=driver.findElement(PassLocator);
 		Thread.sleep(1000);
 		if(ele.isDisplayed()) {
-			String s=ele.getText();
-			TestBase.TakeScreenshot("Assertion failed:The actual Text is "+text +" is not expected",Folder,text);
-			CaptureScreenShot(Folder,text);
+			TestBase.TakeScreenshot("Assertion failed:The actual Text is "+ImageName +" is not expected",FolderName,ImageName);
+			CaptureScreenShot(FolderName,ImageName);
 		}
 		else {
-			TestBase.TakeScreenshot("Assertion failed:The actual Text is "+text +" is not expected",Folder,text);
-			CaptureScreenShot(Folder,text);
+			TestBase.TakeScreenshot("Assertion failed:The actual Text is "+ImageName +" is not expected",FolderName,ImageName);
+			CaptureScreenShot(FolderName,ImageName);
 
 		}
 	}

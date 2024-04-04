@@ -10,6 +10,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -26,6 +27,8 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.github.javafaker.Faker;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 public class TestBase {
@@ -44,6 +47,8 @@ public class TestBase {
 	public static String TestDescription;
 	public static String ImageName;
 	public static String LogDescription;
+	public static By PassLocator;
+	public static String EnterText;
 	protected static final Logger LOG = (Logger) LogManager.getLogger(TestBase.class);
 	
 	
@@ -82,7 +87,13 @@ public class TestBase {
 			return test;
 
 		}
-
+		public static String RandomName()
+		{
+			Faker faker = new Faker();
+			String ApplicationName=faker.name().username();
+			System.out.println(ApplicationName);
+			return ApplicationName;
+		}
 		//ExtentTest Information 
 		public static void TestPass(String TextDescription) {
 			test.pass(TextDescription);
@@ -212,7 +223,6 @@ public class TestBase {
 		webdriver.waitForElementVisible(ApplicationsPage.btnApplications);
 		TakeScreenshot("User Click On Login Successfully","LoginPage","Login");
 		LogInFo("User Click On Login Page Successfully. ");
-		
 		//ASSERTING THE ACTUAL AND EXPECTED TITLE
 		String expectedTitle = "SailPoint IdentityIQ - Home";
 		String actualTitle = driver.getTitle();
