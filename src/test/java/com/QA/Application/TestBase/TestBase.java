@@ -16,8 +16,14 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import com.QA.Application.Pages.ApplicationsPage;
 import com.QA.Application.Pages.LoginPage;
@@ -27,8 +33,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.github.javafaker.Faker;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 public class TestBase {
@@ -56,21 +60,29 @@ public class TestBase {
 	
 	
 	@BeforeSuite(alwaysRun = true)
-	public void setUp() throws IOException, InterruptedException {
-
+	public void generateReports() throws Exception
+	{
 		propertiesLoad();
 		extentReportSpark();
+	}
+	
+	@BeforeMethod
+	public void setUp() throws IOException, InterruptedException {
 		openBrowser();
 		openURL("URL");
 
 	}
-
-	@AfterSuite(alwaysRun = true)
+	@AfterMethod
 	public void tearDown()  {
-
 		driver.quit();
+		
+	}
+	@AfterSuite(alwaysRun = true)
+	public void closeReport()
+	{
 		extent.flush();
 	}
+	
 	//CREATING EXTENT TEST REPORT
 	public static void CreateExtentTest(String Url,String TestCase,String Category,String Author) {
 		test = extent.createTest(Url,TestCase).assignCategory(Category).assignAuthor(Author);
@@ -86,13 +98,6 @@ public class TestBase {
 			test.log(Status.PASS,LogDetails,MediaEntityBuilder.createScreenCaptureFromPath(ImagePath).build());
 			return test;
 
-		}
-		public static String RandomName()
-		{
-			Faker faker = new Faker();
-			String ApplicationName=faker.name().username();
-			System.out.println(ApplicationName);
-			return ApplicationName;
 		}
 		//ExtentTest Information 
 		public static void TestPass(String TextDescription) {
@@ -184,9 +189,11 @@ public class TestBase {
 			options.addArguments("--disable-logging");
 			options.addArguments("--log-level=3");
 			options.addArguments("--remote-allow-origins=*");
+			options.setExperimentalOption("detach", true);
 			//System.setProperty("webdriver.chrome.driver","C:\\Users\\na21279\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
 			driver = new ChromeDriver(options);
-			System.setProperty("webdriver.chrome.logfile", "./logs/chromeLogs.txt");
+			//driver=new ChromeDriver();
+			//System.setProperty("webdriver.chrome.logfile", "./logs/chromeLogs.txt");
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
@@ -194,7 +201,7 @@ public class TestBase {
 			WebDriverManager.edgedriver().setup();
 			//System.setProperty("webdriver.edge.driver","C:\\Users\\na21279\\Downloads\\edgedriver_win64\\msedgedriver.exe");
 			driver = new EdgeDriver();
-			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "./logs/FirefoxLogs.txt");
+			//System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "./logs/FirefoxLogs.txt");
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
@@ -204,7 +211,6 @@ public class TestBase {
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		}
 	}
-	
 	public static void Launch_Application() throws IOException, InterruptedException {
 		
 		//ENTER USERNAME OF APPLICATION.
@@ -226,6 +232,8 @@ public class TestBase {
 		//ASSERTING THE ACTUAL AND EXPECTED TITLE
 		String expectedTitle = "SailPoint IdentityIQ - Home";
 		String actualTitle = driver.getTitle();
+		System.out.println(actualTitle);
+		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		if (expectedTitle.equals(actualTitle)) {
 			TestPass("Verification Successful - The correct title is displayed on the web page.");
 			LogInFo("Verification Successful - The User is Login The Application");
@@ -234,5 +242,7 @@ public class TestBase {
 			TestFail("Verification Failed - An incorrect title is displayed on the web page.");
 			LogWarn("Verification Failed - An incorrect title is displayed on the web page.");
 		}
+		
 	}
+	
 }

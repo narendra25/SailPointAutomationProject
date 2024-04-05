@@ -7,7 +7,9 @@
         <methods>
           <include name="tc02verifyApplicationOnBoarding"/>
           <include name="setUp"/>
+          <include name="closeReport"/>
           <include name="tearDown"/>
+          <include name="generateReports"/>
         </methods>
       </class> <!-- com.QA.Application.TestScripts.ApplicationOnBoardingScript -->
     </classes>
