@@ -37,13 +37,13 @@ public class ApplicationOnBoardingScript extends TestBase{
 		if(properties.getProperty("ApplicationTypeofOnBoardingType").equalsIgnoreCase("Delimiter")) 
 		{
 			//Enter Application Name
-			webdriver.enterText(ApplicationsPage.txtApplicationName,webdriver.generateRandomString(10));
+			webdriver.enterText(ApplicationsPage.txtApplicationName,properties.getProperty("ApplicationName"));
 			webdriver.getText(ApplicationsPage.txtApplicationName);
 			webdriver.waitForElementVisible(ApplicationsPage.btnDelimiterSave);
 
 			//Select Application Owner
 			webdriver.clickOnButton(ApplicationsPage.selectOwner);
-			webdriver.enterText(ApplicationsPage.txtOwnerName,properties.getProperty("DelimiterApplicationOwner"));
+			webdriver.enterText(ApplicationsPage.txtOwnerName,properties.getProperty("ApplicationOwner"));
 			webdriver.WaitForSometime(1000);
 			Robot r = new Robot();
 			r.keyPress(KeyEvent.VK_ENTER);
@@ -53,12 +53,11 @@ public class ApplicationOnBoardingScript extends TestBase{
 			webdriver.WaitForSometime(1000);
 
 			//Select Application Type 
-			webdriver.selectValueOnDropDown(ApplicationsPage.selectApplicationType,properties.getProperty("DelimiterApplicationType"));
+			webdriver.selectValueOnDropDown(ApplicationsPage.selectApplicationType,properties.getProperty("ApplicationType"));
 			webdriver.WaitForSometime(1000);
 			TakeScreenshot("User Select Application Type","Application","Application Type");
 			//Here Selecting Application AUTHORItative Type
-			if(properties.getProperty("ApplicationAuthorityType").equalsIgnoreCase("AuthoritativeApplication")) 
-			{
+			
 			//Select Authoritative Application 
 			webdriver.clickOnButton(ApplicationsPage.selectAuthoritativeApplication);
 			webdriver.WaitForSometime(1000);
@@ -226,191 +225,27 @@ public class ApplicationOnBoardingScript extends TestBase{
 				test.pass("User Click on Delimiter Save Button");
 				webdriver.WaitForSometime(5000);
 				System.out.println("___________________________________________________________________________________________________________");
-			}
-			}else {
-			//Navigate To Configuration Tab
-			webdriver.clickOnButton(ApplicationsPage.btnConfiguration);
-			webdriver.waitForElementLocated(ApplicationsPage.txtFilePath);
-			LogInFo("User Navigate To Configuration Tab");
-			TakeScreenshot("User is Navigate To Configauration Tab","Application","Configuration");
-
-			//Enter The File Path
-			webdriver.enterText(ApplicationsPage.txtFilePath,properties.getProperty("DelimiterFilePath"));
-			webdriver.waitForElementLocated(ApplicationsPage.txtDelimiter);
-			LogInFo("User Enter The File Path");
-			TestPass("User Enter The File Path");
-
-
-			//Enter The Delimiter
-			webdriver.enterText(ApplicationsPage.txtDelimiter,properties.getProperty("Delimiter"));
-			webdriver.waitForElementLocated(ApplicationsPage.chkFilehascolumnheaderonfirstline);
-			TestPass("User  Enter The Delimiter");
-
-			//CheckBox of Firstline as header
-			webdriver.clickOnButton(ApplicationsPage.chkFilehascolumnheaderonfirstline);
-			TakeScreenshot("User  Select The Check Box of Filehascolumnheaderonfirstline","Application","Filehascolumnheaderonfirstline");
-			webdriver.WaitForSometime(1000);
-			
-			if(properties.getProperty("UserAddObjectType").equalsIgnoreCase("ObjectType")) {
-				webdriver.ScrollParticularElement(ApplicationsPage.btnAddObjectType);
-				webdriver.clickOnButton(ApplicationsPage.btnAddObjectType);
-				webdriver.waitForElementLocated(ApplicationsPage.txtNameObjectType);
-				webdriver.WaitForSometime(2000);
-
-				//Name Of Object Type
-				webdriver.enterText(ApplicationsPage.txtNameObjectType,properties.getProperty("NameObjectType"));
-
-				//Click On Ok Button
-				webdriver.WaitForSometime(2000);
-				webdriver.clickOnButton(ApplicationsPage.btnOkObjectType);
-				webdriver.waitForElementLocated(ApplicationsPage.txtObjectFilepath);
-				webdriver.ScrollParticularElement(ApplicationsPage.txtObjectFilepath);
-
-				//File Path
-				webdriver.enterText(ApplicationsPage.txtObjectFilepath,properties.getProperty("ObjectTypeFilePath"));
-				webdriver.waitForElementLocated(ApplicationsPage.txtObjectDelimiter);
-
-				//Delimiter
-				webdriver.enterText(ApplicationsPage.txtObjectDelimiter,properties.getProperty("txtObjectDelimiter"));
-				webdriver.waitForElementLocated(ApplicationsPage.chkObjectFilehascolumnheaderonfirstline);
-
-				//First Line Has First Column
-				webdriver.clickOnButton(ApplicationsPage.chkObjectFilehascolumnheaderonfirstline);
-
-				//Navigating To schema Tab
-				webdriver.ScrollParticularElement(ApplicationsPage.btnSchema);
-				webdriver.clickOnButton(ApplicationsPage.btnSchema);
-				LogInFo("User Navigationg To schema Page");
-				TestPass("User Navigationg To schema Page");
-				webdriver.WaitForSometime(1000);
-
-				//Enter delimiter Identity Attribute Of Application 
-				webdriver.enterText(ApplicationsPage.txtDelimiterIdentityAttribute,properties.getProperty("DelimitedIdentityAttribute"));
-				TestPass("User Enter Delimited Identity Attribute");
-				webdriver.WaitForSometime(1000);
-
-				//Enter delimiter Identity Display Attribute Of Application 
-				webdriver.enterText(ApplicationsPage.txtDelimiterDisplayAttribute,properties.getProperty("DelimitedDispalyAttribute"));
-				TestPass("User Enter DelimitedDispalyAttribute");
-				webdriver.WaitForSometime(1000);
-
-				//Enter Object Identity Attribute Of Application 
-				webdriver.waitForElementLocated(ApplicationsPage.txtObjectDelimiterIdentityAttribute);
-				webdriver.ScrollParticularElement(ApplicationsPage.txtObjectDelimiterIdentityAttribute);
-				webdriver.enterText(ApplicationsPage.txtObjectDelimiterIdentityAttribute,properties.getProperty("txtObjectDelimiterIdentityAttribute"));
-				TestPass("User Enter ObjectIdentity Attribute");
-				webdriver.WaitForSometime(1000);
-
-				//Enter Object Identity Display Attribute Of Application 
-				webdriver.enterText(ApplicationsPage.txtObjectDelimiterDisplayAttribute,properties.getProperty("txtObjectDelimiterDisplayAttribute"));
-				TestPass("User Enter ObjectDispalyAttribute");
-				webdriver.WaitForSometime(1000);
-				TakeScreenshot("User Enter ObjectDispalyAttribute","Application","DelimiterDisplayAttribute");
-				
-				//Click On DiscoverSchemaAttribute Button
-				webdriver.clickOnButton(ApplicationsPage.btnDelimiterDiscoverSchemaAttribute);
-				LogTrace("User Click on Discover Schema Attribute");
-				webdriver.WaitForSometime(2000);
-				TakeScreenshot("User Click on Discover Schema Attribute","Application","DelimiterDiscoverSchemaAttribute");
-				
-				//Click On Preview Button
-				webdriver.clickOnButton(ApplicationsPage.btnDelimiterPreview);
-				LogInFo("User Click on Preview");
-				TakeScreenshot("User Click on Preview","Application","PreviewObject");
-				webdriver.WaitForSometime(2000);
-				r.keyPress(KeyEvent.VK_ESCAPE);
-				r.keyRelease(KeyEvent.VK_ESCAPE);
-				webdriver.WaitForSometime(1000);
-
-				//-----------Object Type Schema------------///
-				//Click On DiscoverSchemaAttribute Button
-				webdriver.ScrollParticularElement(ApplicationsPage.btnObjectDiscoverSchemaAttribute);
-				webdriver.clickOnButton(ApplicationsPage.btnObjectDiscoverSchemaAttribute);
-				LogInFo("User Click on Object Discover Schema Attribute");
-				TestPass("User Click on Object Discover Schema Attribute");
-				webdriver.WaitForSometime(2000);
-				
-				//Click On Preview Button
-				webdriver.clickOnButton(ApplicationsPage.btnObjectPreview);
-				LogInFo("User Click on Object Preview");
-				TestPass("User Click on Object Preview");
-				webdriver.WaitForSometime(2000);
-				r.keyPress(KeyEvent.VK_ESCAPE);
-				r.keyRelease(KeyEvent.VK_ESCAPE);
-				webdriver.WaitForSometime(1000);
-
-				//Click On Save Button Of Delimiter File
-				//webdriver.clickOnButton(ApplicationsPage.btnDelimiterSave);
-				TestPass("User Click on Delimiter Save Button");
-				webdriver.WaitForSometime(5000);
-
-			}
-
-			//TestConnection
-			//			webdriver.ScrollParticularElement(ApplicationsPage.btnDelimiterTestConnection);
-			//			webdriver.clickOnButton(ApplicationsPage.btnDelimiterTestConnection);
-			//			test.pass(.createScreenCaptureFromPath(webdriver.CaptureScreenShot("DelimiterTestConnection")).build());
-			//
-			//			test.pass("User Check The Test Connection");
-			//			webdriver.WaitForSometime(9000);
-			//Navigating To Schema Page
-			else {
-				webdriver.clickOnButton(ApplicationsPage.btnSchema);
-				LogInFo("User Navigationg To schema Page ");
-				TestPass("User Navigationg To schema Page ");
-				webdriver.waitForElementVisible(ApplicationsPage.txtDelimiterIdentityAttribute);
-
-				//Enter delimiter Identity Attribute Of Application 
-				webdriver.enterText(ApplicationsPage.txtDelimiterIdentityAttribute,properties.getProperty("DelimitedIdentityAttribute"));
-				TestPass("User Enter Delimited Identity Attribute");
-				webdriver.waitForElementVisible(ApplicationsPage.txtDelimiterDisplayAttribute);
-
-				//Enter delimiter Identity Display Attribute Of Application 
-				webdriver.enterText(ApplicationsPage.txtDelimiterDisplayAttribute,properties.getProperty("DelimitedDispalyAttribute"));
-				webdriver.WaitForSometime(1000);
-				TakeScreenshot("User Enter DelimitedDispalyAttribute","Application","DisplayAttribute");
-				
-				//Click On DiscoverSchemaAttribute Button
-				webdriver.clickOnButton(ApplicationsPage.btnDelimiterDiscoverSchemaAttribute);
-				LogInFo("User Click on Discover Schema Attribute");
-				webdriver.WaitForSometime(2000);
-				TakeScreenshot("User Click on Discover Schema Attribute","Application","DiscoverSchema");
-				
-				//Click On Preview Button
-				webdriver.clickOnButton(ApplicationsPage.btnDelimiterPreview);
-				LogInFo("User Click on Preview");
-				TakeScreenshot("User Click on Preview","Application","Preview");
-				webdriver.WaitForSometime(2000);
-				r.keyPress(KeyEvent.VK_ESCAPE);
-				r.keyRelease(KeyEvent.VK_ESCAPE);
-				webdriver.WaitForSometime(1000);
-
-				//Click On Save Button Of Delimiter File
-				//webdriver.clickOnButton(ApplicationsPage.btnDelimiterSave);
-				test.pass("User Click on Delimiter Save Button");
-				webdriver.WaitForSometime(5000);
-				System.out.println("___________________________________________________________________________________________________________");
-			}}}
+			}}
 		else if(properties.getProperty("ApplicationTypeofOnBoardingType").equalsIgnoreCase("JDBC")) 
 		{
 			//Enter Application Name
-			webdriver.enterText(ApplicationsPage.txtApplicationName,properties.getProperty("JDBCApplicationName"));
-			webdriver.WaitForSometime(1000);
-			LogInFo("User Enter Application Name");
-			TestPass("User Enter Application Name");
-			
+			webdriver.enterText(ApplicationsPage.txtApplicationName,properties.getProperty("ApplicationName"));
+			webdriver.getText(ApplicationsPage.txtApplicationName);
+			webdriver.waitForElementVisible(ApplicationsPage.btnDelimiterSave);
+
 			//Select Application Owner
 			webdriver.clickOnButton(ApplicationsPage.selectOwner);
-			webdriver.enterText(ApplicationsPage.txtOwnerName,properties.getProperty("JDBCApplicationOwner"));
-			webdriver.WaitForSometime(2000);
+			webdriver.enterText(ApplicationsPage.txtOwnerName,properties.getProperty("ApplicationOwner"));
+			webdriver.WaitForSometime(1000);
 			Robot r = new Robot();
 			r.keyPress(KeyEvent.VK_ENTER);
 			r.keyRelease(KeyEvent.VK_ENTER);
-			TakeScreenshot("User Select The Application Owner","JDBCAPPLICATION","OwnerName");
+			TestPass("User Select The Application Owner");
+			LogInFo("User Select The Application Owner");
 			webdriver.WaitForSometime(1000);
 
 			//Select Application Type 
-			webdriver.selectValueOnDropDown(ApplicationsPage.selectApplicationType,properties.getProperty("JDBCApplicationType"));
+			webdriver.selectValueOnDropDown(ApplicationsPage.selectApplicationType,properties.getProperty("ApplicationType"));
 			LOG.info("User Select The Application Type");
 			TakeScreenshot("User Select The Application Type","JDBCAPPLICATION" ,"ApplicationType");
 			webdriver.WaitForSometime(2000);
@@ -454,7 +289,7 @@ public class ApplicationOnBoardingScript extends TestBase{
 			webdriver.clickOnButton(ApplicationsPage.btnTestConnection);
 			LOG.info("User Checking The Test Connection");
 			test.pass("User Checking The Test Connection");
-			webdriver.WaitForSometime(1000);
+			webdriver.WaitForSometime(5000);
 			//Navigate Schema Tab
 			webdriver.clickOnButton(ApplicationsPage.tabSchema);
 			LOG.info("User Navigate To Schema Tab");
@@ -481,9 +316,11 @@ public class ApplicationOnBoardingScript extends TestBase{
 			//Click On Preview Button
 			webdriver.clickOnButton(ApplicationsPage.btnPreview);
 			LogInFo("User Click on Preview");
+			webdriver.WaitForSometime(2000);
 			TakeScreenshot("User Click on Preview", "JDBCAPPLICATION","JDBCDPreview");
 			webdriver.WaitForSometime(2000);
-			webdriver.clickOnButton(ApplicationsPage.btnPreviewClose);
+			r.keyPress(KeyEvent.VK_ESCAPE);
+			r.keyRelease(KeyEvent.VK_ESCAPE);
 			webdriver.WaitForSometime(2000);
 			webdriver.clickOnButton(ApplicationsPage.btnApplicationSave);
 			webdriver.WaitForSometime(3000);

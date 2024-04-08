@@ -3,18 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.QA.Application.TestScripts.ApplicationOnBoardingScript">
-        <methods>
-          <include name="tc02verifyApplicationOnBoarding"/>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.QA.Application.TestScripts.ApplicationOnBoardingScript -->
       <class name="com.QA.Application.TestScripts.CreateAggregationTask">
         <methods>
           <include name="tc03verifyCreateAggregationTask"/>
           <include name="setUp"/>
+          <include name="closeReport"/>
           <include name="tearDown"/>
+          <include name="generateReports"/>
         </methods>
       </class> <!-- com.QA.Application.TestScripts.CreateAggregationTask -->
     </classes>

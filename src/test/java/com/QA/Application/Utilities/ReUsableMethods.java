@@ -31,6 +31,9 @@ public class ReUsableMethods extends TestBase{
 		element.sendKeys(EnterText);
 
 	}
+	public void DynamicXpathContains(String Text) {
+		driver.findElement(By.xpath("//*[contains(text(),'"+Text+"')]")).click();
+	}
 	//Clear Text Method
 	public void clearText(By PassLocator) {
 

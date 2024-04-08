@@ -1,7 +1,12 @@
 package com.QA.Application.TestScripts;
 
 import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import com.QA.Application.Pages.TaskPageObjects;
 import com.QA.Application.TestBase.TestBase;
@@ -33,6 +38,40 @@ public class CreateAggregationTask extends TestBase{
 		//Click On Application Account Aggregation 
 		webdriver.clickOnButton(TaskPageObjects.btnAccountAggregartion);
 		TakeScreenshot("Create a Task For AccountAggregartion","Tasks","AccountAggregartion");
+		webdriver.waitForElementVisible(TaskPageObjects.txtTaskName);
+		
+		//Enter Task Name
+		webdriver.enterText(TaskPageObjects.txtTaskName,properties.getProperty("ApplicationName")+"aggregation");
+		TakeScreenshot("Enter Task Name","Tasks","TaskName");
+		webdriver.WaitForSometime(2000);
+		LogInFo("User enter Task Name");
+		
+		//Scroll down to Task Select
+		webdriver.ScrollParticularElement(TaskPageObjects.btnTaskDropdown);
+		webdriver.clickOnButton(TaskPageObjects.btnTaskDropdown);
+		TakeScreenshot("Click on Task DropDown","Tasks","TasksDropDown");
+		webdriver.WaitForSometime(2000);
+		//Select The Task
+		webdriver.DynamicXpathContains(properties.getProperty("ApplicationName"));
+		webdriver.WaitForSometime(2000);
+		TakeScreenshot("User Select The Task","Tasks","SelectTask");
+		//Scroll down To SAve And Execute
+		webdriver.ScrollParticularElement(TaskPageObjects.saveAndExecute);
+		webdriver.clickOnButton(TaskPageObjects.saveAndExecute);
+		webdriver.DynamicXpathContains(properties.getProperty("DelimiterApplicationName"));
+		TakeScreenshot("User click on save and execute Button","Tasks","saveAndExecute");
+		//webdriver.waitForElementVisible(TaskPageObjects.OKButton);
+		
+		//Click On 
+		TakeScreenshot("User click on Ok Button","Tasks","OkButton");
+		Robot r=new Robot();
+		r.keyPress(KeyEvent.VK_ENTER);
+		r.keyRelease(KeyEvent.VK_ENTER);
+		webdriver.WaitForSometime(2000);
+		
+		//Navigating Back
+		driver.navigate().back();
+		webdriver.WaitForSometime(200000);
 		}
 		else {
 			System.out.println("Pora Pakkaki");
