@@ -29,12 +29,15 @@ public class CreateAggregationTask extends TestBase{
 		webdriver.clickOnButton(TaskPageObjects.btnTasks);
 		webdriver.waitForElementLocated(TaskPageObjects.btnAddNewTask);
 		TakeScreenshot("Create a Task For Application","Tasks","Task");
+		webdriver.WaitForSometime(3000);
 		//Click On AddNewTask
 		webdriver.clickOnButton(TaskPageObjects.btnAddNewTask);
 		webdriver.waitForElementLocated(TaskPageObjects.btnAccountAggregartion);
 		TakeScreenshot("Create a Task","Tasks","AddNewTask");
 		if(properties.getProperty("ApplicationAggregationType").equalsIgnoreCase("Account Aggregation")) 
+			
 		{
+			webdriver.WaitForSometime(3000);
 		//Click On Application Account Aggregation 
 		webdriver.clickOnButton(TaskPageObjects.btnAccountAggregartion);
 		TakeScreenshot("Create a Task For AccountAggregartion","Tasks","AccountAggregartion");
@@ -50,7 +53,7 @@ public class CreateAggregationTask extends TestBase{
 		webdriver.ScrollParticularElement(TaskPageObjects.btnTaskDropdown);
 		webdriver.clickOnButton(TaskPageObjects.btnTaskDropdown);
 		TakeScreenshot("Click on Task DropDown","Tasks","TasksDropDown");
-		webdriver.WaitForSometime(2000);
+		webdriver.WaitForSometime(4000);
 		//Select The Task
 		webdriver.DynamicXpathContains(properties.getProperty("ApplicationName"));
 		webdriver.WaitForSometime(2000);
@@ -60,6 +63,7 @@ public class CreateAggregationTask extends TestBase{
 		webdriver.clickOnButton(TaskPageObjects.saveAndExecute);
 		webdriver.DynamicXpathContains(properties.getProperty("DelimiterApplicationName"));
 		TakeScreenshot("User click on save and execute Button","Tasks","saveAndExecute");
+		webdriver.WaitForSometime(3000);
 		//webdriver.waitForElementVisible(TaskPageObjects.OKButton);
 		
 		//Click On 
@@ -71,7 +75,7 @@ public class CreateAggregationTask extends TestBase{
 		
 		//Navigating Back
 		driver.navigate().back();
-		webdriver.WaitForSometime(200000);
+		webdriver.WaitForSometime(2000);
 		}
 		else {
 			System.out.println("Getting Aggregation Error");

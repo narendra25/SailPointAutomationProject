@@ -40,33 +40,35 @@ public class ApplicationOnBoardingScript extends TestBase{
 			webdriver.enterText(ApplicationsPage.txtApplicationName,properties.getProperty("ApplicationName"));
 			webdriver.getText(ApplicationsPage.txtApplicationName);
 			webdriver.waitForElementVisible(ApplicationsPage.btnDelimiterSave);
+			webdriver.WaitForSometime(3000);
 
 			//Select Application Owner
 			webdriver.clickOnButton(ApplicationsPage.selectOwner);
 			webdriver.enterText(ApplicationsPage.txtOwnerName,properties.getProperty("ApplicationOwner"));
-			webdriver.WaitForSometime(1000);
+			webdriver.WaitForSometime(3000);
 			Robot r = new Robot();
 			r.keyPress(KeyEvent.VK_ENTER);
 			r.keyRelease(KeyEvent.VK_ENTER);
 			TestPass("User Select The Application Owner");
 			LogInFo("User Select The Application Owner");
-			webdriver.WaitForSometime(1000);
+			webdriver.WaitForSometime(3000);
 
 			//Select Application Type 
 			webdriver.selectValueOnDropDown(ApplicationsPage.selectApplicationType,properties.getProperty("ApplicationType"));
-			webdriver.WaitForSometime(1000);
+			webdriver.WaitForSometime(2000);
 			TakeScreenshot("User Select Application Type","Application","Application Type");
 			//Here Selecting Application AUTHORItative Type
 			
 			//Select Authoritative Application 
 			webdriver.clickOnButton(ApplicationsPage.selectAuthoritativeApplication);
-			webdriver.WaitForSometime(1000);
+			webdriver.WaitForSometime(2000);
 			TakeScreenshot("User Select Application As Authorative Application","Application","AuthorativeApplication");
 			
 			//Navigate To Configuration Tab
 			webdriver.clickOnButton(ApplicationsPage.btnConfiguration);
 			webdriver.waitForElementLocated(ApplicationsPage.txtFilePath);
 			LogInFo("User Navigate To Configuration Tab");
+			webdriver.WaitForSometime(2000);
 			TakeScreenshot("User is Navigate To Configauration Tab","Application","Configuration");
 
 			//Enter The File Path
@@ -84,7 +86,7 @@ public class ApplicationOnBoardingScript extends TestBase{
 			//CheckBox of Firstline as header
 			webdriver.clickOnButton(ApplicationsPage.chkFilehascolumnheaderonfirstline);
 			TakeScreenshot("User  Select The Check Box of Filehascolumnheaderonfirstline","Application","Filehascolumnheaderonfirstline");
-			webdriver.WaitForSometime(1000);
+			webdriver.WaitForSometime(2000);
 			
 			if(properties.getProperty("UserAddObjectType").equalsIgnoreCase("ObjectType")) {
 				webdriver.ScrollParticularElement(ApplicationsPage.btnAddObjectType);
@@ -232,17 +234,18 @@ public class ApplicationOnBoardingScript extends TestBase{
 			webdriver.enterText(ApplicationsPage.txtApplicationName,properties.getProperty("ApplicationName"));
 			webdriver.getText(ApplicationsPage.txtApplicationName);
 			webdriver.waitForElementVisible(ApplicationsPage.btnDelimiterSave);
+			webdriver.WaitForSometime(3000);
 
 			//Select Application Owner
 			webdriver.clickOnButton(ApplicationsPage.selectOwner);
 			webdriver.enterText(ApplicationsPage.txtOwnerName,properties.getProperty("ApplicationOwner"));
-			webdriver.WaitForSometime(1000);
+			webdriver.WaitForSometime(3000);
 			Robot r = new Robot();
 			r.keyPress(KeyEvent.VK_ENTER);
 			r.keyRelease(KeyEvent.VK_ENTER);
 			TestPass("User Select The Application Owner");
 			LogInFo("User Select The Application Owner");
-			webdriver.WaitForSometime(1000);
+			webdriver.WaitForSometime(3000);
 
 			//Select Application Type 
 			webdriver.selectValueOnDropDown(ApplicationsPage.selectApplicationType,properties.getProperty("ApplicationType"));
@@ -258,20 +261,20 @@ public class ApplicationOnBoardingScript extends TestBase{
 
 			//Enter Connection User 
 			webdriver.clearText(ApplicationsPage.txtConnectionUser);
-			webdriver.WaitForSometime(1000);
+			webdriver.WaitForSometime(3000);
 			webdriver.enterText(ApplicationsPage.txtConnectionUser,properties.getProperty("JDBCConnectionUser"));
 			LogInFo("User Enter The Connection User Name");
 			TakeScreenshot("User Enter The Connection User Name", "JDBCAPPLICATION","ConnectionUser");
 			//Enter Connection Password
 			webdriver.clearText(ApplicationsPage.txtConnectionPassword);
-			webdriver.WaitForSometime(1000);
+			webdriver.WaitForSometime(3000);
 			webdriver.enterText(ApplicationsPage.txtConnectionPassword,properties.getProperty("JDBCConnectionPassword"));
 			LogInFo("User Enter The Connection Password");
 			TakeScreenshot("User Enter The Connection Password", "JDBCAPPLICATION","ConnectionPassword");
 
 			//Enter Database URL
 			webdriver.clearText(ApplicationsPage.txtDataBaseURL);
-			webdriver.WaitForSometime(1000);
+			webdriver.WaitForSometime(2000);
 			webdriver.enterText(ApplicationsPage.txtDataBaseURL,properties.getProperty("JDBCDatabaseURL"));
 			LogInFo("User Enter The Connection Database URL");
 			TakeScreenshot("User Enter The Connection DatabaseURL", "JDBCAPPLICATION","ConnectionDataBaseURL");
@@ -280,7 +283,7 @@ public class ApplicationOnBoardingScript extends TestBase{
 
 			//Enter The SQL Statement
 			webdriver.clearText(ApplicationsPage.txtSQLStatment);
-			webdriver.WaitForSometime(1000);
+			webdriver.WaitForSometime(2000);
 			webdriver.enterText(ApplicationsPage.txtSQLStatment,properties.getProperty("JDBCSqlStatement"));
 			LogInFo("User Enter The Connection SQL Statement");
 			TakeScreenshot("User Enter The Connection SQL Statement", "JDBCAPPLICATION","ConnectionSQLStatement");
@@ -294,34 +297,34 @@ public class ApplicationOnBoardingScript extends TestBase{
 			webdriver.clickOnButton(ApplicationsPage.tabSchema);
 			LOG.info("User Navigate To Schema Tab");
 			test.pass("User Navigate To Schema Tab");
-			webdriver.WaitForSometime(1000);
+			webdriver.WaitForSometime(3000);
 
 			//Enter Identity Attribute
 			webdriver.enterText(ApplicationsPage.txtJDBCIdentityAttribute,properties.getProperty("JDBCIdentityAttribute"));
 			LogInFo("User Enter JDBC Dispaly Attribute");
 			TakeScreenshot("User Enter JDBC Dispaly Attribute", "JDBCAPPLICATION","JDBCIdentityAttribute");
-			webdriver.WaitForSometime(1000);
+			webdriver.WaitForSometime(3000);
 			//Enter Dispaly Attribute
 			webdriver.enterText(ApplicationsPage.txtDispalyAttribute,properties.getProperty("JDBCDisplayAttribute"));
 			LOG.info("User Enter JDBC Dispaly Attribute");
 			test.pass("User Enter JDBC Display Attribute");
-			webdriver.WaitForSometime(1000);
+			webdriver.WaitForSometime(4000);
 
 
 			//Click On DiscoverSchemaAttribute Button
 			webdriver.clickOnButton(ApplicationsPage.btnDiscoverSchemaAttribute);
 			LogInFo("User Click on Discover Schema Attribute");
 			TakeScreenshot("User Click on Discover Schema Attribute", "JDBCAPPLICATION","JDBCDiscoverAttribute");
-			webdriver.WaitForSometime(2000);
+			webdriver.WaitForSometime(5000);
 			//Click On Preview Button
 			webdriver.clickOnButton(ApplicationsPage.btnPreview);
 			LogInFo("User Click on Preview");
-			webdriver.WaitForSometime(2000);
+			webdriver.WaitForSometime(5000);
 			TakeScreenshot("User Click on Preview", "JDBCAPPLICATION","JDBCDPreview");
-			webdriver.WaitForSometime(2000);
+			webdriver.WaitForSometime(3000);
 			r.keyPress(KeyEvent.VK_ESCAPE);
 			r.keyRelease(KeyEvent.VK_ESCAPE);
-			webdriver.WaitForSometime(2000);
+			webdriver.WaitForSometime(3000);
 			webdriver.clickOnButton(ApplicationsPage.btnApplicationSave);
 			webdriver.WaitForSometime(3000);
 		}

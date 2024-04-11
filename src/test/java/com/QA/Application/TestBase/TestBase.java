@@ -227,6 +227,7 @@ public class TestBase {
 		//SUBMIT BUTTON OF APPLICATION.
 		webdriver.clickOnButton(LoginPage.btnLogIn);
 		webdriver.waitForElementVisible(ApplicationsPage.btnApplications);
+		webdriver.WaitForSometime(3000);
 		TakeScreenshot("User Click On Login Successfully","LoginPage","Login");
 		LogInFo("User Click On Login Page Successfully. ");
 		//ASSERTING THE ACTUAL AND EXPECTED TITLE
