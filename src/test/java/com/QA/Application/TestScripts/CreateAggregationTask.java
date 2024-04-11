@@ -74,7 +74,7 @@ public class CreateAggregationTask extends TestBase{
 		webdriver.WaitForSometime(200000);
 		}
 		else {
-			System.out.println("Pora Pakkaki");
+			System.out.println("Getting Aggregation Error");
 		}
 
 	}
