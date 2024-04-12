@@ -1,9 +1,7 @@
 package com.QA.Application.TestScripts;
 
-import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.testng.annotations.Test;
@@ -12,7 +10,7 @@ import com.QA.Application.TestBase.TestBase;
 
 public class ApplicationOnBoardingScript extends TestBase{
 	@Test(priority=2)
-	public static void tc02verifyApplicationOnBoarding() throws InterruptedException, IOException, AWTException {
+	public static void tc02verifyApplicationOnBoarding() throws Exception {
 		CreateExtentTest("Verify Application On Boarding In Sailpoint", "Case 1: User needs to verify Application On Boarding in Sailpoint.","Functional_TestCase","Narendra Reddy");
 		
 		//Launching Application
@@ -234,15 +232,13 @@ public class ApplicationOnBoardingScript extends TestBase{
 			webdriver.enterText(ApplicationsPage.txtApplicationName,properties.getProperty("ApplicationName"));
 			webdriver.getText(ApplicationsPage.txtApplicationName);
 			webdriver.waitForElementVisible(ApplicationsPage.btnDelimiterSave);
-			webdriver.WaitForSometime(3000);
+			webdriver.WaitForSometime(2000);
 
 			//Select Application Owner
 			webdriver.clickOnButton(ApplicationsPage.selectOwner);
 			webdriver.enterText(ApplicationsPage.txtOwnerName,properties.getProperty("ApplicationOwner"));
 			webdriver.WaitForSometime(3000);
-			Robot r = new Robot();
-			r.keyPress(KeyEvent.VK_ENTER);
-			r.keyRelease(KeyEvent.VK_ENTER);
+			webdriver.clickOnButton(ApplicationsPage.selectOwnerName);
 			TestPass("User Select The Application Owner");
 			LogInFo("User Select The Application Owner");
 			webdriver.WaitForSometime(3000);
@@ -308,25 +304,28 @@ public class ApplicationOnBoardingScript extends TestBase{
 			webdriver.enterText(ApplicationsPage.txtDispalyAttribute,properties.getProperty("JDBCDisplayAttribute"));
 			LOG.info("User Enter JDBC Dispaly Attribute");
 			test.pass("User Enter JDBC Display Attribute");
-			webdriver.WaitForSometime(4000);
+			webdriver.WaitForSometime(2000);
 
 
 			//Click On DiscoverSchemaAttribute Button
 			webdriver.clickOnButton(ApplicationsPage.btnDiscoverSchemaAttribute);
 			LogInFo("User Click on Discover Schema Attribute");
 			TakeScreenshot("User Click on Discover Schema Attribute", "JDBCAPPLICATION","JDBCDiscoverAttribute");
-			webdriver.WaitForSometime(5000);
+			webdriver.WaitForSometime(3000);
 			//Click On Preview Button
 			webdriver.clickOnButton(ApplicationsPage.btnPreview);
 			LogInFo("User Click on Preview");
-			webdriver.WaitForSometime(5000);
+			webdriver.WaitForSometime(3000);
 			TakeScreenshot("User Click on Preview", "JDBCAPPLICATION","JDBCDPreview");
-			webdriver.WaitForSometime(3000);
-			r.keyPress(KeyEvent.VK_ESCAPE);
-			r.keyRelease(KeyEvent.VK_ESCAPE);
-			webdriver.WaitForSometime(3000);
-			webdriver.clickOnButton(ApplicationsPage.btnApplicationSave);
-			webdriver.WaitForSometime(3000);
+			webdriver.WaitForSometime(2000);
+			webdriver.clickOnButton(ApplicationsPage.btnPreviewClose);
+			LogInFo("User Click on Preview close Button");
+			webdriver.WaitForSometime(2000);
+			//webdriver.clickOnButton(ApplicationsPage.btnApplicationSave);
+			webdriver.WaitForSometime(2000);
+			
+			//LogOut The AppliCation 
+			LogOut_Application();
 		}
 		else if(properties.getProperty("ApplicationTypeofOnBoardingType").equalsIgnoreCase("LDAP")) 
 		{

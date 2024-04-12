@@ -245,5 +245,19 @@ public class TestBase {
 		}
 		
 	}
+	public static void LogOut_Application() throws Exception {
+		webdriver.waitForElementVisible(LoginPage.btnLogOutDropDown);
+		webdriver.clickOnButton(LoginPage.btnLogOutDropDown);
+		LogInFo("User Click On Logout Dropdown Button");
+	TakeScreenshot("User Click On Logout Dropdown Button","LoginPage","LogoutDropdown");
+	
+	//User click On Logout Button
+	webdriver.waitForElementLocated(LoginPage.btnLogout);
+	webdriver.clickOnButton(LoginPage.btnLogout);
+	LogInFo("User click On Logout Button");
+	webdriver.WaitForSometime(2000);
+	TakeScreenshot("User click On Logout Button","LoginPage","Logout");
+	webdriver.waitForElementLocated(LoginPage.btnLogIn);
+	}
 	
 }
