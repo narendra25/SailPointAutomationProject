@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.QA.Application.TestScripts.ApplicationOnBoardingScript">
+      <class name="com.QA.Application.TestScripts.IdentityMappingScripts">
         <methods>
-          <include name="tc02verifyApplicationOnBoarding"/>
+          <include name="tc05verifyCreateIdentityMappings"/>
           <include name="setUp"/>
           <include name="closeReport"/>
           <include name="tearDown"/>
           <include name="generateReports"/>
         </methods>
-      </class> <!-- com.QA.Application.TestScripts.ApplicationOnBoardingScript -->
+      </class> <!-- com.QA.Application.TestScripts.IdentityMappingScripts -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
