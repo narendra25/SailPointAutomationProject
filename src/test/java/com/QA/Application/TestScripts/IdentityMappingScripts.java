@@ -22,9 +22,39 @@ public class IdentityMappingScripts extends TestBase {
 		//click on Global setting
 		webdriver.clickOnButton(IdentityMappingPage.globalSetting);
 		LogInFo("User Click On Global settings ");
-		TestPass("User Click On Global settings");
+		webdriver.clickOnButton(IdentityMappingPage.identityMappings);
+		LOG.info("User Click on Identity Mapping");
+		TakeScreenshot("User Click on Identity Mapping", "IdentityMappings", "IdentityMapping");
 		
-		//LogOutApplication
+		if(properties.getProperty("IdentityFirstName").equalsIgnoreCase("vinay")) {
+			webdriver.clickOnButton(IdentityMappingPage.firstName);
+		}
+		if(properties.getProperty("IdentityLastName").equalsIgnoreCase("LastName")) {
+			webdriver.clickOnButton(IdentityMappingPage.lastName);
+		}
+		if(properties.getProperty("IdentityEmail").equalsIgnoreCase("LastName")) {
+			webdriver.clickOnButton(IdentityMappingPage.email);
+		}	
+		else {
+			System.out.println("getting error");
+		}
+		LOG.info("User Click on Identity Attribute");
+		TakeScreenshot("User selected Identity Attribute", "IdentityMappings", "IdentityAttribute");
+		webdriver.clickOnButton(IdentityMappingPage.addSource);
+		LOG.info("User click on Add Source");
+		TakeScreenshot("User Click on Add Source", "IdentityMappings", "AddSource");
+		webdriver.enterText(IdentityMappingPage.appValue, properties.getProperty("ApplicationName"));
+		webdriver.clickOnButton(IdentityMappingPage.selectApp);
+		Thread.sleep(1000);
+		webdriver.selectTextOnDropDown(IdentityMappingPage.attributeValue, properties.getProperty("IdentityLastName").toUpperCase());
+		LOG.info("User entered Source Data");
+		TakeScreenshot("User entered Source Data", "IdentityMappings", "SourceData");
+		webdriver.clickOnButton(IdentityMappingPage.addButton);
+		webdriver.ScrollParticularElement(IdentityMappingPage.saveButton);
+		Thread.sleep(1000);
+		webdriver.clickOnButton(IdentityMappingPage.saveButton);
+		LOG.info("User Edited Identity Attribute Successfully");
+		TakeScreenshot("User Edited Identity Attribute Successfully", "IdentityMappings", "EditedAttribute");
 		LogOut_Application();
 	}
 	
