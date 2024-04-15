@@ -321,7 +321,7 @@ public class ApplicationOnBoardingScript extends TestBase{
 			webdriver.clickOnButton(ApplicationsPage.btnPreviewClose);
 			LogInFo("User Click on Preview close Button");
 			webdriver.WaitForSometime(2000);
-			//webdriver.clickOnButton(ApplicationsPage.btnApplicationSave);
+			webdriver.clickOnButton(ApplicationsPage.btnApplicationSave);
 			webdriver.WaitForSometime(2000);
 			
 			//LogOut The AppliCation 
