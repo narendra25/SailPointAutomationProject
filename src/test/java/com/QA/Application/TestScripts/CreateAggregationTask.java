@@ -17,7 +17,7 @@ public class CreateAggregationTask extends TestBase{
 		CreateExtentTest("Verify Create Aggregation Task Of Application", "Case 1: User needs to verify Create Aggregation Task Of Application .","Functional_TestCase","Narendra Reddy");
 		
 		//Launching Application
-		Launch_Application();
+		Application.Launch_Application();
 
 		//Click On 	SetUp
 		webdriver.clickOnButton(TaskPageObjects.btnSetUp);

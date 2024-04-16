@@ -24,6 +24,7 @@ public class IdentityMappingPage  {
 	public static By attributeValue = By.id("configForm:sourceAttributes");
 	public static By addButton = By.xpath("(//span[contains(text(),'Add')])[4]");	
 	public static By saveButton = By.id("configForm:saveButton");
+	public static By getAttributeName=By.xpath("//input[@id='configForm:attribute']");
 	
 	// Refresh Identity
 	public static By refreshId = By.xpath("//div[contains(text(),'Refresh Identity Cube')]");

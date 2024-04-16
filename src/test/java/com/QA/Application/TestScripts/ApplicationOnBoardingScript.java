@@ -14,7 +14,7 @@ public class ApplicationOnBoardingScript extends TestBase{
 		CreateExtentTest("Verify Application On Boarding In Sailpoint", "Case 1: User needs to verify Application On Boarding in Sailpoint.","Functional_TestCase","Narendra Reddy");
 		
 		//Launching Application
-		Launch_Application();
+		Application.Launch_Application();
 
 		//Click On Applications
 		webdriver.clickOnButton(ApplicationsPage.btnApplications);
@@ -325,7 +325,7 @@ public class ApplicationOnBoardingScript extends TestBase{
 			webdriver.WaitForSometime(2000);
 			
 			//LogOut The AppliCation 
-			LogOut_Application();
+			Application.LogOut_Application();
 		}
 		else if(properties.getProperty("ApplicationTypeofOnBoardingType").equalsIgnoreCase("LDAP")) 
 		{

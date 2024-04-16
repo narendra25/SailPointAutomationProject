@@ -13,7 +13,7 @@ public class ApplicationRulesSailPoint extends TestBase {
 	@Test(priority=4,description="Write Rule for SailPOint")
 	public static void tc01VerifyLogin() throws InterruptedException, IOException {
 		CreateExtentTest("Write Rule for SailPOint", "Case 1: User needs to verify if Rules Are working as expected.","Functional_TestCase","Narendra Reddy");
-		Launch_Application();
+		Application.Launch_Application();
 		//Click On Applications
 		webdriver.clickOnButton(ApplicationsPage.btnApplications);
 		TestPass("User Click On Applications");

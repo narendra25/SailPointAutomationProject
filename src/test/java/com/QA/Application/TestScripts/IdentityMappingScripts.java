@@ -1,8 +1,6 @@
 package com.QA.Application.TestScripts;
 
 import org.testng.annotations.Test;
-
-import com.QA.Application.Pages.IdentityMappingPage;
 import com.QA.Application.TestBase.TestBase;
 
 public class IdentityMappingScripts extends TestBase {
@@ -11,7 +9,11 @@ public class IdentityMappingScripts extends TestBase {
 	public static void tc05verifyCreateIdentityMappings() throws Exception {
 		
 		CreateExtentTest("VerifyIdentityMappings","Case 1: User needs to verify Create IdentityMappimgs", "Functional_TestCase","VinayKumar");
+		Application.IdentityMappings("First Name");
+		//Application.IdentityMappings("Last Name");
+		//Application.IdentityMappings("Email");
 		
+<<<<<<< HEAD
 		//Launch Application
 		Launch_Application();
 		
@@ -57,8 +59,7 @@ public class IdentityMappingScripts extends TestBase {
 		TakeScreenshot("User Edited Identity Attribute Successfully", "IdentityMappings", "EditedAttribute");
 		
 		LogOut_Application();
+=======
+>>>>>>> 755730e79cb8aab39afec81c30560b057afa6798
 	}
-	
-	
-
 }

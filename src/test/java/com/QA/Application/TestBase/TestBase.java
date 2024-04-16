@@ -19,22 +19,21 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
-
-import com.QA.Application.Pages.ApplicationsPage;
-import com.QA.Application.Pages.LoginPage;
 import com.QA.Application.Utilities.ReUsableMethods;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+
+import ApplicationReusableMethods.ApplicationReusableMethods;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 public class TestBase {
 	public static Properties properties;
 	public static org.openqa.selenium.WebDriver driver;
 	public static ReUsableMethods webdriver = new ReUsableMethods();
+	public static ApplicationReusableMethods Application=new ApplicationReusableMethods();
 	public static Date date = new Date();
 	public static SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH-mm-ss");
 	public static String dt = formatter.format(date);
@@ -50,6 +49,7 @@ public class TestBase {
 	public static By PassLocator;
 	public static String EnterText;
 	protected static final Logger LOG = (Logger) LogManager.getLogger(TestBase.class);
+	public static String IdentityMappingName;
 	
 	
 	static String Concatnate=".";
@@ -207,53 +207,4 @@ public class TestBase {
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		}
 	}
-	public static void Launch_Application() throws IOException, InterruptedException {
-		
-		//ENTER USERNAME OF APPLICATION.
-		webdriver.enterText(LoginPage.txtUserName,properties.getProperty("ApplicationUserName"));
-		webdriver.AssertElementIsPresentOrNot(LoginPage.txtUserName,"LoginPage","spadmin");
-		LogInFo("User Enter User Name");
-		
-		//ENTER PASSWORD OF APPLICATION.
-		webdriver.enterText(LoginPage.txtPassword,properties.getProperty("ApplicationPassword"));
-		webdriver.ScrollParticularElement(LoginPage.txtPassword);
-		webdriver.AssertElementIsPresentOrNot(LoginPage.txtPassword,"LoginPage","admin");
-		LogInFo("User Enter The Password ");
-		
-		//SUBMIT BUTTON OF APPLICATION.
-		webdriver.clickOnButton(LoginPage.btnLogIn);
-		webdriver.waitForElementVisible(ApplicationsPage.btnApplications);
-		webdriver.WaitForSometime(3000);
-		TakeScreenshot("User Click On Login Successfully","LoginPage","Login");
-		LogInFo("User Click On Login Page Successfully. ");
-		//ASSERTING THE ACTUAL AND EXPECTED TITLE
-		String expectedTitle = "SailPoint IdentityIQ - Home";
-		String actualTitle = driver.getTitle();
-		System.out.println(actualTitle);
-		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-		if (expectedTitle.equals(actualTitle)) {
-			TestPass("Verification Successful - The correct title is displayed on the web page.");
-			LogInFo("Verification Successful - The User is Login The Application");
-
-		} else {
-			TestFail("Verification Failed - An incorrect title is displayed on the web page.");
-			LogWarn("Verification Failed - An incorrect title is displayed on the web page.");
-		}
-		
 	}
-	public static void LogOut_Application() throws Exception {
-		webdriver.waitForElementVisible(LoginPage.btnLogOutDropDown);
-		webdriver.clickOnButton(LoginPage.btnLogOutDropDown);
-		LogInFo("User Click On Logout Dropdown Button");
-	TakeScreenshot("User Click On Logout Dropdown Button","LoginPage","LogoutDropdown");
-	
-	//User click On Logout Button
-	webdriver.waitForElementLocated(LoginPage.btnLogout);
-	webdriver.clickOnButton(LoginPage.btnLogout);
-	LogInFo("User click On Logout Button");
-	webdriver.WaitForSometime(2000);
-	TakeScreenshot("User click On Logout Button","LoginPage","Logout");
-	webdriver.waitForElementLocated(LoginPage.btnLogIn);
-	}
-	
-}
