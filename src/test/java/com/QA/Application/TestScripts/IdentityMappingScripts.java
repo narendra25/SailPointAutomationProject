@@ -13,11 +13,9 @@ public class IdentityMappingScripts extends TestBase {
 		Application.IdentityMappings("First Name");
 		Application.IdentityMappings("Last Name");
 		//Application.IdentityMappings("Email");
-<<<<<<< HEAD
-=======
+
 		Application.LogOut_Application();
 		
 
->>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
 	}
 }

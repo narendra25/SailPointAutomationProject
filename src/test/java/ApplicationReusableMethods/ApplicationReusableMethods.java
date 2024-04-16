@@ -3,9 +3,11 @@ package ApplicationReusableMethods;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.bouncycastle.jcajce.provider.asymmetric.dsa.DSASigner.detDSA;
 import org.openqa.selenium.WebElement;
 
 import com.QA.Application.Pages.ApplicationsPage;
+import com.QA.Application.Pages.DebugPage;
 import com.QA.Application.Pages.IdentityMappingPage;
 import com.QA.Application.Pages.LoginPage;
 import com.QA.Application.TestBase.TestBase;
@@ -115,8 +117,48 @@ public void Launch_Application() throws IOException, InterruptedException {
 			
 		}
 		
-		public void deleteApplication(String AppName, String SearchByNameOrID)
+		public void deleteApplication(String Object, String SearchByNameOrID, String Action) throws Exception
 		{
+			driver.get("http://localhost:8080/identityiq/debug/debug.jsf");
+			LogInFo("User enter into Debug Page");
+			TakeScreenshot("User enter into Debug Page", "DeleteApp", "DebugHomePage");
+			webdriver.clickOnButton(DebugPage.btnobject);
+			LogInFo("User click on object dropdown");
+			TakeScreenshot("User click on object dropdown", "DeleteApp", "selectDropdown");
+			webdriver.enterText(DebugPage.txtenterAppName, Object);
+			webdriver.WaitForSometime(1000);
+			webdriver.DynamicXpathText(Object);
+			LogInFo("User selected Object");
+			TakeScreenshot("User selected Object", "DeleteApp", "AppSelect");
+			
+			webdriver.waitForElementLocated(DebugPage.txtfilterName);
+			webdriver.ClickByJavaScript_Executor(DebugPage.txtfilterName);
+			webdriver.enterText(DebugPage.txtfilterName, SearchByNameOrID);
+			webdriver.clickOnButton(DebugPage.btnsearch);
+			LogInFo("User entered Name or ID");
+			TakeScreenshot("User entered Name or ID", "DeleteApp", "NameOrID");
+			webdriver.clickOnButton(DebugPage.btncheckboxResult);
+			webdriver.clickOnButton(DebugPage.btnAction);
+			LogInFo("User click on Action Button");
+			TakeScreenshot("User click on Action Button", "DeleteApp", "ActionBtn");
+			if(Action.equalsIgnoreCase("Delete"))
+			{
+			webdriver.clickOnButton(DebugPage.btnDelete);
+			webdriver.clickOnButton(DebugPage.btnYes);
+			LogInFo("Validate User Deleted Application Successfully");
+			TakeScreenshot("Validate User Deleted Application Successfully", "DeleteApp", "AppDelete");
+			}
+			if(Action.equalsIgnoreCase("New"))
+			{
+			webdriver.clickOnButton(DebugPage.btnNew);
+			webdriver.WaitForSometime(1000);
+			webdriver.clickOnButton(DebugPage.txtObjEditer);
+			webdriver.WaitForSometime(1000);
+			webdriver.enterText(DebugPage.txtObjEditer, "Test Data Passed");
+			webdriver.clickOnButton(DebugPage.btnSave);
+			LogInFo("Validate User New Application Data added Successfully");
+			TakeScreenshot("Validate User New Application Data added Successfully", "DeleteApp", "NewData");
+			}
 			
 		}
 
