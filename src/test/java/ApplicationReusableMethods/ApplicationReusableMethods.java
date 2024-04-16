@@ -116,6 +116,11 @@ public void Launch_Application() throws IOException, InterruptedException {
 			Application.LogOut_Application();
 			
 		}
+		
+		public void deleteApplication(String AppName, String SearchByNameOrID)
+		{
+			
+		}
 
 
 }
