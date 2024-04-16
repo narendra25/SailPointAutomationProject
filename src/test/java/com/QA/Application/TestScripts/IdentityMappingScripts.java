@@ -9,8 +9,15 @@ public class IdentityMappingScripts extends TestBase {
 	public static void tc05verifyCreateIdentityMappings() throws Exception {
 		
 		CreateExtentTest("VerifyIdentityMappings","Case 1: User needs to verify Create IdentityMappimgs", "Functional_TestCase","VinayKumar");
+		Application.Launch_Application();
 		Application.IdentityMappings("First Name");
-		//Application.IdentityMappings("Last Name");
+		Application.IdentityMappings("Last Name");
 		//Application.IdentityMappings("Email");
+<<<<<<< HEAD
+=======
+		Application.LogOut_Application();
+		
+
+>>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
 	}
 }

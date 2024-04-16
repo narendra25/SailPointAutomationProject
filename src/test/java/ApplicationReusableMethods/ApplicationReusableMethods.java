@@ -62,7 +62,6 @@ public void Launch_Application() throws IOException, InterruptedException {
 	
 	//Identity Mappings 
 		public void IdentityMappings(String IdentityMappingName) throws Exception {
-			Application.Launch_Application();
 			//Click On setting Button icon
 			webdriver.clickOnButton(IdentityMappingPage.globalDropdown);
 			LogInFo("User click on Setting Icon");
@@ -82,7 +81,7 @@ public void Launch_Application() throws IOException, InterruptedException {
 			LogInFo("User Click on Identity Attribute");
 			TakeScreenshot("User selected Identity Attribute", "IdentityMappings", "IdentityAttribute");
 			webdriver.waitForElementLocated(IdentityMappingPage.getAttributeName);
-			webdriver.WaitForSometime(1000);
+			webdriver.WaitForSometime(2000);
 			
 			//	Storing The Value Of Get Attribute Value
 			WebElement element=driver.findElement(IdentityMappingPage.getAttributeName);
@@ -113,7 +112,6 @@ public void Launch_Application() throws IOException, InterruptedException {
 			webdriver.clickOnButton(IdentityMappingPage.saveButton);
 			LogInFo("User Edited Identity Attribute Successfully");
 			TakeScreenshot("User Edited Identity Attribute Successfully", "IdentityMappings", "EditedAttribute");
-			Application.LogOut_Application();
 			
 		}
 		
