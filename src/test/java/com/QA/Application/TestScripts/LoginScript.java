@@ -9,6 +9,5 @@ public class LoginScript extends TestBase{
 		CreateExtentTest("Verify URL", "Case 1: User needs to verify if Go Applicaton  homepage works as expected.","Functional_TestCase","Narendra Reddy");
 		Application.Launch_Application();
 		Application.LogOut_Application();
-		CreateExtentTest(LogDescription, ImageName, FolderName, EnterText);
 	}
 }

@@ -2,8 +2,6 @@ package com.QA.Application.TestScripts;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
-import java.util.concurrent.TimeUnit;
-
 import org.testng.annotations.Test;
 import com.QA.Application.Pages.ApplicationsPage;
 import com.QA.Application.TestBase.TestBase;
