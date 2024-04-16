@@ -3,27 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="com.QA.Application.TestScripts.IdentityMappingScripts">
-=======
-      <class name="com.QA.Application.TestScripts.ApplicationOnBoardingScript">
->>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
+      <class name="com.QA.Application.TestScripts.DeleteApplicationScript">
         <methods>
-<<<<<<< HEAD
-          <include name="tc05verifyCreateIdentityMappings"/>
-=======
-          <include name="tc02verifyApplicationOnBoarding"/>
->>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
           <include name="setUp"/>
           <include name="closeReport"/>
+          <include name="deleteApp"/>
           <include name="tearDown"/>
           <include name="generateReports"/>
         </methods>
-<<<<<<< HEAD
-      </class> <!-- com.QA.Application.TestScripts.IdentityMappingScripts -->
-=======
-      </class> <!-- com.QA.Application.TestScripts.ApplicationOnBoardingScript -->
->>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
+      </class> <!-- com.QA.Application.TestScripts.DeleteApplicationScript -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -34,6 +34,9 @@ public class ReUsableMethods extends TestBase{
 	public void DynamicXpathContains(String Text) {
 		driver.findElement(By.xpath("//*[contains(text(),'"+Text+"')]")).click();
 	}
+	public void DynamicXpathText(String Text) {
+		driver.findElement(By.xpath("//*[text()='"+Text+"']")).click();
+	}
 	//Clear Text Method
 	public void clearText(By PassLocator) {
 
@@ -210,7 +213,7 @@ public class ReUsableMethods extends TestBase{
 	}
 
 	//I Click By Using JavaScript executor
-	public static void ClickByJavaScript_Executor(By PassLocator) {
+	public void ClickByJavaScript_Executor(By PassLocator) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebElement button =driver.findElement(PassLocator);
 		js.executeScript("arguments[0].click();", button);

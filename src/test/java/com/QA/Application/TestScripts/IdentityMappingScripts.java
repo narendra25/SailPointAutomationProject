@@ -14,5 +14,6 @@ public class IdentityMappingScripts extends TestBase {
 		Application.IdentityMappings("Last Name");
 		//Application.IdentityMappings("Email");
 		Application.LogOut_Application();
+
 	}
 }
