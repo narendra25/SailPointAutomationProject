@@ -51,10 +51,11 @@ public class IdentityMappingScripts extends TestBase {
 		TakeScreenshot("User entered Source Data", "IdentityMappings", "SourceData");
 		webdriver.clickOnButton(IdentityMappingPage.addButton);
 		webdriver.ScrollParticularElement(IdentityMappingPage.saveButton);
-		Thread.sleep(1000);
+		Thread.sleep(10000);
 		webdriver.clickOnButton(IdentityMappingPage.saveButton);
 		LOG.info("User Edited Identity Attribute Successfully");
 		TakeScreenshot("User Edited Identity Attribute Successfully", "IdentityMappings", "EditedAttribute");
+		
 		LogOut_Application();
 	}
 	
