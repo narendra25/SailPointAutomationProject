@@ -11,5 +11,5 @@ public class TaskPageObjects {
 	public static By btnTaskDropdown=By.id("ext-gen1125");
 	public static By selectTaskName=By.xpath("//div[contains(text(),'EmployeeDetailsAuth')]");
 	public static By saveAndExecute = By.xpath("//span[contains(text(),'Save and Execute')]");
-	public static By OKButton = By.xpath("//span[contains(text(),'OK')]");
+	public static By OKButton = By.xpath("//span[contains(text(),'OK')]//parent::button");
 }

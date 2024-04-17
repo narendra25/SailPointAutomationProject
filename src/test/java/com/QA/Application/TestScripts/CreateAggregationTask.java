@@ -67,14 +67,13 @@ public class CreateAggregationTask extends TestBase{
 		//webdriver.waitForElementVisible(TaskPageObjects.OKButton);
 		
 		//Click On 
-		TakeScreenshot("User click on Ok Button","Tasks","OkButton");
-		Robot r=new Robot();
-		r.keyPress(KeyEvent.VK_ENTER);
-		r.keyRelease(KeyEvent.VK_ENTER);
-		webdriver.WaitForSometime(2000);
 		
+		webdriver.ClickByJavaScript_Executor(TaskPageObjects.OKButton);
+		TakeScreenshot("User click on Ok Button","Tasks","OkButton");
+		
+		webdriver.WaitForSometime(2000);
 		//Navigating Back
-		driver.navigate().back();
+		//driver.navigate().back();
 		webdriver.WaitForSometime(2000);
 		}
 		else {
