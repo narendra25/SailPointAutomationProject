@@ -1,3 +1,22 @@
+<<<<<<< HEAD
+[12:43:11,941 DEBUG][Application 1][i.g.b.w.WebDriverManager.<init>] Using WebDriverManager 5.6.4  
+[12:43:12,163 DEBUG][Application 1][i.g.b.w.c.ResolutionCache.checkKeyInResolutionCache] Resolution chrome=123 in cache (valid until 13:26:46 18/04/2024 IST)  
+[12:43:12,164 DEBUG][Application 1][i.g.b.w.c.ResolutionCache.checkKeyInResolutionCache] Resolution chrome123=123.0.6312.122 in cache (valid until 12:26:46 19/04/2024 IST)  
+[12:43:12,165 INFO][Application 1][i.g.b.w.WebDriverManager.resolveDriverVersion] Using chromedriver 123.0.6312.122 (resolved driver for Chrome 123)  
+[12:43:12,195 DEBUG][Application 1][i.g.b.w.WebDriverManager.manage] Driver chromedriver 123.0.6312.122 found in cache  
+[12:43:12,196 INFO][Application 1][i.g.b.w.WebDriverManager.exportDriver] Exporting webdriver.chrome.driver as C:\Users\vc21352\.cache\selenium\chromedriver\win64\123.0.6312.122\chromedriver.exe  
+[12:43:14,741 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Enter User Name  
+[12:43:15,032 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Enter The Password   
+[12:43:20,150 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Click On Login Page Successfully.   
+[12:43:20,166 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] Verification Successful - The User is Login The Application  
+[12:43:21,951 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User able to Click On ApplicationDefinition  
+[12:43:28,491 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Select The Application Owner  
+[12:43:32,323 INFO][Application 1][c.Q.D.DelimitedDDTScript.delimitedFileTest] User Select The Application Type  
+[12:43:36,542 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Navigate The Configuration Tab  
+[12:43:40,136 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Navigate The Schema Tab  
+[12:43:40,467 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Click on Discover Schema Attribute  
+[12:43:43,672 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Click on Preview  
+=======
 [12:34:40,134 DEBUG][Application 1][i.g.b.w.WebDriverManager.<init>] Using WebDriverManager 5.6.4  
 [12:34:40,372 DEBUG][Application 1][i.g.b.w.c.ResolutionCache.checkValidity] Removing resolution chrome=123 from cache (expired on 2024-04-18T12:34:31.000+0530)  
 [12:34:40,391 DEBUG][Application 1][o.a.h.c.h.i.c.InternalHttpClient.doExecute] ex-0000000001 preparing request execution  
@@ -159,3 +178,4 @@
 [12:36:02,138 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] Verification Successful - The User is Login The Application  
 [12:36:02,200 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Click on SetUpDropdown  
 [12:36:11,780 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User enter Task Name  
+>>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git

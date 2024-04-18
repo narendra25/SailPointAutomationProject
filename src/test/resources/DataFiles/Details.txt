@@ -1,0 +1,5 @@
+EMPID,EMPNAME,LASTNAME,EMAIL,ROLE,MANAGER,DEPTID
+21352,vinay,kumar,vinay.chennuri@ojas-i.com,testing,mahesh,13
+13220,narendra,kumar,anrsmile96@gmail.com,java,naresh,12
+13221,eswar,kumar,eswar@gmail.com,testing,java,naresh,13
+
