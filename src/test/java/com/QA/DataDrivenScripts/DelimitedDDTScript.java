@@ -1,4 +1,4 @@
-package com.QA.DataDriven;
+package com.QA.DataDrivenScripts;
 
 import java.io.FileInputStream;
 import org.apache.poi.ss.usermodel.Row;
@@ -31,10 +31,7 @@ public class DelimitedDDTScript extends TestBase {
 					String DelimitedTxt = row.getCell(3).getStringCellValue();
 					String DelimitedIdentityAttribute = row.getCell(4).getStringCellValue();
 					String DelimitedDisplayAttribute = row.getCell(5).getStringCellValue();
-//					String JDBCDatabaseURL= row.getCell(5).getStringCellValue();
-//					String JDBCSqlStatement= row.getCell(6).getStringCellValue();
-//					String JDBCIdentityAttribute= row.getCell(7).getStringCellValue();
-//					String JDBCDisplayAttribute= row.getCell(8).getStringCellValue();				
+			
 				
 				CreateExtentTest("Verify Delimited File Application OnBoarding Through DDT", "Case 1: User needs to verify if Delimited File Application On Boarding Script Through JDBC","Functional_TestCase","Vinay Kumar");
 				
