@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.QA.DataDrivenScripts.DelimitedDDTScript">
+      <class name="com.QA.DataDrivenScripts.DeBugDDTScipts">
         <methods>
-          <include name="delimitedFileTest"/>
+          <include name="verifyCreateIdentityMappingsDDTScript"/>
           <include name="setUp"/>
           <include name="closeReport"/>
           <include name="generateReports"/>
         </methods>
-      </class> <!-- com.QA.DataDrivenScripts.DelimitedDDTScript -->
+      </class> <!-- com.QA.DataDrivenScripts.DeBugDDTScipts -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

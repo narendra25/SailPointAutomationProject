@@ -38,7 +38,7 @@ public class DeBugDDTScipts extends TestBase {
 			Application.Launch_Application();
 			
 			
-			driver.get("http://localhost:8082/identityiq/debug/debug.jsf");
+			driver.get(properties.getProperty("DeBugPageUrl"));
 			LogInFo("User enter into Debug Page");
 			TakeScreenshot("User enter into Debug Page", "DeBugDDT", "DebugHomePage");
 			webdriver.clickOnButton(DebugPage.btnobject);
