@@ -3,15 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.QA.Application.TestScripts.DelimitedDataFromExcel">
+      <class name="com.QA.DataDriven.DelimitedDDTScript">
         <methods>
-          <include name="readData"/>
-          <include name="setUp"/>
-          <include name="closeReport"/>
-          <include name="tearDown"/>
-          <include name="generateReports"/>
+          <include name="delimitedFileTest"/>
         </methods>
-      </class> <!-- com.QA.Application.TestScripts.DelimitedDataFromExcel -->
+      </class> <!-- com.QA.DataDriven.DelimitedDDTScript -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -68,11 +68,11 @@ public class TestBase {
 		openURL("URL");
 
 	}
-	@AfterMethod
-	public void tearDown()  {
-		driver.quit();
-		
-	}
+//	@AfterMethod
+//	public void tearDown()  {
+//		driver.quit();
+//		
+//	}
 	@AfterSuite(alwaysRun = true)
 	public void closeReport()
 	{
