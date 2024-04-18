@@ -1,4 +1,4 @@
-package com.QA.DataDriven;
+package com.QA.DataDrivenScripts;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,11 +13,12 @@ import com.QA.Application.Pages.ApplicationsPage;
 import com.QA.Application.TestBase.TestBase;
 
 public class JDBCDDTScript extends TestBase {
-	@Test
+	String filePath=System.getProperty("user.dir");
+	@Test(priority=2)
 	public void JDBC_APPLICATION_ONBOARDING_DDT() throws Exception {
 		
 		// Initialize Excel file
-		FileInputStream file = new FileInputStream(new File("C:\\Users\\na21279\\eclipse-workspace\\SailPoint_Automation\\src\\test\\resources\\DataFiles\\loginData.xlsx"));
+		FileInputStream file=new FileInputStream(filePath+"/src/test/resources/DataFiles/loginData.xlsx");
 		Workbook workbook = new XSSFWorkbook(file);
 		Sheet sheet = workbook.getSheet("JDBCAPPLICATION");
 

@@ -1,4 +1,4 @@
-package com.QA.DataDriven;
+package com.QA.DataDrivenScripts;
 
 import java.io.FileInputStream;
 import java.util.concurrent.TimeUnit;
@@ -16,11 +16,12 @@ import java.io.File;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 public class SailpointDDTLogin extends TestBase{
-	@Test
+	String filePath=System.getProperty("user.dir");
+	@Test(priority=1)
 	public void Launch_Application_DDT() throws Exception {
 		
 		// Initialize Excel file
-		FileInputStream file = new FileInputStream(new File("C:\\Users\\na21279\\eclipse-workspace\\SailPoint_Automation\\src\\test\\resources\\DataFiles\\loginData.xlsx"));
+		FileInputStream file=new FileInputStream(filePath+"/src/test/resources/DataFiles/loginData.xlsx");
 		Workbook workbook = new XSSFWorkbook(file);
 		Sheet sheet = workbook.getSheet("LoginDetails");
 
@@ -35,20 +36,20 @@ public class SailpointDDTLogin extends TestBase{
 			
 			//ENTER USERNAME OF APPLICATION.
 			webdriver.enterText(LoginPage.txtUserName,username);
-			TakeScreenshot("User Able to enter UserName","LoginPage","UserName");
+			TakeScreenshot("User Able to enter UserName","LoginPageDDT","UserName");
 			LogInFo("User Enter User Name");
 
 			//ENTER PASSWORD OF APPLICATION.
 			webdriver.enterText(LoginPage.txtPassword,password);
 			webdriver.ScrollParticularElement(LoginPage.txtPassword);
-			TakeScreenshot("User Able to enter Password","LoginPage","Password");
+			TakeScreenshot("User Able to enter Password","LoginPageDDT","Password");
 			LogInFo("User Enter The Password ");
 
 			//SUBMIT BUTTON OF APPLICATION.
 			webdriver.clickOnButton(LoginPage.btnLogIn);
 			webdriver.waitForElementVisible(ApplicationsPage.btnApplications);
 			webdriver.WaitForSometime(3000);
-			TakeScreenshot("User Click On Login Successfully","LoginPage","Login");
+			TakeScreenshot("User Click On Login Successfully","LoginPageDDT","Login");
 			LogInFo("User Click On Login Page Successfully. ");
 			//ASSERTING THE ACTUAL AND EXPECTED TITLE
 			String expectedTitle = "SailPoint IdentityIQ - Home";
