@@ -14,4 +14,7 @@ public static By btnCancelButton=By.xpath("(//span[contains(text(),'Cancel')])[2
 ///Creation rule///
 public static By btnCreationRule=By.xpath("(//input[@class='ruleEditorBtn'])[2]");
 public static By txtCreationRuleName=By.xpath("//input[@class='ruleEditorField x-form-field x-form-text']");
+
+
+//DYnamic Xpath Of Rules
 }

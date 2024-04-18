@@ -36,7 +36,6 @@ public class CreateAggregationTaskDDT extends TestBase {
 
 
 			Application.Launch_Application();
-
 			//Click On 	SetUp
 			webdriver.clickOnButton(TaskPageObjects.btnSetUp);
 			LogInFo("User Click on SetUpDropdown");

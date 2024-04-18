@@ -39,10 +39,7 @@ public class JDBCDDTScript extends TestBase {
 			
 			CreateExtentTest("Verify JDBC Application OnBoarding Through DDT", "Case 1: User needs to verify if JDBC Application On Boarding Script Through JDBC","Functional_TestCase","Narendra Reddy");
 			
-			
 			Application.Launch_Application();
-			
-			
 			//Click On Applications
 			webdriver.clickOnButton(ApplicationsPage.btnApplications);
 			TestPass("User Click On Applications");

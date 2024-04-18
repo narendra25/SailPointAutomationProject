@@ -37,6 +37,12 @@ public class ReUsableMethods extends TestBase{
 	public void DynamicXpathText(String Text) {
 		driver.findElement(By.xpath("//*[text()='"+Text+"']")).click();
 	}
+	
+	//Dynamic Click Button of Rules
+	public void Dynamic_Create_Rule(String  EnterText) {
+		WebElement element=driver.findElement(By.xpath("(//*[text()='"+EnterText+"']//parent::td//parent::tr//parent::td)[3]/input"));
+		element.click();
+	}
 	//Clear Text Method
 	public void clearText(By PassLocator) {
 
