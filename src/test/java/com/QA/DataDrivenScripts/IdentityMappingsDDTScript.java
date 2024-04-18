@@ -27,15 +27,10 @@ public class IdentityMappingsDDTScript extends TestBase{
 			String ApplicationName = row.getCell(0).getStringCellValue();
 			String IdentityMappingName= row.getCell(1).getStringCellValue();
 			String AttributeName= row.getCell(2).getStringCellValue();
-			
-
 
 			CreateExtentTest("Verify Identity Mappings  Through DDT", "Case 1: User needs to verify if Identity Mappings Script Through DDT Test","Functional_TestCase","Narendra Reddy");
 
-
 			Application.Launch_Application();
-
-
 
 			//Click On setting Button icon
 			webdriver.clickOnButton(IdentityMappingPage.globalDropdown);

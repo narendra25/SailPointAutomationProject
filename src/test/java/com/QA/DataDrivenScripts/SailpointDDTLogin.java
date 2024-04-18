@@ -16,9 +16,9 @@ import java.io.File;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 public class SailpointDDTLogin extends TestBase{
-	String filePath=System.getProperty("user.dir");
+	static String filePath=System.getProperty("user.dir");
 	@Test(priority=1)
-	public void Launch_Application_DDT() throws Exception {
+	public static void Launch_Application_DDT() throws Exception {
 		
 		// Initialize Excel file
 		FileInputStream file=new FileInputStream(filePath+"/src/test/resources/DataFiles/loginData.xlsx");
@@ -59,13 +59,14 @@ public class SailpointDDTLogin extends TestBase{
 			if (expectedTitle.equals(actualTitle)) {
 				TestPass("Verification Successful - The correct title is displayed on the web page.");
 				LogInFo("Verification Successful - The User is Login The Application");
-				Application.LogOut_Application();
+				
 			} else {
 				TestFail("Verification Failed - An incorrect title is displayed on the web page.");
 				LogWarn("Verification Failed - An incorrect title is displayed on the web page.");
 			}
 
 		}
+		Application.LogOut_Application();
 		
 	}
 	

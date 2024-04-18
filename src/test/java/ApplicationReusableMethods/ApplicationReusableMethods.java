@@ -1,8 +1,13 @@
 package ApplicationReusableMethods;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.bouncycastle.jcajce.provider.asymmetric.dsa.DSASigner.detDSA;
 import org.openqa.selenium.WebElement;
 
@@ -10,7 +15,9 @@ import com.QA.Application.Pages.ApplicationsPage;
 import com.QA.Application.Pages.DebugPage;
 import com.QA.Application.Pages.IdentityMappingPage;
 import com.QA.Application.Pages.LoginPage;
+import com.QA.Application.Pages.RulesPage;
 import com.QA.Application.TestBase.TestBase;
+import com.QA.DataDrivenScripts.*;
 
 public class ApplicationReusableMethods extends TestBase{
 public void Launch_Application() throws IOException, InterruptedException {
@@ -161,6 +168,65 @@ public void Launch_Application() throws IOException, InterruptedException {
 			TakeScreenshot("Validate User New Application Data added Successfully", "DeleteApp", "NewData");
 			}
 			
+		}
+		
+		public void CreateRuleOfSailPointApplication() throws Exception {
+			String filePath=System.getProperty("user.dir");
+			// Initialize Excel file
+			FileInputStream file=new FileInputStream(filePath+"/src/test/resources/DataFiles/CreationRulesSailPoint.xlsx");
+			Workbook workbook = new XSSFWorkbook(file);
+			Sheet sheet = workbook.getSheet("CreateRulesOfSailpoint");
+
+
+			// Iterate through the rows and columns to read the data
+			for (int rowNum = 1; rowNum <= sheet.getLastRowNum(); rowNum++) {
+				Row row = sheet.getRow(rowNum);
+							String ApplicationName = row.getCell(0).getStringCellValue();
+							String RuleType= row.getCell(1).getStringCellValue();
+							String RuleName= row.getCell(2).getStringCellValue();
+							String WritingRuleEditor= row.getCell(3).getStringCellValue();
+							
+							Application.Launch_Application();
+							
+							//Click On Applications
+							webdriver.clickOnButton(ApplicationsPage.btnApplications);
+							TestPass("User Click On Applications");
+
+							//click on application defination
+							webdriver.clickOnButton(ApplicationsPage.btnApplicationDefination);
+							webdriver.VerifyElementIsPresentorNot(ApplicationsPage.btnApplicationDefination,"Application","ApplicationDefination");
+							LogInFo("User able to Click On ApplicationDefinition");
+							//Click On application Based On Application Name 
+							webdriver.DynamicXpathContains(ApplicationName);
+							webdriver.waitForElementLocated(RulesPage.btnRulesTab);
+
+							//Click On Rules Button
+							webdriver.clickOnButton(RulesPage.btnRulesTab);
+							webdriver.waitForElementLocated(RulesPage.btnCorrelationRule);
+							TakeScreenshot("User Able to Click On Rules Tab","RulesDDT","RulesButton");
+							webdriver.Dynamic_Create_Rule(RuleType);
+							TakeScreenshot("User Able to Click On Rules Create","RulesDDT","RulesCreate");
+							webdriver.waitForElementVisible(RulesPage.txtCorrelationRuleName);
+							//Enter Rule Name 
+							webdriver.enterText(RulesPage.txtCorrelationRuleName,RuleName);
+							webdriver.WaitForSometime(2000);
+							TakeScreenshot("User Able to Enter RuleName","RulesDDT","RulesCreate");
+							
+							//Writing The Rule In Text Editor
+							webdriver.enterText(RulesPage.txtRuleEditor,WritingRuleEditor);
+							webdriver.waitForElementVisible(RulesPage.btncancelCrossButton);
+							TakeScreenshot("User Write The Rule For Correlation Rule for Application", "RulesDDT","CorrelationName");
+							webdriver.WaitForSometime(3000);
+							//Click On Cancel Cross Button
+							webdriver.clickOnButton(RulesPage.btnSaveButton);
+							webdriver.WaitForSometime(3000);
+							TakeScreenshot("User click On Save Button", "RulesDDT","SavingRule");
+							
+							//Logout Application
+							Application.LogOut_Application();
+
+						
+			}
 		}
 
 
