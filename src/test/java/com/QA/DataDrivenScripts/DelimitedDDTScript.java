@@ -53,7 +53,7 @@ public class DelimitedDDTScript extends TestBase {
 				webdriver.clickOnButton(ApplicationsPage.btnAddNewApplication);
 				TakeScreenshot("AddNew Application","DelimitedFileDDT","AddNewApplication");
 				
-				//Enter Application Name
+				//Enter Application Name 
 				webdriver.enterText(ApplicationsPage.txtApplicationName,ApplicationName);
 				webdriver.getText(ApplicationsPage.txtApplicationName);
 				webdriver.WaitForSometime(2000);

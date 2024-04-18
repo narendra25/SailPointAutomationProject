@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test thread-count="5" name="Test">
-    <classes>
-      <class name="com.QA.Application.TestScripts.DeleteApplicationScript"/>
-      <class name="com.QA.Application.TestScripts.LoginScript"/>
-<<<<<<< HEAD
-=======
-      <class name="com.QA.Application.TestScripts.ApplicationOnBoardingScript"/>
-      <class name="com.QA.Application.TestScripts.CreateAggregationTask"/>
-      <class name="com.QA.Application.TestScripts.IdentityMappingScripts"/>
-      <class name="com.QA.Application.TestScripts.ApplicationRulesSailPoint"/>
->>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
-    </classes>
-  </test> <!-- Test -->
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="com.QA.Application.TestScripts.LoginScript" />
+		</classes>
+	</test> <!-- Test -->
 </suite> <!-- Suite -->

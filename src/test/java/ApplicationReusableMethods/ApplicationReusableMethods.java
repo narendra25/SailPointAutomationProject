@@ -60,6 +60,7 @@ public void Launch_Application() throws IOException, InterruptedException {
 	webdriver.WaitForSometime(2000);
 	TakeScreenshot("User click On Logout Button","LoginPage","Logout");
 	webdriver.waitForElementLocated(LoginPage.btnLogIn);
+	driver.quit();
 	}
 	
 	//Identity Mappings 
