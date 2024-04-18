@@ -1,78 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="4" total="7" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-<<<<<<< HEAD
-  <suite started-at="2024-04-18T11:16:55 IST" name="Default suite" finished-at="2024-04-18T11:17:22 IST" duration-ms="26859">
-=======
-  <suite started-at="2024-04-18T12:34:40 IST" name="Suite" finished-at="2024-04-18T12:36:25 IST" duration-ms="105536">
->>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
+  <suite started-at="2024-04-18T13:05:04 IST" name="Default suite" finished-at="2024-04-18T13:05:11 IST" duration-ms="6799">
     <groups>
     </groups>
-<<<<<<< HEAD
-    <test started-at="2024-04-18T11:16:55 IST" name="Default test" finished-at="2024-04-18T11:17:22 IST" duration-ms="26859">
-      <class name="com.QA.DataDriven.DelimitedDDTScript">
-        <test-method is-config="true" signature="generateReports()[pri:0, instance:com.QA.DataDriven.DelimitedDDTScript@305f031]" started-at="2024-04-18T11:16:55 IST" name="generateReports" finished-at="2024-04-18T11:16:55 IST" duration-ms="79" status="PASS">
+    <test started-at="2024-04-18T13:05:04 IST" name="Default test" finished-at="2024-04-18T13:05:11 IST" duration-ms="6799">
+      <class name="com.QA.DataDrivenScripts.DelimitedDDTScript">
+        <test-method is-config="true" signature="generateReports()[pri:0, instance:com.QA.DataDrivenScripts.DelimitedDDTScript@4a9f80d3]" started-at="2024-04-18T13:05:04 IST" name="generateReports" finished-at="2024-04-18T13:05:04 IST" duration-ms="72" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateReports -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.QA.DataDriven.DelimitedDDTScript@305f031]" started-at="2024-04-18T11:16:55 IST" name="setUp" finished-at="2024-04-18T11:16:57 IST" duration-ms="1762" status="PASS">
-=======
-    <test started-at="2024-04-18T12:34:40 IST" name="Test" finished-at="2024-04-18T12:36:25 IST" duration-ms="105536">
-      <class name="com.QA.DataDrivenScripts.SailpointDDTLogin">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.QA.DataDrivenScripts.SailpointDDTLogin@4602c2a9]" started-at="2024-04-18T12:35:47 IST" name="setUp" finished-at="2024-04-18T12:35:48 IST" duration-ms="946" status="PASS">
->>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.QA.DataDrivenScripts.DelimitedDDTScript@4a9f80d3]" started-at="2024-04-18T13:05:04 IST" name="setUp" finished-at="2024-04-18T13:05:11 IST" duration-ms="6772" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String)" because "com.QA.Application.TestBase.TestBase.test" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String)" because "com.QA.Application.TestBase.TestBase.test" is null
+at com.QA.Application.TestBase.TestBase.openURL(TestBase.java:165)
+at com.QA.Application.TestBase.TestBase.setUp(TestBase.java:68)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:527)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-<<<<<<< HEAD
-        <test-method signature="delimitedFileTest()[pri:0, instance:com.QA.DataDriven.DelimitedDDTScript@305f031]" started-at="2024-04-18T11:16:57 IST" name="delimitedFileTest" finished-at="2024-04-18T11:17:22 IST" duration-ms="25069" status="PASS">
-=======
-        <test-method signature="Launch_Application_DDT()[pri:1, instance:com.QA.DataDrivenScripts.SailpointDDTLogin@4602c2a9]" started-at="2024-04-18T12:35:48 IST" name="Launch_Application_DDT" finished-at="2024-04-18T12:35:56 IST" duration-ms="7246" status="PASS">
+        <test-method signature="delimitedFileTest()[pri:0, instance:com.QA.DataDrivenScripts.DelimitedDDTScript@4a9f80d3]" started-at="2024-04-18T13:05:11 IST" name="delimitedFileTest" finished-at="2024-04-18T13:05:11 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String)" because "com.QA.Application.TestBase.TestBase.test" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String)" because "com.QA.Application.TestBase.TestBase.test" is null
+at com.QA.Application.TestBase.TestBase.openURL(TestBase.java:165)
+at com.QA.Application.TestBase.TestBase.setUp(TestBase.java:68)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:527)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Launch_Application_DDT -->
-      </class> <!-- com.QA.DataDrivenScripts.SailpointDDTLogin -->
-      <class name="com.QA.DataDrivenScripts.JDBCDDTScript">
-        <test-method is-config="true" signature="generateReports()[pri:0, instance:com.QA.DataDrivenScripts.JDBCDDTScript@6c67e137]" started-at="2024-04-18T12:34:40 IST" name="generateReports" finished-at="2024-04-18T12:34:40 IST" duration-ms="74" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- generateReports -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.QA.DataDrivenScripts.JDBCDDTScript@6c67e137]" started-at="2024-04-18T12:34:40 IST" name="setUp" finished-at="2024-04-18T12:34:42 IST" duration-ms="2060" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="JDBC_APPLICATION_ONBOARDING_DDT()[pri:2, instance:com.QA.DataDrivenScripts.JDBCDDTScript@6c67e137]" started-at="2024-04-18T12:34:42 IST" name="JDBC_APPLICATION_ONBOARDING_DDT" finished-at="2024-04-18T12:35:47 IST" duration-ms="65744" status="PASS">
->>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
-          <reporter-output>
-          </reporter-output>
-<<<<<<< HEAD
         </test-method> <!-- delimitedFileTest -->
-        <test-method is-config="true" signature="closeReport()[pri:0, instance:com.QA.DataDriven.DelimitedDDTScript@305f031]" started-at="2024-04-18T11:17:22 IST" name="closeReport" finished-at="2024-04-18T11:17:22 IST" duration-ms="197" status="PASS">
-=======
-        </test-method> <!-- JDBC_APPLICATION_ONBOARDING_DDT -->
-        <test-method is-config="true" signature="closeReport()[pri:0, instance:com.QA.DataDrivenScripts.JDBCDDTScript@6c67e137]" started-at="2024-04-18T12:36:25 IST" name="closeReport" finished-at="2024-04-18T12:36:25 IST" duration-ms="320" status="PASS">
->>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
+        <test-method is-config="true" signature="closeReport()[pri:0, instance:com.QA.DataDrivenScripts.DelimitedDDTScript@4a9f80d3]" started-at="2024-04-18T13:05:11 IST" name="closeReport" finished-at="2024-04-18T13:05:11 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeReport -->
-<<<<<<< HEAD
-      </class> <!-- com.QA.DataDriven.DelimitedDDTScript -->
+      </class> <!-- com.QA.DataDrivenScripts.DelimitedDDTScript -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
-=======
-      </class> <!-- com.QA.DataDrivenScripts.JDBCDDTScript -->
-      <class name="com.QA.DataDrivenScripts.CreateAggregationTaskDDT">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.QA.DataDrivenScripts.CreateAggregationTaskDDT@60fa3495]" started-at="2024-04-18T12:35:56 IST" name="setUp" finished-at="2024-04-18T12:35:57 IST" duration-ms="964" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verifyCreateIdentityMappingsDDTScript()[pri:3, instance:com.QA.DataDrivenScripts.CreateAggregationTaskDDT@60fa3495]" started-at="2024-04-18T12:35:57 IST" name="verifyCreateIdentityMappingsDDTScript" finished-at="2024-04-18T12:36:25 IST" duration-ms="28549" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCreateIdentityMappingsDDTScript -->
-      </class> <!-- com.QA.DataDrivenScripts.CreateAggregationTaskDDT -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
->>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
 </testng-results>

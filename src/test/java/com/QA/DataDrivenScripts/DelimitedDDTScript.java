@@ -28,9 +28,9 @@ public class DelimitedDDTScript extends TestBase {
 					String ApplicationName = row.getCell(0).getStringCellValue();
 					String ApplicationOwner= row.getCell(1).getStringCellValue();
 					String ApplicationType= row.getCell(2).getStringCellValue();
-					String DelimitedTxt = row.getCell(3).getStringCellValue();
-					String DelimitedIdentityAttribute = row.getCell(4).getStringCellValue();
-					String DelimitedDisplayAttribute = row.getCell(5).getStringCellValue();
+					String DelimitedTxt= row.getCell(3).getStringCellValue();
+					String DelimitedIdentityAttribute= row.getCell(4).getStringCellValue();
+					String DelimitedDisplayAttribute= row.getCell(5).getStringCellValue();
 			
 				
 				CreateExtentTest("Verify Delimited File Application OnBoarding Through DDT", "Case 1: User needs to verify if Delimited File Application On Boarding Script Through JDBC","Functional_TestCase","Vinay Kumar");
