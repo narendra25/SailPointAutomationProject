@@ -3,14 +3,14 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.QA.DataDrivenScripts.CreateAggregationTaskDDT">
+      <class name="com.QA.Application.TestScripts.LoginScript">
         <methods>
-          <include name="verifyCreateIdentityMappingsDDTScript"/>
           <include name="setUp"/>
           <include name="closeReport"/>
+          <include name="tc01VerifyLogin"/>
           <include name="generateReports"/>
         </methods>
-      </class> <!-- com.QA.DataDrivenScripts.CreateAggregationTaskDDT -->
+      </class> <!-- com.QA.Application.TestScripts.LoginScript -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
