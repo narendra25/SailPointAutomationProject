@@ -21,7 +21,7 @@ public class SailpointDDTLogin extends TestBase{
 	public static void Launch_Application_DDT() throws Exception {
 		
 		// Initialize Excel file
-		FileInputStream file=new FileInputStream(filePath+"/src/test/resources/DataFiles/loginData.xlsx");
+		FileInputStream file=new FileInputStream(filePath+"/src/test/resources/DataFiles/Application.xlsx");
 		Workbook workbook = new XSSFWorkbook(file);
 		Sheet sheet = workbook.getSheet("LoginDetails");
 

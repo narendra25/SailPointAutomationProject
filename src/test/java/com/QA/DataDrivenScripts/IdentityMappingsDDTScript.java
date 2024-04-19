@@ -16,7 +16,7 @@ public class IdentityMappingsDDTScript extends TestBase{
 	public static void verifyCreateIdentityMappingsDDTScript() throws Exception {
 
 		// Initialize Excel file
-		FileInputStream file=new FileInputStream(filePath+"/src/test/resources/DataFiles/loginData.xlsx");
+		FileInputStream file=new FileInputStream(filePath+"/src/test/resources/DataFiles/DeBugandIdentity.xlsx");
 		Workbook workbook = new XSSFWorkbook(file);
 		Sheet sheet = workbook.getSheet("IdentityMappings");
 

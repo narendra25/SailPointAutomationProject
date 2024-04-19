@@ -17,7 +17,7 @@ public class DelimitedDDTScript extends TestBase {
 	public void delimitedFileTest() throws Exception
 	{
 		// Initialize Excel file
-				FileInputStream file = new FileInputStream(filePath+"/src/test/resources/DataFiles/loginData.xlsx");
+				FileInputStream file = new FileInputStream(filePath+"/src/test/resources/DataFiles/Application.xlsx");
 				Workbook workbook = new XSSFWorkbook(file);
 				Sheet sheet = workbook.getSheet("DelimitedFile");
 

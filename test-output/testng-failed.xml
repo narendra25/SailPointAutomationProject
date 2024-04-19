@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.QA.DataDrivenScripts.CreateRulesDDTScript">
+      <class name="com.QA.Application.TestScripts.ApplicationRulesSailPoint">
         <methods>
-          <include name="verifyCreateApplicationRules"/>
           <include name="setUp"/>
           <include name="closeReport"/>
+          <include name="tc01VerifyLogin"/>
           <include name="generateReports"/>
         </methods>
-      </class> <!-- com.QA.DataDrivenScripts.CreateRulesDDTScript -->
+      </class> <!-- com.QA.Application.TestScripts.ApplicationRulesSailPoint -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
