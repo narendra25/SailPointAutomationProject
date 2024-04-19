@@ -1,39 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="com.QA.Application.TestScripts.ApplicationRulesSailPoint">
-=======
-<<<<<<< HEAD
-      <class name="com.QA.Application.TestScripts.LoginScript">
-=======
-      <class name="com.QA.DataDrivenScripts.CreateRulesDDTScript">
->>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
->>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
+      <class name="com.QA.DataDrivenScripts.SelectingRuleOfApplicationDDTScript">
         <methods>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-          <include name="verifyCreateApplicationRules"/>
->>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
->>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
+          <include name="VerifySelectingRuleOfApplicationDDTScript"/>
           <include name="setUp"/>
           <include name="closeReport"/>
-          <include name="tc01VerifyLogin"/>
           <include name="generateReports"/>
         </methods>
-<<<<<<< HEAD
-      </class> <!-- com.QA.Application.TestScripts.ApplicationRulesSailPoint -->
-=======
-<<<<<<< HEAD
-      </class> <!-- com.QA.Application.TestScripts.LoginScript -->
-=======
-      </class> <!-- com.QA.DataDrivenScripts.CreateRulesDDTScript -->
->>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
->>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
+      </class> <!-- com.QA.DataDrivenScripts.SelectingRuleOfApplicationDDTScript -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

@@ -39,9 +39,21 @@ public class ReUsableMethods extends TestBase{
 	}
 	
 	//Dynamic Click Button of Rules
-	public void Dynamic_Create_Rule(String  EnterText) {
+	public void Dynamic_Create_Rule(String  EnterText) throws InterruptedException {
 		WebElement element=driver.findElement(By.xpath("(//*[text()='"+EnterText+"']//parent::td//parent::tr//parent::td)[3]/input"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(500);
 		element.click();
+	}
+	//(//*[text()='Correlation Rule']//parent::td//parent::tr//parent::td)[2]/select
+	//Secting Rule Of SailPoint Application
+	public void Dynamic_Selecting_Rule_Application(String  EnterText,String RuleName) throws InterruptedException {
+		WebElement element=driver.findElement(By.xpath("(//*[text()='"+EnterText+"']//parent::td//parent::tr//parent::td)[2]/select"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(500);
+		Select selectValue = new Select(element);
+			selectValue.selectByVisibleText(RuleName);
+		
 	}
 	//Clear Text Method
 	public void clearText(By PassLocator) {
