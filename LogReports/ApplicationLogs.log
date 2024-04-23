@@ -1,11 +1,12 @@
-[13:49:08,753 DEBUG][Application 1][i.g.b.w.WebDriverManager.<init>] Using WebDriverManager 5.6.4  
-[13:49:09,045 DEBUG][Application 1][i.g.b.w.c.ResolutionCache.checkKeyInResolutionCache] Resolution chrome=124 in cache (valid until 14:44:49 19/04/2024 IST)  
-[13:49:09,047 DEBUG][Application 1][i.g.b.w.c.ResolutionCache.checkKeyInResolutionCache] Resolution chrome124=124.0.6367.60 in cache (valid until 09:53:50 20/04/2024 IST)  
-[13:49:09,048 INFO][Application 1][i.g.b.w.WebDriverManager.resolveDriverVersion] Using chromedriver 124.0.6367.60 (resolved driver for Chrome 124)  
-[13:49:09,086 DEBUG][Application 1][i.g.b.w.WebDriverManager.manage] Driver chromedriver 124.0.6367.60 found in cache  
-[13:49:09,087 INFO][Application 1][i.g.b.w.WebDriverManager.exportDriver] Exporting webdriver.chrome.driver as C:\Users\na21279\.cache\selenium\chromedriver\win64\124.0.6367.60\chromedriver.exe  
-[13:49:11,453 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Enter User Name  
-[13:49:11,771 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Enter The Password   
-[13:49:15,936 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Click On Login Page Successfully.   
-[13:49:15,954 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] Verification Successful - The User is Login The Application  
-[13:49:17,701 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User able to Click On ApplicationDefinition  
+[15:36:53,458 DEBUG][Application 1][i.g.b.w.WebDriverManager.<init>] Using WebDriverManager 5.6.4  
+[15:36:53,877 DEBUG][Application 1][i.g.b.w.c.ResolutionCache.checkKeyInResolutionCache] Resolution chrome=124 in cache (valid until 16:28:46 23/04/2024 IST)  
+[15:36:53,879 DEBUG][Application 1][i.g.b.w.c.ResolutionCache.checkKeyInResolutionCache] Resolution chrome124=124.0.6367.60 in cache (valid until 15:28:46 24/04/2024 IST)  
+[15:36:53,881 INFO][Application 1][i.g.b.w.WebDriverManager.resolveDriverVersion] Using chromedriver 124.0.6367.60 (resolved driver for Chrome 124)  
+[15:36:53,928 DEBUG][Application 1][i.g.b.w.WebDriverManager.manage] Driver chromedriver 124.0.6367.60 found in cache  
+[15:36:53,929 INFO][Application 1][i.g.b.w.WebDriverManager.exportDriver] Exporting webdriver.chrome.driver as C:\Users\na21279\.cache\selenium\chromedriver\win64\124.0.6367.60\chromedriver.exe  
+[15:36:57,282 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Enter User Name  
+[15:36:57,666 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Enter The Password   
+[15:37:02,646 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Click On Login Page Successfully.   
+[15:37:02,659 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] Verification Successful - The User is Login The Application  
+[15:37:02,969 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Click On Logout Dropdown Button  
+[15:37:03,568 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User click On Logout Button  

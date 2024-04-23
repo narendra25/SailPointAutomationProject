@@ -1,5 +1,7 @@
 package com.QA.Application.TestBase;
 
+import java.awt.Desktop;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -45,11 +47,12 @@ public class TestBase {
 	public static String FolderName;
 	public static String TestDescription;
 	public static String ImageName;
-	public static String LogDescription;
+	public static String LogDescription;  
 	public static By PassLocator;
 	public static String EnterText;
 	protected static final Logger LOG = (Logger) LogManager.getLogger(TestBase.class);
 	public static String IdentityMappingName;
+	public static File file=new File(reportDestination);
 	
 	
 	static String Concatnate=".";
@@ -74,9 +77,13 @@ public class TestBase {
 //		
 //	}
 	@AfterSuite(alwaysRun = true)
-	public void closeReport()
+	public void closeReport() throws IOException
 	{
 		extent.flush();
+		
+		//This Below Code is Opening The Reports after test is complted
+		Desktop.getDesktop().browse(file.toURI());
+		
 	}
 	
 	//CREATING EXTENT TEST REPORT
@@ -120,7 +127,8 @@ public class TestBase {
 		}
 
 	public void extentReportSpark() {
-		spark= new ExtentHtmlReporter(reportDestination);
+		
+		spark= new ExtentHtmlReporter(file);
 		extent = new ExtentReports();
 		extent.attachReporter(spark);
 		extent.setSystemInfo("OS", System.getProperty("os.name"));
