@@ -39,9 +39,9 @@ public class SailpointDDTLogin extends TestBase{
 
 			//SUBMIT BUTTON OF APPLICATION.
 			webdriver.clickOnButton(LoginPage.btnLogIn);
+			TakeScreenshot("User Click On Login Successfully","LoginPageDDT","Login");
 			webdriver.waitForElementVisible(ApplicationsPage.btnApplications);
 			webdriver.WaitForSometime(3000);
-			TakeScreenshot("User Click On Login Successfully","LoginPageDDT","Login");
 			LogInFo("User Click On Login Page Successfully. ");
 			//ASSERTING THE ACTUAL AND EXPECTED TITLE
 			String expectedTitle = "SailPoint IdentityIQ - Home";

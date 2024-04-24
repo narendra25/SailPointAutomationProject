@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="ApplicationOnBoardingDDT(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.QA.DataDrivenScripts.CreateAggregationTaskDDT">
+      <class name="com.QA.DataDrivenScripts.SailpointDDTLogin">
         <methods>
-          <include name="verifyCreateIdentityMappingsDDTScript"/>
+          <include name="Launch_Application_DDT"/>
           <include name="setUp"/>
           <include name="closeReport"/>
           <include name="tearDown"/>
           <include name="generateReports"/>
         </methods>
-      </class> <!-- com.QA.DataDrivenScripts.CreateAggregationTaskDDT -->
+      </class> <!-- com.QA.DataDrivenScripts.SailpointDDTLogin -->
     </classes>
-  </test> <!-- ApplicationOnBoardingDDT(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

@@ -44,7 +44,7 @@ public class TestBase {
 	public static ExtentHtmlReporter spark;
 	public static ExtentTest test;
 	public static ExtentReports extent;
-	public static String reportDestination = "reports/report_" + dt + ".html";
+	public static String reportDestination = "./reports/Reports__"+ dt+"/report_" + dt + ".html";
 	public static String FolderName;
 	public static String TestDescription;
 	public static String ImageName;

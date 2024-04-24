@@ -2,6 +2,9 @@ package com.QA.Application.Utilities;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -23,6 +26,14 @@ import com.QA.Application.TestBase.TestBase;
 
 
 public class ReUsableMethods extends TestBase{
+//	static Calendar cal = Calendar.getInstance();
+//    
+//    // Get the current time as a Date object
+//    static Date time = cal.getTime();
+//    
+//    // Convert the Date object to a timestamp string
+//    static String timestamp = time.toString().replace(":", "").replace(" ", "");
+   
 	public static By PassLocator;
 	public static String EnterText;
 	//Enter Text by using PassPassLocator
@@ -198,7 +209,7 @@ public class ReUsableMethods extends TestBase{
 	public static String CaptureScreenShot(String Folder,String filename) throws IOException {
 		File ts=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		//File srcFile=ts.getScreenshotAs(OutputType.FILE);
-		String destFile="./reports/screenshots/"+Folder+"/"+filename+".png";
+		String destFile="./reports/screenshots__"+dt+"/"+Folder+dt+"/"+filename+dt+".png";
 		File Path=new File(destFile);
 		FileUtils.copyFile(ts,Path);
 		return destFile;
