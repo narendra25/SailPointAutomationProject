@@ -13,4 +13,5 @@ public class CreateRulesDDTScript extends TestBase {
 
 		Application.CreateRuleOfSailPointApplication();
 	}
+	
 }

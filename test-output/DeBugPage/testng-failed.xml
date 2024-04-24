@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [DeBugPage]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="DeBugPage(failed)">
+    <classes>
+      <class name="com.QA.DataDrivenScripts.DeBugDDTScipts">
+        <methods>
+          <include name="verifyCreateIdentityMappingsDDTScript"/>
+          <include name="setUp"/>
+          <include name="closeReport"/>
+          <include name="generateReports"/>
+        </methods>
+      </class> <!-- com.QA.DataDrivenScripts.DeBugDDTScipts -->
+    </classes>
+  </test> <!-- DeBugPage(failed) -->
+</suite> <!-- Failed suite [DeBugPage] -->

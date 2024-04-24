@@ -11,5 +11,5 @@ public class LoginPage {
 	    
 	//Logout Locators
 	    public static By btnLogOutDropDown=By.xpath("//span[contains(text(),'The Administrator')]");
-	    public static By btnLogout=By.xpath("(//a[@role='menuitem'])[48]");
+	    public static By btnLogout=By.xpath("//a[@onclick='doLogout(); return false;']");
 }

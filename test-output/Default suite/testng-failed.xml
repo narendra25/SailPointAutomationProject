@@ -3,14 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.QA.DataDrivenScripts.SailpointDDTLogin">
+      <class name="com.QA.DataDrivenScripts.DeBugDDTScipts">
         <methods>
-          <include name="Launch_Application_DDT"/>
+          <include name="verifyCreateIdentityMappingsDDTScript"/>
           <include name="setUp"/>
           <include name="closeReport"/>
+          <include name="tearDown"/>
           <include name="generateReports"/>
         </methods>
-      </class> <!-- com.QA.DataDrivenScripts.SailpointDDTLogin -->
+      </class> <!-- com.QA.DataDrivenScripts.DeBugDDTScipts -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

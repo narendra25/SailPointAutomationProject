@@ -17,6 +17,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -71,15 +72,16 @@ public class TestBase {
 		openURL("URL");
 
 	}
-//	@AfterMethod
-//	public void tearDown()  {
-//		driver.quit();
-//		
-//	}
+	@AfterClass
+	public void tearDown()  {
+		driver.quit();
+		
+	}
 	@AfterSuite(alwaysRun = true)
 	public void closeReport() throws IOException
 	{
 		extent.flush();
+		
 		
 		//This Below Code is Opening The Reports after test is complted
 		Desktop.getDesktop().browse(file.toURI());

@@ -16,17 +16,17 @@ public class IdentityMappingsDDTScript extends TestBase{
 	public static void verifyCreateIdentityMappingsDDTScript() throws Exception {
 
 		// Initialize Excel file
-		FileInputStream file=new FileInputStream(filePath+"/src/test/resources/DataFiles/DeBugandIdentity.xlsx");
+		FileInputStream file=new FileInputStream(filePath+properties.getProperty("DataFile"));
 		Workbook workbook = new XSSFWorkbook(file);
-		Sheet sheet = workbook.getSheet("IdentityMappings");
+		Sheet sheet = workbook.getSheet("SailPointApplicationJDBC");
 
 
 		// Iterate through the rows and columns to read the data
-		for (int rowNum = 1; rowNum <= sheet.getLastRowNum(); rowNum++) {
+		for (int rowNum = 2; rowNum <= sheet.getLastRowNum(); rowNum++) {
 			Row row = sheet.getRow(rowNum);
-			String ApplicationName = row.getCell(0).getStringCellValue();
-			String IdentityMappingName= row.getCell(1).getStringCellValue();
-			String AttributeName= row.getCell(2).getStringCellValue();
+			String ApplicationName = row.getCell(2).getStringCellValue();
+			String IdentityMappingName= row.getCell(18).getStringCellValue();
+			String AttributeName= row.getCell(19).getStringCellValue();
 
 			CreateExtentTest("Verify Identity Mappings  Through DDT", "Case 1: User needs to verify if Identity Mappings Script Through DDT Test","Functional_TestCase","Narendra Reddy");
 

@@ -2,6 +2,7 @@ package ApplicationReusableMethods;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.ss.usermodel.Row;
@@ -58,16 +59,16 @@ public void Launch_Application() throws IOException, InterruptedException {
 		webdriver.waitForElementVisible(LoginPage.btnLogOutDropDown);
 		webdriver.clickOnButton(LoginPage.btnLogOutDropDown);
 		LogInFo("User Click On Logout Dropdown Button");
-	TakeScreenshot("User Click On Logout Dropdown Button","LoginPage","LogoutDropdown");
+	TakeScreenshot("User Click On Logout Dropdown Button","LogOutPage","LogoutDropdown");
 	
 	//User click On Logout Button
+	webdriver.WaitForSometime(2000);
 	webdriver.waitForElementLocated(LoginPage.btnLogout);
 	webdriver.clickOnButton(LoginPage.btnLogout);
 	LogInFo("User click On Logout Button");
 	webdriver.WaitForSometime(2000);
-	TakeScreenshot("User click On Logout Button","LoginPage","Logout");
+	TakeScreenshot("User click On Logout Button","LogOutPage","Logout");
 	webdriver.waitForElementLocated(LoginPage.btnLogIn);
-	driver.quit();
 	}
 	
 	//Identity Mappings 
@@ -173,18 +174,18 @@ public void Launch_Application() throws IOException, InterruptedException {
 		public void CreateRuleOfSailPointApplication() throws Exception {
 			String filePath=System.getProperty("user.dir");
 			// Initialize Excel file
-			FileInputStream file=new FileInputStream(filePath+"/src/test/resources/DataFiles/CreationRulesSailPoint.xlsx");
+			FileInputStream file=new FileInputStream(filePath+properties.getProperty("DataFile"));
 			Workbook workbook = new XSSFWorkbook(file);
-			Sheet sheet = workbook.getSheet("CreateRulesOfSailpoint");
+			Sheet sheet = workbook.getSheet("SailPointApplicationJDBC");
 
 
 			// Iterate through the rows and columns to read the data
-			for (int rowNum = 1; rowNum <= sheet.getLastRowNum(); rowNum++) {
+			for (int rowNum = 2; rowNum <= sheet.getLastRowNum(); rowNum++) {
 				Row row = sheet.getRow(rowNum);
-							String ApplicationName = row.getCell(0).getStringCellValue();
-							String RuleType= row.getCell(1).getStringCellValue();
-							String RuleName= row.getCell(2).getStringCellValue();
-							String WritingRuleEditor= row.getCell(3).getStringCellValue();
+							String ApplicationName = row.getCell(2).getStringCellValue();
+							String RuleType= row.getCell(13).getStringCellValue();
+							String RuleName= row.getCell(14).getStringCellValue();
+							String WritingRuleEditor= row.getCell(15).getStringCellValue();
 							
 							Application.Launch_Application();
 							

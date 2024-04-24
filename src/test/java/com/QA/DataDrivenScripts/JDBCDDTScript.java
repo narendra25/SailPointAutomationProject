@@ -18,28 +18,28 @@ public class JDBCDDTScript extends TestBase {
 	public void JDBC_APPLICATION_ONBOARDING_DDT() throws Exception {
 		
 		// Initialize Excel file
-		FileInputStream file=new FileInputStream(filePath+"/src/test/resources/DataFiles/Application.xlsx");
+		FileInputStream file=new FileInputStream(filePath+properties.getProperty("DataFile"));
 		Workbook workbook = new XSSFWorkbook(file);
-		Sheet sheet = workbook.getSheet("JDBCAPPLICATION");
+		Sheet sheet = workbook.getSheet("SailPointApplicationJDBC");
 
-
+		
 		// Iterate through the rows and columns to read the data
-		for (int rowNum = 1; rowNum <= sheet.getLastRowNum(); rowNum++) {
+		for (int rowNum = 2; rowNum <= sheet.getLastRowNum(); rowNum++) {
 			Row row = sheet.getRow(rowNum);
-			String ApplicationName = row.getCell(0).getStringCellValue();
-			String ApplicationOwner= row.getCell(1).getStringCellValue();
-			String ApplicationType= row.getCell(2).getStringCellValue();
-			String JDBCConnectionUser= row.getCell(3).getStringCellValue();
-			String JDBCConnectionPassword= row.getCell(4).getStringCellValue();
-			String JDBCDatabaseURL= row.getCell(5).getStringCellValue();
-			String JDBCSqlStatement= row.getCell(6).getStringCellValue();
-			String JDBCIdentityAttribute= row.getCell(7).getStringCellValue();
-			String JDBCDisplayAttribute= row.getCell(8).getStringCellValue();
+			String ApplicationName = row.getCell(2).getStringCellValue();
+			String ApplicationOwner= row.getCell(3).getStringCellValue();
+			String ApplicationType= row.getCell(4).getStringCellValue();
+			String JDBCConnectionUser= row.getCell(5).getStringCellValue();
+			String JDBCConnectionPassword= row.getCell(6).getStringCellValue();
+			String JDBCDatabaseURL= row.getCell(7).getStringCellValue();
+			String JDBCSqlStatement= row.getCell(8).getStringCellValue();
+			String JDBCIdentityAttribute= row.getCell(9).getStringCellValue();
+			String JDBCDisplayAttribute= row.getCell(10).getStringCellValue();
 			
 			
 			CreateExtentTest("Verify JDBC Application OnBoarding Through DDT", "Case 1: User needs to verify if JDBC Application On Boarding Script Through JDBC","Functional_TestCase","Narendra Reddy");
-			
 			Application.Launch_Application();
+			
 			//Click On Applications
 			webdriver.clickOnButton(ApplicationsPage.btnApplications);
 			TestPass("User Click On Applications");
@@ -149,13 +149,13 @@ public class JDBCDDTScript extends TestBase {
 			LogInFo("User Click on Preview close Button");
 			webdriver.WaitForSometime(2000);
 			webdriver.clickOnButton(ApplicationsPage.btnApplicationSave);
-			webdriver.WaitForSometime(2000);
+			webdriver.WaitForSometime(5000);
 			
 			//LogOut The AppliCation 
 			Application.LogOut_Application();
 
-
 		}
-
+		
+		
 	}
 }
