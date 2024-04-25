@@ -2,8 +2,6 @@ package com.QA.Application.TestScripts;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
-import java.util.concurrent.TimeUnit;
-
 import org.testng.annotations.Test;
 import com.QA.Application.Pages.ApplicationsPage;
 import com.QA.Application.TestBase.TestBase;
@@ -14,7 +12,7 @@ public class ApplicationOnBoardingScript extends TestBase{
 		CreateExtentTest("Verify Application On Boarding In Sailpoint", "Case 1: User needs to verify Application On Boarding in Sailpoint.","Functional_TestCase","Narendra Reddy");
 		
 		//Launching Application
-		Launch_Application();
+		Application.Launch_Application();
 
 		//Click On Applications
 		webdriver.clickOnButton(ApplicationsPage.btnApplications);
@@ -321,11 +319,11 @@ public class ApplicationOnBoardingScript extends TestBase{
 			webdriver.clickOnButton(ApplicationsPage.btnPreviewClose);
 			LogInFo("User Click on Preview close Button");
 			webdriver.WaitForSometime(2000);
-			//webdriver.clickOnButton(ApplicationsPage.btnApplicationSave);
+			webdriver.clickOnButton(ApplicationsPage.btnApplicationSave);
 			webdriver.WaitForSometime(2000);
 			
 			//LogOut The AppliCation 
-			LogOut_Application();
+			Application.LogOut_Application();
 		}
 		else if(properties.getProperty("ApplicationTypeofOnBoardingType").equalsIgnoreCase("LDAP")) 
 		{

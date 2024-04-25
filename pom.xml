@@ -31,7 +31,7 @@
 			<configuration>
 				<suiteXmlFiles>
 					<!-- NAME OF XML SUITE FILE -->
-					<suiteXmlFile>testng.xml</suiteXmlFile>
+					<suiteXmlFile>DataDrivenTestScripts.xml</suiteXmlFile>
 				</suiteXmlFiles>
 			</configuration>
 		</plugin>
@@ -78,7 +78,7 @@
  <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
-            <version>4.1.2</version>
+            <version>4.1.1</version>
         </dependency>
             <dependency>
             <groupId>jexcelapi</groupId>
@@ -88,7 +88,7 @@
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
-            <version>3.10-FINAL</version>
+            <version>4.1.1</version>
         </dependency>
  
   <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->

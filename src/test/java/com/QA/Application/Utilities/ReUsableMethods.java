@@ -23,6 +23,14 @@ import com.QA.Application.TestBase.TestBase;
 
 
 public class ReUsableMethods extends TestBase{
+//	static Calendar cal = Calendar.getInstance();
+//    
+//    // Get the current time as a Date object
+//    static Date time = cal.getTime();
+//    
+//    // Convert the Date object to a timestamp string
+//    static String timestamp = time.toString().replace(":", "").replace(" ", "");
+   
 	public static By PassLocator;
 	public static String EnterText;
 	//Enter Text by using PassPassLocator
@@ -33,6 +41,27 @@ public class ReUsableMethods extends TestBase{
 	}
 	public void DynamicXpathContains(String Text) {
 		driver.findElement(By.xpath("//*[contains(text(),'"+Text+"')]")).click();
+	}
+	public void DynamicXpathText(String Text) {
+		driver.findElement(By.xpath("//*[text()='"+Text+"']")).click();
+	}
+	
+	//Dynamic Click Button of Rules
+	public void Dynamic_Create_Rule(String  EnterText) throws InterruptedException {
+		WebElement element=driver.findElement(By.xpath("(//*[text()='"+EnterText+"']//parent::td//parent::tr//parent::td)[3]/input"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(500);
+		element.click();
+	}
+	//(//*[text()='Correlation Rule']//parent::td//parent::tr//parent::td)[2]/select
+	//Secting Rule Of SailPoint Application
+	public void Dynamic_Selecting_Rule_Application(String  EnterText,String RuleName) throws InterruptedException {
+		WebElement element=driver.findElement(By.xpath("(//*[text()='"+EnterText+"']//parent::td//parent::tr//parent::td)[2]/select"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(500);
+		Select selectValue = new Select(element);
+			selectValue.selectByVisibleText(RuleName);
+		
 	}
 	//Clear Text Method
 	public void clearText(By PassLocator) {
@@ -177,7 +206,7 @@ public class ReUsableMethods extends TestBase{
 	public static String CaptureScreenShot(String Folder,String filename) throws IOException {
 		File ts=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		//File srcFile=ts.getScreenshotAs(OutputType.FILE);
-		String destFile="./reports/screenshots/"+Folder+"/"+filename+".png";
+		String destFile="./reports/screenshots__"+dt+"/"+Folder+dt+"/"+filename+dt+".png";
 		File Path=new File(destFile);
 		FileUtils.copyFile(ts,Path);
 		return destFile;
@@ -210,7 +239,7 @@ public class ReUsableMethods extends TestBase{
 	}
 
 	//I Click By Using JavaScript executor
-	public static void ClickByJavaScript_Executor(By PassLocator) {
+	public void ClickByJavaScript_Executor(By PassLocator) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebElement button =driver.findElement(PassLocator);
 		js.executeScript("arguments[0].click();", button);
