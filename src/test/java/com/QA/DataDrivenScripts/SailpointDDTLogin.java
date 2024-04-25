@@ -1,5 +1,8 @@
 package com.QA.DataDrivenScripts;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
 import java.io.FileInputStream;
 import org.testng.annotations.Test;
 import com.QA.Application.Pages.ApplicationsPage;
@@ -39,6 +42,7 @@ public class SailpointDDTLogin extends TestBase{
 
 			//SUBMIT BUTTON OF APPLICATION.
 			webdriver.clickOnButton(LoginPage.btnLogIn);
+			webdriver.VerifyElementIsPresentorNot(ApplicationsPage.btnApplications,"LoginPageDDT","Login");
 			TakeScreenshot("User Click On Login Successfully","LoginPageDDT","Login");
 			webdriver.waitForElementVisible(ApplicationsPage.btnApplications);
 			webdriver.WaitForSometime(3000);

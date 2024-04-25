@@ -5,8 +5,9 @@
     <classes>
       <class name="com.QA.DataDrivenScripts.SailpointDDTLogin">
         <methods>
-          <include name="Launch_Application_DDT"/>
+          <include name="tearDow"/>
           <include name="setUp"/>
+          <include name="Launch_Application_DDT"/>
           <include name="closeReport"/>
           <include name="tearDown"/>
           <include name="generateReports"/>

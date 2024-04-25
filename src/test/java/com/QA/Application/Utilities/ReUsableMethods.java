@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
@@ -143,9 +144,14 @@ public class ReUsableMethods extends TestBase{
 
 	//WAIT FOR ELEMENT VISIBLE 
 	public void waitForElementVisible(By PassLocator) {
-		WebDriverWait wait = new WebDriverWait(driver, 50);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(PassLocator));
-
+		try {
+			WebDriverWait wait = new WebDriverWait(driver,10);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(PassLocator));
+		} catch (NoSuchElementException e) {
+		    // Handle NoSuchElementException (e.g., log an error message)
+		    System.out.println("Element not found: " + e.getMessage());
+		    driver.close();
+		}
 	}
 	//WAIT FOR ELEMENT TO BE CLICKABLE
 	public void waitForElementToBeClickable(By PassLocator) {
@@ -286,6 +292,7 @@ public class ReUsableMethods extends TestBase{
 		else {
 			TestBase.TakeScreenshot("Assertion failed:The actual Text is "+ImageName +" is not expected",FolderName,ImageName);
 			CaptureScreenShot(FolderName,ImageName);
+			driver.close();
 
 		}
 	}
