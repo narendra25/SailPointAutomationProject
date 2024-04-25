@@ -18,17 +18,17 @@ public class DeBugDDTScipts extends TestBase {
 	public static void verifyCreateIdentityMappingsDDTScript() throws Exception {
 
 		// Initialize Excel file
-		FileInputStream file=new FileInputStream(filePath+"/src/test/resources/DataFiles/loginData.xlsx");
+		FileInputStream file=new FileInputStream(filePath+properties.getProperty("DataFile"));
 		Workbook workbook = new XSSFWorkbook(file);
-		Sheet sheet = workbook.getSheet("DeBugOperations");
+		Sheet sheet = workbook.getSheet("SailPointApplicationJDBC");
 
 
 		// Iterate through the rows and columns to read the data
-		for (int rowNum = 1; rowNum <= sheet.getLastRowNum(); rowNum++) {
+		for (int rowNum = 2; rowNum <= sheet.getLastRowNum(); rowNum++) {
 			Row row = sheet.getRow(rowNum);
-			String SelectAnObject = row.getCell(0).getStringCellValue();
-			String SearchByNameOrID= row.getCell(1).getStringCellValue();
-			String Action= row.getCell(2).getStringCellValue();
+			String SelectAnObject = row.getCell(20).getStringCellValue();
+			String SearchByNameOrID= row.getCell(2).getStringCellValue(); //14
+			String Action= row.getCell(21).getStringCellValue();
 			
 
 
@@ -45,7 +45,7 @@ public class DeBugDDTScipts extends TestBase {
 			LogInFo("User click on object dropdown");
 			TakeScreenshot("User click on object dropdown", "DeBugDDT", "selectDropdown");
 			webdriver.enterText(DebugPage.txtenterAppName, SelectAnObject);
-			webdriver.WaitForSometime(1000);
+			webdriver.WaitForSometime(5000);
 			webdriver.DynamicXpathText(SelectAnObject);
 			LogInFo("User selected Object");
 			TakeScreenshot("User selected Object", "DeBugDDT", "AppSelect");
@@ -68,8 +68,9 @@ public class DeBugDDTScipts extends TestBase {
 			webdriver.clickOnButton(DebugPage.btnYes);
 			LogInFo("Validate User Deleted Application Successfully");
 			TakeScreenshot("Validate User Deleted Application Successfully", "DeBugDDT", "AppDelete");
+			
 			}
-			if(Action.equalsIgnoreCase("New"))
+			else if(Action.equalsIgnoreCase("New"))
 			{
 			webdriver.clickOnButton(DebugPage.btnNew);
 			webdriver.WaitForSometime(1000);
@@ -79,10 +80,13 @@ public class DeBugDDTScipts extends TestBase {
 			webdriver.clickOnButton(DebugPage.btnSave);
 			LogInFo("Validate User New Application Data added Successfully");
 			TakeScreenshot("Validate User New Application Data added Successfully", "DeBugDDT", "NewData");
+			
 			}
+			webdriver.WaitForSometime(3000);
+			Application.LogOut_Application();
 		}
-		webdriver.WaitForSometime(3000);
-		Application.LogOut_Application();
+		
 
 }
+	
 }

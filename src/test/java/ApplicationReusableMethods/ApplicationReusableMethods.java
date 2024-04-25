@@ -16,6 +16,7 @@ import com.QA.Application.Pages.LoginPage;
 import com.QA.Application.Pages.RulesPage;
 import com.QA.Application.TestBase.TestBase;
 
+
 public class ApplicationReusableMethods extends TestBase {
 	public void Launch_Application() throws IOException, InterruptedException {
 
@@ -56,6 +57,7 @@ public class ApplicationReusableMethods extends TestBase {
 		webdriver.waitForElementVisible(LoginPage.btnLogOutDropDown);
 		webdriver.clickOnButton(LoginPage.btnLogOutDropDown);
 		LogInFo("User Click On Logout Dropdown Button");
+<<<<<<< HEAD
 		TakeScreenshot("User Click On Logout Dropdown Button", "LoginPage", "LogoutDropdown");
 
 		// User click On Logout Button
@@ -66,6 +68,18 @@ public class ApplicationReusableMethods extends TestBase {
 		TakeScreenshot("User click On Logout Button", "LoginPage", "Logout");
 		webdriver.waitForElementLocated(LoginPage.btnLogIn);
 		driver.quit();
+=======
+	TakeScreenshot("User Click On Logout Dropdown Button","LogOutPage","LogoutDropdown");
+	
+	//User click On Logout Button
+	webdriver.WaitForSometime(2000);
+	webdriver.waitForElementLocated(LoginPage.btnLogout);
+	webdriver.clickOnButton(LoginPage.btnLogout);
+	LogInFo("User click On Logout Button");
+	webdriver.WaitForSometime(2000);
+	TakeScreenshot("User click On Logout Button","LogOutPage","Logout");
+	webdriver.waitForElementLocated(LoginPage.btnLogIn);
+>>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
 	}
 
 	// Identity Mappings
@@ -265,7 +279,71 @@ public class ApplicationReusableMethods extends TestBase {
 		LogInFo("User scroll to Manager Correlation");
 		TakeScreenshot("User scroll to Manager Correlation", "APPCorrelation", "ManagerCorrelation");
 		
+<<<<<<< HEAD
+=======
+		public void CreateRuleOfSailPointApplication() throws Exception {
+			String filePath=System.getProperty("user.dir");
+			// Initialize Excel file
+			FileInputStream file=new FileInputStream(filePath+properties.getProperty("DataFile"));
+			Workbook workbook = new XSSFWorkbook(file);
+			Sheet sheet = workbook.getSheet("SailPointApplicationJDBC");
+>>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
 
+<<<<<<< HEAD
 	}
+=======
+
+			// Iterate through the rows and columns to read the data
+			for (int rowNum = 2; rowNum <= sheet.getLastRowNum(); rowNum++) {
+				Row row = sheet.getRow(rowNum);
+							String ApplicationName = row.getCell(2).getStringCellValue();
+							String RuleType= row.getCell(13).getStringCellValue();
+							String RuleName= row.getCell(14).getStringCellValue();
+							String WritingRuleEditor= row.getCell(15).getStringCellValue();
+							
+							Application.Launch_Application();
+							
+							//Click On Applications
+							webdriver.clickOnButton(ApplicationsPage.btnApplications);
+							TestPass("User Click On Applications");
+
+							//click on application defination
+							webdriver.clickOnButton(ApplicationsPage.btnApplicationDefination);
+							webdriver.VerifyElementIsPresentorNot(ApplicationsPage.btnApplicationDefination,"Application","ApplicationDefination");
+							LogInFo("User able to Click On ApplicationDefinition");
+							//Click On application Based On Application Name 
+							webdriver.DynamicXpathContains(ApplicationName);
+							webdriver.waitForElementLocated(RulesPage.btnRulesTab);
+
+							//Click On Rules Button
+							webdriver.clickOnButton(RulesPage.btnRulesTab);
+							webdriver.waitForElementLocated(RulesPage.btnCorrelationRule);
+							TakeScreenshot("User Able to Click On Rules Tab","RulesDDT","RulesButton");
+							webdriver.Dynamic_Create_Rule(RuleType);
+							TakeScreenshot("User Able to Click On Rules Create","RulesDDT","RulesCreate");
+							webdriver.waitForElementVisible(RulesPage.txtCorrelationRuleName);
+							//Enter Rule Name 
+							webdriver.enterText(RulesPage.txtCorrelationRuleName,RuleName);
+							webdriver.WaitForSometime(2000);
+							TakeScreenshot("User Able to Enter RuleName","RulesDDT","RulesCreate");
+							
+							//Writing The Rule In Text Editor
+							webdriver.enterText(RulesPage.txtRuleEditor,WritingRuleEditor);
+							webdriver.waitForElementVisible(RulesPage.btncancelCrossButton);
+							TakeScreenshot("User Write The Rule For Correlation Rule for Application", "RulesDDT","CorrelationName");
+							webdriver.WaitForSometime(3000);
+							//Click On Cancel Cross Button
+							webdriver.clickOnButton(RulesPage.btnSaveButton);
+							webdriver.WaitForSometime(3000);
+							TakeScreenshot("User click On Save Button", "RulesDDT","SavingRule");
+							
+							//Logout Application
+							Application.LogOut_Application();
+
+						
+			}
+		}
+
+>>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
 
 }

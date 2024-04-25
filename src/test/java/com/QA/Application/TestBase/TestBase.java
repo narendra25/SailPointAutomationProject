@@ -1,5 +1,7 @@
 package com.QA.Application.TestBase;
 
+import java.awt.Desktop;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -15,6 +17,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -41,15 +44,16 @@ public class TestBase {
 	public static ExtentHtmlReporter spark;
 	public static ExtentTest test;
 	public static ExtentReports extent;
-	public static String reportDestination = "reports/report_" + dt + ".html";
+	public static String reportDestination = "./reports/Reports__"+ dt+"/report_" + dt + ".html";
 	public static String FolderName;
 	public static String TestDescription;
 	public static String ImageName;
-	public static String LogDescription;
+	public static String LogDescription;  
 	public static By PassLocator;
 	public static String EnterText;
 	protected static final Logger LOG = (Logger) LogManager.getLogger(TestBase.class);
 	public static String IdentityMappingName;
+	public static File file=new File(reportDestination);
 	
 	
 	static String Concatnate=".";
@@ -68,15 +72,20 @@ public class TestBase {
 		openURL("URL");
 
 	}
-//	@AfterMethod
-//	public void tearDown()  {
-//		driver.quit();
-//		
-//	}
+	@AfterClass
+	public void tearDown()  {
+		driver.quit();
+		
+	}
 	@AfterSuite(alwaysRun = true)
-	public void closeReport()
+	public void closeReport() throws IOException
 	{
 		extent.flush();
+		
+		
+		//This Below Code is Opening The Reports after test is complted
+		Desktop.getDesktop().browse(file.toURI());
+		
 	}
 	
 	//CREATING EXTENT TEST REPORT
@@ -120,7 +129,8 @@ public class TestBase {
 		}
 
 	public void extentReportSpark() {
-		spark= new ExtentHtmlReporter(reportDestination);
+		
+		spark= new ExtentHtmlReporter(file);
 		extent = new ExtentReports();
 		extent.attachReporter(spark);
 		extent.setSystemInfo("OS", System.getProperty("os.name"));

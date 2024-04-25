@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="ApplicationOnBoardingDDT(failed)">
     <classes>
-      <class name="com.QA.Application.TestScripts.LoginScript">
+      <class name="com.QA.DataDrivenScripts.CreateAggregationTaskDDT">
         <methods>
+          <include name="verifyCreateIdentityMappingsDDTScript"/>
           <include name="setUp"/>
           <include name="closeReport"/>
-          <include name="tc01VerifyLogin"/>
+          <include name="tearDown"/>
           <include name="generateReports"/>
         </methods>
-      </class> <!-- com.QA.Application.TestScripts.LoginScript -->
+      </class> <!-- com.QA.DataDrivenScripts.CreateAggregationTaskDDT -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- ApplicationOnBoardingDDT(failed) -->
 </suite> <!-- Failed suite [Suite] -->

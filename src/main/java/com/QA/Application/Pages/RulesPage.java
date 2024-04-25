@@ -16,5 +16,5 @@ public static By btnCreationRule=By.xpath("(//input[@class='ruleEditorBtn'])[2]"
 public static By txtCreationRuleName=By.xpath("//input[@class='ruleEditorField x-form-field x-form-text']");
 
 
-//DYnamic Xpath Of Rules
+public static By btnSavebuttonRule=By.id("editForm:saveAppBtn");
 }

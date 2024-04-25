@@ -18,17 +18,17 @@ public class CreateAggregationTaskDDT extends TestBase {
 	public static void verifyCreateIdentityMappingsDDTScript() throws Exception {
 
 		// Initialize Excel file
-		FileInputStream file=new FileInputStream(filePath+"/src/test/resources/DataFiles/loginData.xlsx");
+		FileInputStream file=new FileInputStream(filePath+properties.getProperty("DataFile"));
 		Workbook workbook = new XSSFWorkbook(file);
-		Sheet sheet = workbook.getSheet("CreateAggregationTask");
+		Sheet sheet = workbook.getSheet("SailPointApplicationJDBC");
 
 
 		// Iterate through the rows and columns to read the data
-		for (int rowNum = 1; rowNum <= sheet.getLastRowNum(); rowNum++) {
+		for (int rowNum = 2; rowNum <= sheet.getLastRowNum(); rowNum++) {
 			Row row = sheet.getRow(rowNum);
-			String ApplicationName= row.getCell(0).getStringCellValue();
-			String AggregationTaskName= row.getCell(1).getStringCellValue();
-			String ApplicationAggregationType = row.getCell(2).getStringCellValue();
+			String ApplicationName= row.getCell(2).getStringCellValue();
+			String AggregationTaskName= row.getCell(11).getStringCellValue();
+			String ApplicationAggregationType = row.getCell(12).getStringCellValue();
 
 
 
@@ -89,14 +89,16 @@ public class CreateAggregationTaskDDT extends TestBase {
 				TakeScreenshot("User click on Ok Button","TasksDDT","OkButton");
 
 				webdriver.WaitForSometime(2000);
+			
+				
 			}
 			else {
 				System.out.println("Please Check Properly ..Getting Error");
 			}
-			
+			webdriver.WaitForSometime(2000);
+			Application.LogOut_Application();
 		}
-		webdriver.WaitForSometime(2000);
-		Application.LogOut_Application();
+		
 	}
 }
 
