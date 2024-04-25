@@ -206,7 +206,7 @@ public class ReUsableMethods extends TestBase{
 	public static String CaptureScreenShot(String Folder,String filename) throws IOException {
 		File ts=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		//File srcFile=ts.getScreenshotAs(OutputType.FILE);
-		String destFile="./reports/screenshots__"+dt+"/"+Folder+dt+"/"+filename+dt+".png";
+		String destFile="./reports/screenshots/"+Folder+"/"+filename+".png";
 		File Path=new File(destFile);
 		FileUtils.copyFile(ts,Path);
 		return destFile;
