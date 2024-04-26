@@ -15,11 +15,11 @@ import com.QA.Application.Pages.TaskActionsPage;
 import com.QA.Application.Pages.TaskPageObjects;
 import com.QA.Application.TestBase.TestBase;
 
-public class DeleteTaskScript extends TestBase {
+public class TaskActionScript extends TestBase {
 	static String filePath=System.getProperty("user.dir");
 
 	@Test
-	public static void verifyCreateIdentityMappingsDDTScript() throws Exception {
+	public static void verifyUserPerformTaskActions() throws Exception {
 
 		// Initialize Excel file
 		FileInputStream file=new FileInputStream(filePath+properties.getProperty("DataFile"));
