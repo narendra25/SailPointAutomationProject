@@ -174,7 +174,7 @@ public void Launch_Application() throws IOException, InterruptedException {
 			// Initialize Excel file
 			FileInputStream file=new FileInputStream(filePath+properties.getProperty("DataFile"));
 			Workbook workbook = new XSSFWorkbook(file);
-			Sheet sheet = workbook.getSheet("SailPointApplicationJDBC");
+			Sheet sheet = workbook.getSheet(properties.getProperty("DataSheetName"));
 
 
 			// Iterate through the rows and columns to read the data

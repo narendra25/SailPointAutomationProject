@@ -144,14 +144,9 @@ public class ReUsableMethods extends TestBase{
 
 	//WAIT FOR ELEMENT VISIBLE 
 	public void waitForElementVisible(By PassLocator) {
-		try {
-			WebDriverWait wait = new WebDriverWait(driver,10);
+			WebDriverWait wait = new WebDriverWait(driver,30);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(PassLocator));
-		} catch (NoSuchElementException e) {
-		    // Handle NoSuchElementException (e.g., log an error message)
-		    System.out.println("Element not found: " + e.getMessage());
-		    driver.close();
-		}
+		
 	}
 	//WAIT FOR ELEMENT TO BE CLICKABLE
 	public void waitForElementToBeClickable(By PassLocator) {

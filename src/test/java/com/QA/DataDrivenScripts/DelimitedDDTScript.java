@@ -17,20 +17,20 @@ public class DelimitedDDTScript extends TestBase {
 	public void delimitedFileTest() throws Exception
 	{
 		// Initialize Excel file
-				FileInputStream file = new FileInputStream(filePath+"/src/test/resources/DataFiles/Application.xlsx");
+		FileInputStream file=new FileInputStream(filePath+properties.getProperty("DataFile"));
 				Workbook workbook = new XSSFWorkbook(file);
-				Sheet sheet = workbook.getSheet("DelimitedFile");
+				Sheet sheet = workbook.getSheet(properties.getProperty("DataSheetName"));
 
 
 				// Iterate through the rows and columns to read the data
-				for (int rowNum = 1; rowNum <= sheet.getLastRowNum(); rowNum++) {
+				for (int rowNum = 2; rowNum <= sheet.getLastRowNum(); rowNum++) {
 					Row row = sheet.getRow(rowNum);
-					String ApplicationName = row.getCell(0).getStringCellValue();
-					String ApplicationOwner= row.getCell(1).getStringCellValue();
-					String ApplicationType= row.getCell(2).getStringCellValue();
-					String DelimitedTxt= row.getCell(3).getStringCellValue();
-					String DelimitedIdentityAttribute= row.getCell(4).getStringCellValue();
-					String DelimitedDisplayAttribute= row.getCell(5).getStringCellValue();
+					String ApplicationName = row.getCell(2).getStringCellValue();
+					String ApplicationOwner= row.getCell(3).getStringCellValue();
+					String ApplicationType= row.getCell(4).getStringCellValue();
+					String DelimitedTxt= row.getCell(5).getStringCellValue();
+					String DelimitedIdentityAttribute= row.getCell(6).getStringCellValue();
+					String DelimitedDisplayAttribute= row.getCell(7).getStringCellValue();
 			
 				
 				CreateExtentTest("Verify Delimited File Application OnBoarding Through DDT", "Case 1: User needs to verify if Delimited File Application On Boarding Script Through JDBC","Functional_TestCase","Vinay Kumar");
@@ -47,18 +47,20 @@ public class DelimitedDDTScript extends TestBase {
 				webdriver.clickOnButton(ApplicationsPage.btnApplicationDefination);
 				webdriver.VerifyElementIsPresentorNot(ApplicationsPage.btnApplicationDefination,"ApplicationDDT","ApplicationDefination");
 				LogInFo("User able to Click On ApplicationDefinition");
+				webdriver.WaitForSometime(3000);
 
 				//Click On Add New Application
 				webdriver.waitForElementVisible(ApplicationsPage.btnAddNewApplication);
 				webdriver.clickOnButton(ApplicationsPage.btnAddNewApplication);
-				TakeScreenshot("AddNew Application","DelimitedFileDDT","AddNewApplication");
-				
+				TakeScreenshot("AddNew Application","ApplicationDDT","AddNewApplication");
+				webdriver.WaitForSometime(1000);
+				System.out.println("Helloworld");
 				//Enter Application Name 
 				webdriver.enterText(ApplicationsPage.txtApplicationName,ApplicationName);
 				webdriver.getText(ApplicationsPage.txtApplicationName);
 				webdriver.WaitForSometime(2000);
 				TakeScreenshot("User Select The Application Type","DelimitedFileDDT" ,"ApplicationName");
-				
+				webdriver.WaitForSometime(2000);
 				//Select Application Owner
 				webdriver.clickOnButton(ApplicationsPage.selectOwner);
 				webdriver.enterText(ApplicationsPage.txtOwnerName,ApplicationOwner);
