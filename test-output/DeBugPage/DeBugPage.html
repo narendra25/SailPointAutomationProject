@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Apr 24 12:57:27 IST 2024</td>
+<td>Started on:</td><td>Fri Apr 26 16:18:04 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>21 seconds (21613 ms)</td>
+<tr><td>Total time:</td><td>4 seconds (4740 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -77,36 +77,12 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.QA.DataDrivenScripts.DeBugDDTScipts.verifyCreateIdentityMappingsDDTScript()'><b>verifyCreateIdentityMappingsDDTScript</b><br>Test class: com.QA.DataDrivenScripts.DeBugDDTScipts</td>
-<td><div><pre>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;OJAS-DL647&apos;, ip: &apos;192.168.4.218&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.9&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at com.QA.Application.Utilities.ReUsableMethods.enterText(ReUsableMethods.java:30)
-	at ApplicationReusableMethods.ApplicationReusableMethods.Launch_Application(ApplicationReusableMethods.java:26)
-	at com.QA.DataDrivenScripts.DeBugDDTScipts.verifyCreateIdentityMappingsDDTScript(DeBugDDTScipts.java:38)
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.ss.usermodel.Cell.getStringCellValue()&quot; because the return value of &quot;org.apache.poi.ss.usermodel.Row.getCell(int)&quot; is null
+	at com.QA.DataDrivenScripts.DeBugDDTScipts.verifyCreateIdentityMappingsDDTScript(DeBugDDTScipts.java:31)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace231995562", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace231995562'><pre>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;OJAS-DL647&apos;, ip: &apos;192.168.4.218&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.9&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at com.QA.Application.Utilities.ReUsableMethods.enterText(ReUsableMethods.java:30)
-	at ApplicationReusableMethods.ApplicationReusableMethods.Launch_Application(ApplicationReusableMethods.java:26)
-	at com.QA.DataDrivenScripts.DeBugDDTScipts.verifyCreateIdentityMappingsDDTScript(DeBugDDTScipts.java:38)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace275448142", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace275448142'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.ss.usermodel.Cell.getStringCellValue()&quot; because the return value of &quot;org.apache.poi.ss.usermodel.Row.getCell(int)&quot; is null
+	at com.QA.DataDrivenScripts.DeBugDDTScipts.verifyCreateIdentityMappingsDDTScript(DeBugDDTScipts.java:31)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -136,8 +112,8 @@ Driver info: driver.version: RemoteWebDriver
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>20</td>
-<td>com.QA.DataDrivenScripts.DeBugDDTScipts@4da855dd</td></tr>
+<td>1</td>
+<td>com.QA.DataDrivenScripts.DeBugDDTScipts@538613b3</td></tr>
 </table><p>
 </body>
 </html>

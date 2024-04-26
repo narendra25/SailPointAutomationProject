@@ -32,7 +32,7 @@ public class DeBugDDTScipts extends TestBase {
 			
 
 
-			CreateExtentTest("Verify DeBugScripts(Application,Task,Rule) Through DDT", "Case 1: User needs to verify if Debug Script Through DDT Test","Functional_TestCase","Narendra Reddy");
+			//CreateExtentTest("Verify DeBugScripts(Application,Task,Rule) Through DDT", "Case 1: User needs to verify if Debug Script Through DDT Test","Functional_TestCase","Narendra Reddy");
 
 
 			Application.Launch_Application();
@@ -55,7 +55,7 @@ public class DeBugDDTScipts extends TestBase {
 			webdriver.enterText(DebugPage.txtfilterName, SearchByNameOrID);
 			webdriver.clickOnButton(DebugPage.btnsearch);
 			LogInFo("User entered Name or ID");
-			TakeScreenshot("User entered Name or ID", "DeBugDDT",SearchByNameOrID);
+			TakeScreenshot("User entered Name or ID", "DeBugDDT","Search");
 			webdriver.clickOnButton(DebugPage.btncheckboxResult);
 			webdriver.clickOnButton(DebugPage.btnAction);
 			LogInFo("User click on Action Button");

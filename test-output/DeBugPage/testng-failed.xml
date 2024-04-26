@@ -8,6 +8,7 @@
           <include name="verifyCreateIdentityMappingsDDTScript"/>
           <include name="setUp"/>
           <include name="closeReport"/>
+          <include name="tearDown"/>
           <include name="generateReports"/>
         </methods>
       </class> <!-- com.QA.DataDrivenScripts.DeBugDDTScipts -->
