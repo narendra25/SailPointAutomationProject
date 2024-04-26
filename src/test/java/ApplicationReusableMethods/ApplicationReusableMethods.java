@@ -8,6 +8,8 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebElement;
+
+import com.QA.Application.Pages.AppCorrelationPage;
 import com.QA.Application.Pages.ApplicationsPage;
 import com.QA.Application.Pages.DebugPage;
 import com.QA.Application.Pages.IdentityMappingPage;
@@ -225,6 +227,46 @@ public void Launch_Application() throws IOException, InterruptedException {
 						
 			}
 		}
+		public void newCorrelation(String AppName, String AppAttribute, String IdentityAttribute) throws Exception {
+			webdriver.clickOnButton(ApplicationsPage.btnApplications);
+			webdriver.clickOnButton(ApplicationsPage.btnApplicationDefination);
+			webdriver.DynamicXpathText(AppName);
+			LogInFo("User Selected Application");
+			TakeScreenshot("User Selected Application", "APPCorrelation", "ApplicationPage");
+			webdriver.clickOnButton(AppCorrelationPage.btnCorrelation);
+			LogInFo("User Entered Correlation Page");
+			TakeScreenshot("User Entered Correlation Page", "APPCorrelation", "CorrelationPage");
+			webdriver.WaitForSometime(2000);
+			webdriver.clickOnButton(AppCorrelationPage.btnNew);
+			webdriver.clickOnButton(AppCorrelationPage.btnWizardNext);
+			webdriver.enterText(AppCorrelationPage.btnConfigName, "Corr1");
+			LogInFo("User Entered Configuration Name");
+			TakeScreenshot("User Entered Configuration Name", "APPCorrelation", "ConfigName");
+			webdriver.clickOnButton(AppCorrelationPage.btnConfigNext);
+			webdriver.clickOnButton(AppCorrelationPage.btnConfigAttributeNext);
+			LogInFo("User Entered Correlation Assignment Page");
+			TakeScreenshot("User Entered Correlation Assignment Page", "APPCorrelation", "CorrelationAssignment");
+			webdriver.selectTextOnDropDown(AppCorrelationPage.selectAppAttribute, AppAttribute);
+			webdriver.selectTextOnDropDown(AppCorrelationPage.selectIdentityAttribute, IdentityAttribute);
+			webdriver.WaitForSometime(2000);
+			webdriver.clickOnButton(AppCorrelationPage.btnSave);
+			LogInFo("User Created New Correlation");
+			TakeScreenshot("User Created New Correlation", "APPCorrelation", "NewCorrelation");
+		}
 
+		public void managerCorrelation(String AppName, String AppAttribute, String IdentityAttribute) throws Exception {
+			webdriver.clickOnButton(ApplicationsPage.btnApplications);
+			webdriver.clickOnButton(ApplicationsPage.btnApplicationDefination);
+			webdriver.DynamicXpathText(AppName);
+			LogInFo("User Selected Application");
+			TakeScreenshot("User Selected Application", "APPCorrelation", "ApplicationPage");
+			webdriver.clickOnButton(AppCorrelationPage.btnCorrelation);
+			LogInFo("User Entered Correlation Page");
+			TakeScreenshot("User Entered Correlation Page", "APPCorrelation", "CorrelationPage");
+			webdriver.WaitForSometime(2000);
+			webdriver.ScrollParticularElement(AppCorrelationPage.btnManagerCorrelation);
+			LogInFo("User scroll to Manager Correlation");
+			TakeScreenshot("User scroll to Manager Correlation", "APPCorrelation", "ManagerCorrelation");
+		}
 
 }
