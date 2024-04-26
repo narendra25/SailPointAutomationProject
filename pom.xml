@@ -31,7 +31,7 @@
 			<configuration>
 				<suiteXmlFiles>
 					<!-- NAME OF XML SUITE FILE -->
-					<suiteXmlFile>DataDrivenTestScripts.xml</suiteXmlFile>
+					<suiteXmlFile>TestSuite/ApplicationOnBoarding.xml</suiteXmlFile>
 				</suiteXmlFiles>
 			</configuration>
 		</plugin>

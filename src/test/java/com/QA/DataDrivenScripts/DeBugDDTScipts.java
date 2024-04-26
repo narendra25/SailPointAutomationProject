@@ -20,7 +20,7 @@ public class DeBugDDTScipts extends TestBase {
 		// Initialize Excel file
 		FileInputStream file=new FileInputStream(filePath+properties.getProperty("DataFile"));
 		Workbook workbook = new XSSFWorkbook(file);
-		Sheet sheet = workbook.getSheet(properties.getProperty("DataSheetName"));
+		Sheet sheet = workbook.getSheet("SailPointApplicationJDBC");
 
 
 		// Iterate through the rows and columns to read the data
@@ -48,14 +48,14 @@ public class DeBugDDTScipts extends TestBase {
 			webdriver.WaitForSometime(5000);
 			webdriver.DynamicXpathText(SelectAnObject);
 			LogInFo("User selected Object");
-			TakeScreenshot("User selected Object", "DeBugDDT", "AppSelect");
+			TakeScreenshot("User selected Object", "DeBugDDT",SelectAnObject);
 			
 			webdriver.waitForElementLocated(DebugPage.txtfilterName);
 			webdriver.ClickByJavaScript_Executor(DebugPage.txtfilterName);
 			webdriver.enterText(DebugPage.txtfilterName, SearchByNameOrID);
 			webdriver.clickOnButton(DebugPage.btnsearch);
 			LogInFo("User entered Name or ID");
-			TakeScreenshot("User entered Name or ID", "DeBugDDT", "NameOrID");
+			TakeScreenshot("User entered Name or ID", "DeBugDDT",SearchByNameOrID);
 			webdriver.clickOnButton(DebugPage.btncheckboxResult);
 			webdriver.clickOnButton(DebugPage.btnAction);
 			LogInFo("User click on Action Button");

@@ -1,4 +1,3 @@
-
 package com.QA.DataDrivenScripts;
 
 import java.io.File;
@@ -21,7 +20,7 @@ public class JDBCDDTScript extends TestBase {
 		// Initialize Excel file
 		FileInputStream file=new FileInputStream(filePath+properties.getProperty("DataFile"));
 		Workbook workbook = new XSSFWorkbook(file);
-		Sheet sheet = workbook.getSheet(properties.getProperty("DataSheetName"));
+		Sheet sheet = workbook.getSheet("SailPointApplicationJDBC");
 
 		
 		// Iterate through the rows and columns to read the data
@@ -60,7 +59,7 @@ public class JDBCDDTScript extends TestBase {
 			webdriver.getText(ApplicationsPage.txtApplicationName);
 			webdriver.waitForElementVisible(ApplicationsPage.btnDelimiterSave);
 			webdriver.WaitForSometime(2000);
-			TakeScreenshot("User Select The Application Type","JDBCAPPLICATIONDDT" ,"ApplicationName");
+			TakeScreenshot("User Select The Application Type","JDBCAPPLICATIONDDT" ,ApplicationName);
 			//Select Application Owner
 			webdriver.clickOnButton(ApplicationsPage.selectOwner);
 			webdriver.enterText(ApplicationsPage.txtOwnerName,ApplicationOwner);
@@ -74,7 +73,7 @@ public class JDBCDDTScript extends TestBase {
 			webdriver.selectValueOnDropDown(ApplicationsPage.selectApplicationType,ApplicationType);
 			LOG.info("User Select The Application Type");
 			webdriver.WaitForSometime(2000);
-			TakeScreenshot("User Select The Application Type","JDBCAPPLICATIONDDT" ,"ApplicationType");
+			TakeScreenshot("User Select The Application Type","JDBCAPPLICATIONDDT" ,ApplicationType);
 			webdriver.WaitForSometime(2000);
 			
 			//Navigate To Configuration Tab
@@ -88,13 +87,13 @@ public class JDBCDDTScript extends TestBase {
 			webdriver.WaitForSometime(3000);
 			webdriver.enterText(ApplicationsPage.txtConnectionUser,JDBCConnectionUser);
 			LogInFo("User Enter The Connection User Name");
-			TakeScreenshot("User Enter The Connection User Name", "JDBCAPPLICATIONDDT","ConnectionUser");
+			TakeScreenshot("User Enter The Connection User Name", "JDBCAPPLICATIONDDT",JDBCConnectionUser);
 			//Enter Connection Password
 			webdriver.clearText(ApplicationsPage.txtConnectionPassword);
 			webdriver.WaitForSometime(3000);
 			webdriver.enterText(ApplicationsPage.txtConnectionPassword,JDBCConnectionPassword);
 			LogInFo("User Enter The Connection Password");
-			TakeScreenshot("User Enter The Connection Password", "JDBCAPPLICATIONDDT","ConnectionPassword");
+			TakeScreenshot("User Enter The Connection Password", "JDBCAPPLICATIONDDT",JDBCConnectionPassword);
 
 			//Enter Database URL
 			webdriver.clearText(ApplicationsPage.txtDataBaseURL);
@@ -126,7 +125,7 @@ public class JDBCDDTScript extends TestBase {
 			//Enter Identity Attribute
 			webdriver.enterText(ApplicationsPage.txtJDBCIdentityAttribute,JDBCIdentityAttribute);
 			LogInFo("User Enter JDBC Dispaly Attribute");
-			TakeScreenshot("User Enter JDBC Dispaly Attribute", "JDBCAPPLICATIONDDT","JDBCIdentityAttribute");
+			TakeScreenshot("User Enter JDBC Dispaly Attribute", "JDBCAPPLICATIONDDT",JDBCIdentityAttribute);
 			webdriver.WaitForSometime(3000);
 			//Enter Dispaly Attribute
 			webdriver.enterText(ApplicationsPage.txtDispalyAttribute,JDBCDisplayAttribute);

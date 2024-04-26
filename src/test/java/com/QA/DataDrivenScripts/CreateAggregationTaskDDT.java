@@ -20,7 +20,7 @@ public class CreateAggregationTaskDDT extends TestBase {
 		// Initialize Excel file
 		FileInputStream file=new FileInputStream(filePath+properties.getProperty("DataFile"));
 		Workbook workbook = new XSSFWorkbook(file);
-		Sheet sheet = workbook.getSheet(properties.getProperty("DataSheetName"));;
+		Sheet sheet = workbook.getSheet("SailPointApplicationJDBC");
 
 
 		// Iterate through the rows and columns to read the data

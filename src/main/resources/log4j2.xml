@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
   <Appenders>
-    <File name="FILEOUT" fileName="LogReports/ApplicationLogs_${date:yyyy-MM-dd_HH-mm-ss}.log" append="false">
+    <File name="FILEOUT" fileName="LogReports/ApplicationLogs__${date:yyyy-MM-dd_HH-mm-ss}.log" append="false">
       <PatternLayout pattern="[%highlight{%d{ABSOLUTE} %p}{STYLE=Logback, bold}][%style{Application %T}{magenta}][%style{%C{1.}.%M}{cyan}] %m %red{%xEx{full}} %n"/>
     </File>
     <Console name="STDOUT" target="SYSTEM_OUT">
@@ -13,7 +13,6 @@
     <Root level="debug">
       <AppenderRef ref="FILEOUT" level="Trace"/>
       <AppenderRef ref="STDOUT" level="Trace"/>
-      
     </Root>
   </Loggers>
 </Configuration>

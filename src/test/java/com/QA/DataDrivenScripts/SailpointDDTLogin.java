@@ -1,8 +1,5 @@
 package com.QA.DataDrivenScripts;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
-
 import java.io.FileInputStream;
 import org.testng.annotations.Test;
 import com.QA.Application.Pages.ApplicationsPage;
@@ -18,7 +15,7 @@ public class SailpointDDTLogin extends TestBase{
 		// Initialize Excel file
 		FileInputStream file=new FileInputStream(filePath+properties.getProperty("DataFile"));
 		Workbook workbook = new XSSFWorkbook(file);
-		Sheet sheet = workbook.getSheet(properties.getProperty("DataSheetName"));
+		Sheet sheet = workbook.getSheet("SailPointApplicationJDBC");
 
 
 		// Iterate through the rows and columns to read the data
@@ -31,18 +28,17 @@ public class SailpointDDTLogin extends TestBase{
 			
 			//ENTER USERNAME OF APPLICATION.
 			webdriver.enterText(LoginPage.txtUserName,username);
-			TakeScreenshot("User Able to enter UserName","LoginPageDDT","UserName");
+			TakeScreenshot("User Able to enter UserName","LoginPageDDT",username);
 			LogInFo("User Enter User Name");
 
 			//ENTER PASSWORD OF APPLICATION.
 			webdriver.enterText(LoginPage.txtPassword,password);
 			webdriver.ScrollParticularElement(LoginPage.txtPassword);
-			TakeScreenshot("User Able to enter Password","LoginPageDDT","Password");
+			TakeScreenshot("User Able to enter Password","LoginPageDDT",password);
 			LogInFo("User Enter The Password ");
 
 			//SUBMIT BUTTON OF APPLICATION.
 			webdriver.clickOnButton(LoginPage.btnLogIn);
-			webdriver.VerifyElementIsPresentorNot(ApplicationsPage.btnApplications,"LoginPageDDT","Login");
 			TakeScreenshot("User Click On Login Successfully","LoginPageDDT","Login");
 			webdriver.waitForElementVisible(ApplicationsPage.btnApplications);
 			webdriver.WaitForSometime(3000);

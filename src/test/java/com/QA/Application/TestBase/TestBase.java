@@ -77,11 +77,6 @@ public class TestBase {
 		driver.quit();
 		
 	}
-	@AfterMethod
-	public void tearDow()  {
-		driver.quit();
-		
-	}
 	@AfterSuite(alwaysRun = true)
 	public void closeReport() throws IOException
 	{

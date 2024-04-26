@@ -20,6 +20,9 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class ShadDom extends TestBase{
+	public void test() {
+		webdriver.clickOnButton(PassLocator);
+	}
 	public static void main(String[] args) {
         // Create a Calendar instance
         Calendar cal = Calendar.getInstance();

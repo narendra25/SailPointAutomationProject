@@ -10,7 +10,6 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
@@ -144,9 +143,9 @@ public class ReUsableMethods extends TestBase{
 
 	//WAIT FOR ELEMENT VISIBLE 
 	public void waitForElementVisible(By PassLocator) {
-			WebDriverWait wait = new WebDriverWait(driver,30);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(PassLocator));
-		
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(PassLocator));
+
 	}
 	//WAIT FOR ELEMENT TO BE CLICKABLE
 	public void waitForElementToBeClickable(By PassLocator) {
@@ -207,7 +206,7 @@ public class ReUsableMethods extends TestBase{
 	public static String CaptureScreenShot(String Folder,String filename) throws IOException {
 		File ts=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		//File srcFile=ts.getScreenshotAs(OutputType.FILE);
-		String destFile="./reports/screenshots/"+Folder+"/"+filename+".png";
+		String destFile="./reports/screenshots"+"/"+Folder+"/"+filename+".png";
 		File Path=new File(destFile);
 		FileUtils.copyFile(ts,Path);
 		return destFile;
@@ -287,7 +286,6 @@ public class ReUsableMethods extends TestBase{
 		else {
 			TestBase.TakeScreenshot("Assertion failed:The actual Text is "+ImageName +" is not expected",FolderName,ImageName);
 			CaptureScreenShot(FolderName,ImageName);
-			driver.close();
 
 		}
 	}
