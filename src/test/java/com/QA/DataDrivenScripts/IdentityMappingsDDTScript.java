@@ -25,10 +25,10 @@ public class IdentityMappingsDDTScript extends TestBase{
 		for (int rowNum = 2; rowNum <= sheet.getLastRowNum(); rowNum++) {
 			Row row = sheet.getRow(rowNum);
 			String ApplicationName = row.getCell(2).getStringCellValue();
-			String IdentityMappingName= row.getCell(18).getStringCellValue();
-			String AttributeName= row.getCell(19).getStringCellValue();
+			String IdentityMappingName= row.getCell(16).getStringCellValue();
+			String AttributeName= row.getCell(17).getStringCellValue();
 
-			CreateExtentTest("Verify Identity Mappings  Through DDT", "Case 1: User needs to verify if Identity Mappings Script Through DDT Test","Functional_TestCase","Narendra Reddy");
+			CreateExtentTest("Verify Identity Mappings  Through DDT", "Case 1: User needs to verify if Identity Mappings Script Through DDT Test","Functional_TestCase","VinayKumar");
 
 			Application.Launch_Application();
 

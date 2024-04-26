@@ -31,7 +31,7 @@
 			<configuration>
 				<suiteXmlFiles>
 					<!-- NAME OF XML SUITE FILE -->
-					<suiteXmlFile>TestSuite/ApplicationOnBoarding.xml</suiteXmlFile>
+					<suiteXmlFile>TestSuite/CompleteFlowOfApplication.xml</suiteXmlFile>
 				</suiteXmlFiles>
 			</configuration>
 		</plugin>

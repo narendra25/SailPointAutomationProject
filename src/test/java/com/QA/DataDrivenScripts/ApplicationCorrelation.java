@@ -5,7 +5,7 @@ import com.QA.Application.TestBase.TestBase;
 
 public class ApplicationCorrelation extends TestBase {
 
-	@Test
+	@Test(priority=6)
 	public void testCorrelation() throws Exception, InterruptedException {
 		CreateExtentTest("Verify Create Aggregation Task Of Application",
 				"Case 1: User needs to verify Create Aggregation Task Of Application .", "Functional_TestCase",

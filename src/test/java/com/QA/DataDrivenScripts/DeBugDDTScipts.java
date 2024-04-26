@@ -14,8 +14,8 @@ import com.QA.Application.TestBase.TestBase;
 public class DeBugDDTScipts extends TestBase {
 	static String filePath=System.getProperty("user.dir");
 
-	@Test
-	public static void verifyCreateIdentityMappingsDDTScript() throws Exception {
+	@Test(priority=8)
+	public static void verifyDebuActionDDTScript() throws Exception {
 
 		// Initialize Excel file
 		FileInputStream file=new FileInputStream(filePath+properties.getProperty("DataFile"));
@@ -26,13 +26,13 @@ public class DeBugDDTScipts extends TestBase {
 		// Iterate through the rows and columns to read the data
 		for (int rowNum = 2; rowNum <= sheet.getLastRowNum(); rowNum++) {
 			Row row = sheet.getRow(rowNum);
-			String SelectAnObject = row.getCell(20).getStringCellValue();
-			String SearchByNameOrID= row.getCell(2).getStringCellValue(); //14
-			String Action= row.getCell(21).getStringCellValue();
+			String SelectAnObject = row.getCell(18).getStringCellValue();
+			String ApplicationName= row.getCell(2).getStringCellValue(); //14
+			String Action= row.getCell(19).getStringCellValue();
 			
 
 
-			//CreateExtentTest("Verify DeBugScripts(Application,Task,Rule) Through DDT", "Case 1: User needs to verify if Debug Script Through DDT Test","Functional_TestCase","Narendra Reddy");
+			CreateExtentTest("Verify DeBugScripts(Application,Task,Rule) Through DDT", "Case 1: User needs to verify if Debug Script Through DDT Test","Functional_TestCase","Narendra Reddy");
 
 
 			Application.Launch_Application();
@@ -52,7 +52,7 @@ public class DeBugDDTScipts extends TestBase {
 			
 			webdriver.waitForElementLocated(DebugPage.txtfilterName);
 			webdriver.ClickByJavaScript_Executor(DebugPage.txtfilterName);
-			webdriver.enterText(DebugPage.txtfilterName, SearchByNameOrID);
+			webdriver.enterText(DebugPage.txtfilterName, ApplicationName);
 			webdriver.clickOnButton(DebugPage.btnsearch);
 			LogInFo("User entered Name or ID");
 			TakeScreenshot("User entered Name or ID", "DeBugDDT","Search");

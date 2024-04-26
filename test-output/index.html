@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\na21279\AppData\Local\Temp\testng-eclipse-1603862219\testng-customsuite.xml</span>
+                    <span>C:\Users\na21279\AppData\Local\Temp\testng-eclipse-1496505765\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.QA.DataDrivenScripts.DeBugDDTScipts" class="method navigator-link" hash-for-method="verifyCreateIdentityMappingsDDTScript">verifyCreateIdentityMappingsDDTScript</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.QA.DataDrivenScripts.DeBugDDTScipts" class="method navigator-link" hash-for-method="verifyDebuActionDDTScript">verifyDebuActionDDTScript</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -126,11 +126,11 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyCreateIdentityMappingsDDTScript">
-                  </a> <!-- verifyCreateIdentityMappingsDDTScript -->
-                  <span class="method-name">verifyCreateIdentityMappingsDDTScript</span>
-                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.ss.usermodel.Cell.getStringCellValue()&quot; because the return value of &quot;org.apache.poi.ss.usermodel.Row.getCell(int)&quot; is null
-	at com.QA.DataDrivenScripts.DeBugDDTScipts.verifyCreateIdentityMappingsDDTScript(DeBugDDTScipts.java:31)
+                  <a name="verifyDebuActionDDTScript">
+                  </a> <!-- verifyDebuActionDDTScript -->
+                  <span class="method-name">verifyDebuActionDDTScript</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.ss.usermodel.Row.getCell(int)&quot; because &quot;row&quot; is null
+	at com.QA.DataDrivenScripts.DeBugDDTScipts.verifyDebuActionDDTScript(DeBugDDTScipts.java:29)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -168,7 +168,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\na21279\AppData\Local\Temp\testng-eclipse-1603862219\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\na21279\AppData\Local\Temp\testng-eclipse-1496505765\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -219,14 +219,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyCreateIdentityMappingsDDTScript')
+data.setCell(0, 1, 'verifyDebuActionDDTScript')
 data.setCell(0, 2, 'com.QA.DataDrivenScripts.DeBugDDTScipts')
-data.setCell(0, 3, 1017);
+data.setCell(0, 3, 40250);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 seconds</span>
+              <span class="suite-total-time">Total running time: 40 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -259,23 +259,21 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">143 ms</span>
+                <span class="method-start">136 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">verifyCreateIdentityMappingsDDTScript</span>
-                <span class="method-start">3619 ms</span>
+                <span class="method-name">verifyDebuActionDDTScript</span>
+                <span class="method-start">3508 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">4641 ms</span>
+                <span class="method-start">43762 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">closeReport</span>
-                <span class="method-start">4918 ms</span>
+                <span class="method-start">44030 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -18,7 +18,7 @@ import com.QA.Application.TestBase.TestBase;
 public class TaskActionScript extends TestBase {
 	static String filePath=System.getProperty("user.dir");
 
-	@Test
+	@Test(priority=7)
 	public static void verifyUserPerformTaskActions() throws Exception {
 
 		// Initialize Excel file

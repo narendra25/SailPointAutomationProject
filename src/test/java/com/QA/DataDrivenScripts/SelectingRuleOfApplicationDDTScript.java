@@ -13,7 +13,7 @@ import com.QA.Application.Pages.RulesPage;
 import com.QA.Application.TestBase.TestBase;
 
 public class SelectingRuleOfApplicationDDTScript extends TestBase{
-	@Test
+	@Test(priority=5)
 	public static void VerifySelectingRuleOfApplicationDDTScript()throws Exception {
 
 		CreateExtentTest("Verify Selecting Rule Of Application Script Sailpoint Through DDT", "Case 1: User needs to verify if Selecting Rule Of Application DDT Script","Functional_TestCase","Narendra Reddy");

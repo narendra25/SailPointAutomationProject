@@ -32,7 +32,7 @@ public class CreateAggregationTaskDDT extends TestBase {
 
 
 
-			CreateExtentTest("Verify Create Aggregation Script Through DDT", "Case 1: User needs to verify if Create Aggregation Script Through DDT Test","Functional_TestCase","Narendra Reddy");
+			CreateExtentTest("Verify Create Aggregation Script Through DDT", "Case 1: User needs to verify if Create Aggregation Script Through DDT Test","Functional_TestCase","VinayKumar");
 
 
 			Application.Launch_Application();

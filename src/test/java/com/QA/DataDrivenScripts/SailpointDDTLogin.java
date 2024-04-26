@@ -10,7 +10,7 @@ import org.apache.poi.ss.usermodel.*;
 public class SailpointDDTLogin extends TestBase{
 	static String filePath=System.getProperty("user.dir");
 	@Test(priority=1)
-	public static void Launch_Application_DDT() throws Exception {
+	public static void VerifyUserLoginandLogout() throws Exception {
 		
 		// Initialize Excel file
 		FileInputStream file=new FileInputStream(filePath+properties.getProperty("DataFile"));
@@ -24,7 +24,7 @@ public class SailpointDDTLogin extends TestBase{
 			String username = row.getCell(0).getStringCellValue();
 			String password = row.getCell(1).getStringCellValue();
 			
-			CreateExtentTest("Verify LoginPage DDT Script", "Case 1: User needs to verify if Go Applicaton Through DDT is working or not.","Functional_TestCase","Narendra Reddy");
+			CreateExtentTest("Verify If User Login And Logout Functionality", "Case 1: User needs to verify if Login and logout funtionality working or not.","Functional_TestCase","NarendraReddy");
 			
 			//ENTER USERNAME OF APPLICATION.
 			webdriver.enterText(LoginPage.txtUserName,username);

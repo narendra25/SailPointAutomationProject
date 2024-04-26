@@ -5,9 +5,9 @@
     <classes>
       <class name="com.QA.DataDrivenScripts.DeBugDDTScipts">
         <methods>
-          <include name="verifyCreateIdentityMappingsDDTScript"/>
           <include name="setUp"/>
           <include name="closeReport"/>
+          <include name="verifyDebuActionDDTScript"/>
           <include name="tearDown"/>
           <include name="generateReports"/>
         </methods>
