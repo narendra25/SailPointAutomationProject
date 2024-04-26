@@ -7,24 +7,13 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-<<<<<<< HEAD
 import org.openqa.selenium.WebElement;
-<<<<<<< HEAD
 import com.QA.Application.Pages.AppCorrelationPage;
-=======
->>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
-=======
-
 import com.QA.Application.Pages.AppCorrelationPage;
->>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
 import com.QA.Application.Pages.ApplicationsPage;
 import com.QA.Application.Pages.LoginPage;
 import com.QA.Application.Pages.RulesPage;
 import com.QA.Application.TestBase.TestBase;
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
 
 public class ApplicationReusableMethods extends TestBase {
 	public void Launch_Application() throws IOException, InterruptedException {
