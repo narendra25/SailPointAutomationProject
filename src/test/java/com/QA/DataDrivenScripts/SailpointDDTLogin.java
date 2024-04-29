@@ -9,6 +9,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 public class SailpointDDTLogin extends TestBase{
 	static String filePath=System.getProperty("user.dir");
+	
 	@Test(priority=1)
 	public static void VerifyUserLoginandLogout() throws Exception {
 		
@@ -43,14 +44,18 @@ public class SailpointDDTLogin extends TestBase{
 			webdriver.waitForElementVisible(ApplicationsPage.btnApplications);
 			webdriver.WaitForSometime(3000);
 			LogInFo("User Click On Login Page Successfully. ");
+			
 			//ASSERTING THE ACTUAL AND EXPECTED TITLE
 			String expectedTitle = "SailPoint IdentityIQ - Home";
 			String actualTitle = driver.getTitle();
 			System.out.println(actualTitle);
 			//driver.manage().timeouts().pageLoadTimeout(3, TimeUnit.SECONDS);
+			
 			if (expectedTitle.equals(actualTitle)) {
 				TestPass("Verification Successful - The correct title is displayed on the web page.");
 				LogInFo("Verification Successful - The User is Login The Application");
+				
+				
 				//Application.LogOut_Application();
 			} else {
 				TestFail("Verification Failed - An incorrect title is displayed on the web page.");

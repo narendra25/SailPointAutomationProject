@@ -6,6 +6,7 @@
        <class name="com.QA.DataDrivenScripts.SailpointDDTLogin"/>
       <class name="com.QA.DataDrivenScripts.JDBCDDTScript"/>
       <class name="com.QA.DataDrivenScripts.CreateAggregationTaskDDT"/>
+       <class name="com.QA.DataDrivenScripts.IdentiyWarehouseScript"/>
     </classes>
   </test> <!-- ApplicationOnBoardingDDT -->
 </suite> <!-- Suite -->

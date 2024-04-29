@@ -204,6 +204,8 @@ public class ReUsableMethods extends TestBase{
 	}
 	//Capturing ScreenSHot 
 	public static String CaptureScreenShot(String Folder,String filename) throws IOException {
+		 //Screenshot s=new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+	     
 		File ts=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		//File srcFile=ts.getScreenshotAs(OutputType.FILE);
 		String destFile="./reports/screenshots"+"/"+Folder+"/"+filename+".png";

@@ -19,23 +19,49 @@ import com.QA.Application.TestBase.TestBase;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
-public class ShadDom extends TestBase{
-	public void test() {
-		webdriver.clickOnButton(PassLocator);
-	}
-	public static void main(String[] args) {
-        // Create a Calendar instance
-        Calendar cal = Calendar.getInstance();
-        
-        // Get the current time as a Date object
-        Date time = cal.getTime();
-        
-        // Convert the Date object to a timestamp string
-        String timestamp = time.toString().replace(":", "").replace(" ", "");
-        
-        // Print the timestamp
-        System.out.println("Timestamp: " + timestamp);
-    }
-	
 
-}
+	import java.util.*;
+
+	class GFG 
+	{
+		static String removeDuplicate(char str[], int n)
+		{
+			// Used as index in the modified string
+			int index = 0;
+
+			// Traverse through all characters
+			for (int i = 0; i < n; i++)
+			{
+
+				// Check if str[i] is present before it 
+				int j;
+				for (j = 0; j < i; j++) 
+				{
+					if (str[i] == str[j])
+					{
+						break;
+					}
+				}
+
+				// If not present, then add it to
+				// result.
+				if (j == i) 
+				{
+					str[index++] = str[i];
+				}
+			}
+			return String.valueOf(Arrays.copyOf(str, index));
+		}
+
+		// Driver code
+		public static void main(String[] args)
+		{
+			char str[] = "geeksforgeeks".toCharArray();
+			int n = str.length;
+			System.out.println(removeDuplicate(str, n));
+		}
+	}
+	
+	// This code is contributed by Rajput-Ji
+
+

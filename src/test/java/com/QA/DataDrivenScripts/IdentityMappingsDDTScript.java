@@ -12,7 +12,7 @@ import com.QA.Application.TestBase.TestBase;
 public class IdentityMappingsDDTScript extends TestBase{
 	static String filePath=System.getProperty("user.dir");
 
-	@Test
+	@Test(priority = 5)
 	public static void verifyCreateIdentityMappingsDDTScript() throws Exception {
 
 		// Initialize Excel file

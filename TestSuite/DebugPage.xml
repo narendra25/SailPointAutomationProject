@@ -4,7 +4,8 @@
   <test thread-count="5" name="DeBugPage">
     <classes>
       <class name="com.QA.DataDrivenScripts.DeBugDDTScipts"/>
-      
+       <class name="com.QA.DataDrivenScripts.TaskActionScript"/>
+       <class name="com.QA.DataDrivenScripts.DeleteAllIdentitesScript"/>
     </classes>
   </test> <!-- ApplicationOnBoardingDDT -->
 </suite> <!-- Suite -->

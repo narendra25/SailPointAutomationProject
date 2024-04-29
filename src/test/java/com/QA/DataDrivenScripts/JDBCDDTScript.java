@@ -1,20 +1,20 @@
 package com.QA.DataDrivenScripts;
 
-import java.io.File;
-import java.io.FileInputStream;
 
+import java.io.FileInputStream;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.annotations.Test;
-
 import com.QA.Application.Pages.ApplicationsPage;
 import com.QA.Application.TestBase.TestBase;
 
 public class JDBCDDTScript extends TestBase {
 	String filePath=System.getProperty("user.dir");
+	
 	@Test(priority=2)
+	//@Test(dependsOnMethods={"com.QA.DataDrivenScripts.SailpointDDTLogin.VerifyUserLoginandLogout"})
 	public void JDBC_APPLICATION_ONBOARDING_DDT() throws Exception {
 		
 		// Initialize Excel file
@@ -38,7 +38,10 @@ public class JDBCDDTScript extends TestBase {
 			
 			
 			CreateExtentTest("Verify JDBC Application OnBoarding Through DDT", "Case 1: User needs to verify if JDBC Application On Boarding Script Through JDBC","Functional_TestCase","Narendra Reddy");
+			
+			//Launch Application 
 			Application.Launch_Application();
+			webdriver.WaitForSometime(2000);
 			
 			//Click On Applications
 			webdriver.clickOnButton(ApplicationsPage.btnApplications);
@@ -60,6 +63,7 @@ public class JDBCDDTScript extends TestBase {
 			webdriver.waitForElementVisible(ApplicationsPage.btnDelimiterSave);
 			webdriver.WaitForSometime(2000);
 			TakeScreenshot("User Select The Application Type","JDBCAPPLICATIONDDT" ,ApplicationName);
+			
 			//Select Application Owner
 			webdriver.clickOnButton(ApplicationsPage.selectOwner);
 			webdriver.enterText(ApplicationsPage.txtOwnerName,ApplicationOwner);

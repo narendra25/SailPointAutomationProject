@@ -3,12 +3,21 @@
 <suite name="Failed suite [DeBugPage]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="DeBugPage(failed)">
     <classes>
+      <class name="com.QA.DataDrivenScripts.TaskActionScript">
+        <methods>
+          <include name="setUp"/>
+          <include name="verifyUserPerformTaskActions"/>
+          <include name="closeReport"/>
+          <include name="tearDown"/>
+          <include name="generateReports"/>
+        </methods>
+      </class> <!-- com.QA.DataDrivenScripts.TaskActionScript -->
       <class name="com.QA.DataDrivenScripts.DeBugDDTScipts">
         <methods>
-          <include name="verifyCreateIdentityMappingsDDTScript"/>
           <include name="setUp"/>
           <include name="closeReport"/>
           <include name="tearDown"/>
+          <include name="verifyDebuActionDDTScript"/>
           <include name="generateReports"/>
         </methods>
       </class> <!-- com.QA.DataDrivenScripts.DeBugDDTScipts -->

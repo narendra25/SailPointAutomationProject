@@ -6,6 +6,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import com.QA.Application.Pages.TaskPageObjects;
@@ -15,6 +16,7 @@ public class CreateAggregationTaskDDT extends TestBase {
 	static String filePath=System.getProperty("user.dir");
 
 	@Test(priority=3)
+	//@Test(dependsOnMethods = "JDBC_APPLICATION_ONBOARDING_DDT()")
 	public static void verifyCreateIdentityMappingsDDTScript() throws Exception {
 
 		// Initialize Excel file
@@ -34,8 +36,9 @@ public class CreateAggregationTaskDDT extends TestBase {
 
 			CreateExtentTest("Verify Create Aggregation Script Through DDT", "Case 1: User needs to verify if Create Aggregation Script Through DDT Test","Functional_TestCase","VinayKumar");
 
-
+			//Launch The Application
 			Application.Launch_Application();
+			
 			//Click On 	SetUp
 			webdriver.clickOnButton(TaskPageObjects.btnSetUp);
 			LogInFo("User Click on SetUpDropdown");
@@ -83,19 +86,28 @@ public class CreateAggregationTaskDDT extends TestBase {
 				webdriver.WaitForSometime(3000);
 				//webdriver.waitForElementVisible(TaskPageObjects.OKButton);
 
-				//Click On 
+				//Click On Ok Button
 
 				webdriver.ClickByJavaScript_Executor(TaskPageObjects.OKButton);
 				TakeScreenshot("User click on Ok Button","TasksDDT","OkButton");
 
 				webdriver.WaitForSometime(2000);
-			
 				
+				//User Navigate to TaskResults Tab
+				webdriver.DynamicXpathText("Task Results");
+				TakeScreenshot("User Navigate To Task Results Page","TasksDDT","TaskResults");
+				webdriver.WaitForSometime(1000);
+				//Click On Task in Task Results Page
+				driver.findElement(By.xpath("(//div[text()='"+AggregationTaskName+"'])[2]")).click();
+				TakeScreenshot("User Verify Identites in Task results Page","TasksDDT","TaskIdentites");
+				webdriver.WaitForSometime(1000);
 			}
 			else {
 				System.out.println("Please Check Properly ..Getting Error");
 			}
 			webdriver.WaitForSometime(2000);
+			
+			//LogOut The Application
 			Application.LogOut_Application();
 		}
 		
