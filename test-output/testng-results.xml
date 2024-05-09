@@ -1,20 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+=======
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+>>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
+  <suite started-at="2024-04-19T16:25:05 IST" name="Default suite" finished-at="2024-04-19T16:25:23 IST" duration-ms="18393">
+=======
   <suite started-at="2024-04-25T09:21:51 IST" name="Default suite" finished-at="2024-04-25T09:22:24 IST" duration-ms="32964">
+>>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
     <groups>
     </groups>
+<<<<<<< HEAD
+    <test started-at="2024-04-19T16:25:05 IST" name="Default test" finished-at="2024-04-19T16:25:23 IST" duration-ms="18393">
+      <class name="com.QA.DataDrivenScripts.ApplicationCorrelation">
+        <test-method is-config="true" signature="generateReports()[pri:0, instance:com.QA.DataDrivenScripts.ApplicationCorrelation@305f031]" started-at="2024-04-19T16:25:05 IST" name="generateReports" finished-at="2024-04-19T16:25:05 IST" duration-ms="75" status="PASS">
+=======
     <test started-at="2024-04-25T09:21:51 IST" name="Default test" finished-at="2024-04-25T09:22:24 IST" duration-ms="32964">
       <class name="com.QA.DataDrivenScripts.DeBugDDTScipts">
         <test-method is-config="true" signature="generateReports()[pri:0, instance:com.QA.DataDrivenScripts.DeBugDDTScipts@2187fff7]" started-at="2024-04-25T09:21:51 IST" name="generateReports" finished-at="2024-04-25T09:21:51 IST" duration-ms="153" status="PASS">
+>>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateReports -->
+<<<<<<< HEAD
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.QA.DataDrivenScripts.ApplicationCorrelation@305f031]" started-at="2024-04-19T16:25:05 IST" name="setUp" finished-at="2024-04-19T16:25:07 IST" duration-ms="1881" status="PASS">
+=======
         <test-method is-config="true" signature="setUp()[pri:0, instance:com.QA.DataDrivenScripts.DeBugDDTScipts@2187fff7]" started-at="2024-04-25T09:21:51 IST" name="setUp" finished-at="2024-04-25T09:21:55 IST" duration-ms="4139" status="PASS">
+>>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
+<<<<<<< HEAD
+        <test-method signature="testCorrelation()[pri:0, instance:com.QA.DataDrivenScripts.ApplicationCorrelation@305f031]" started-at="2024-04-19T16:25:07 IST" name="testCorrelation" finished-at="2024-04-19T16:25:23 IST" duration-ms="16490" status="PASS">
+=======
         <test-method signature="verifyCreateIdentityMappingsDDTScript()[pri:0, instance:com.QA.DataDrivenScripts.DeBugDDTScipts@2187fff7]" started-at="2024-04-25T09:21:55 IST" name="verifyCreateIdentityMappingsDDTScript" finished-at="2024-04-25T09:22:24 IST" duration-ms="28433" status="FAIL">
           <exception class="java.lang.NullPointerException">
             <message>
@@ -54,8 +75,13 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.NullPointerException -->
+>>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
+        </test-method> <!-- testCorrelation -->
+        <test-method is-config="true" signature="closeReport()[pri:0, instance:com.QA.DataDrivenScripts.ApplicationCorrelation@305f031]" started-at="2024-04-19T16:25:23 IST" name="closeReport" finished-at="2024-04-19T16:25:24 IST" duration-ms="526" status="PASS">
+=======
         </test-method> <!-- verifyCreateIdentityMappingsDDTScript -->
         <test-method is-config="true" signature="tearDown()[pri:0, instance:com.QA.DataDrivenScripts.DeBugDDTScipts@2187fff7]" started-at="2024-04-25T09:22:24 IST" name="tearDown" finished-at="2024-04-25T09:22:24 IST" duration-ms="333" status="PASS">
           <reporter-output>
@@ -96,10 +122,15 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.io.IOException -->
+>>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeReport -->
+<<<<<<< HEAD
+      </class> <!-- com.QA.DataDrivenScripts.ApplicationCorrelation -->
+=======
       </class> <!-- com.QA.DataDrivenScripts.DeBugDDTScipts -->
+>>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

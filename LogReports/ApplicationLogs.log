@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+[16:25:05,439 DEBUG][Application 1][i.g.b.w.WebDriverManager.<init>] Using WebDriverManager 5.6.4  
+[16:25:05,693 DEBUG][Application 1][i.g.b.w.c.ResolutionCache.checkKeyInResolutionCache] Resolution chrome=124 in cache (valid until 16:39:08 19/04/2024 IST)  
+[16:25:05,694 DEBUG][Application 1][i.g.b.w.c.ResolutionCache.checkKeyInResolutionCache] Resolution chrome124=124.0.6367.60 in cache (valid until 15:39:08 20/04/2024 IST)  
+[16:25:05,694 INFO][Application 1][i.g.b.w.WebDriverManager.resolveDriverVersion] Using chromedriver 124.0.6367.60 (resolved driver for Chrome 124)  
+[16:25:05,727 DEBUG][Application 1][i.g.b.w.WebDriverManager.manage] Driver chromedriver 124.0.6367.60 found in cache  
+[16:25:05,729 INFO][Application 1][i.g.b.w.WebDriverManager.exportDriver] Exporting webdriver.chrome.driver as C:\Users\vc21352\.cache\selenium\chromedriver\win64\124.0.6367.60\chromedriver.exe  
+[16:25:07,869 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Enter User Name  
+[16:25:08,261 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Enter The Password   
+[16:25:14,665 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Click On Login Page Successfully.   
+[16:25:14,682 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] Verification Successful - The User is Login The Application  
+[16:25:17,738 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Selected Application  
+[16:25:18,028 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Entered Correlation Page  
+[16:25:20,993 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Entered Configuration Name  
+[16:25:21,239 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Entered Correlation Assignment Page  
+[16:25:23,675 INFO][Application 1][c.Q.A.T.TestBase.LogInFo] User Created New Correlation  
+=======
 [09:21:50,722 DEBUG][Application 1][o.t.l.Logger.debug] suiteXmlPath: "C:\Users\na21279\AppData\Local\Temp\testng-eclipse-2041238798\testng-customsuite.xml"  
 [09:21:51,151 INFO][Application 1][o.t.l.Logger.info] [Utils] MethodGroupsHelper.collectMethodsByGroup() took 5 ms.  
 [09:21:51,166 INFO][Application 1][o.t.l.Logger.info] [Utils] MethodGroupsHelper.sortMethods() took 12 ms.  
@@ -167,3 +184,4 @@
 [09:22:25,480 INFO][Application 1][o.t.l.Logger.info] [TestNG] Time taken by org.testng.reporters.EmailableReporter2@3bc20984: 20 ms  
 [09:22:25,493 INFO][Application 1][o.t.l.Logger.info] [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@6bd92538: 12 ms  
 [09:22:25,495 INFO][Application 1][o.t.l.Logger.info] [TestNG] Time taken by org.testng.internal.ExitCodeListener@69a373fd: 0 ms  
+>>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git

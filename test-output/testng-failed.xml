@@ -3,15 +3,30 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
+      <class name="com.QA.DataDrivenScripts.CreateRulesDDTScript">
+=======
       <class name="com.QA.DataDrivenScripts.DeBugDDTScipts">
+>>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
         <methods>
+<<<<<<< HEAD
+          <include name="verifyCreateApplicationRules"/>
+=======
           <include name="verifyCreateIdentityMappingsDDTScript"/>
+>>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
           <include name="setUp"/>
           <include name="closeReport"/>
+<<<<<<< HEAD
+=======
           <include name="tearDown"/>
+>>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
           <include name="generateReports"/>
         </methods>
+<<<<<<< HEAD
+      </class> <!-- com.QA.DataDrivenScripts.CreateRulesDDTScript -->
+=======
       </class> <!-- com.QA.DataDrivenScripts.DeBugDDTScipts -->
+>>>>>>> branch 'VinayKumar' of https://github.com/narendra25/SailPointAutomationProject.git
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
